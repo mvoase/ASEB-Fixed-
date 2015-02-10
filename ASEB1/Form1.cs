@@ -33,7 +33,7 @@ namespace ASEB1
             InitializeComponent();
         }
 
-        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Load the HRM FIle 
             OpenFileDialog op = new OpenFileDialog();
@@ -52,6 +52,56 @@ namespace ASEB1
             Application.Exit();
         }
 
+        private void readFile()
+        { 
+            //Read the HRM File and Split the values 
+            try
+            {
+                using (StreamReader sr = new StreamReader(file_name))
+                {
+                    string line;
+
+                    while ((line = sr.ReadLine()) != "[HRData]")
+                    {
+                        line = sr.ReadLine();
+                    }
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        string split = line;
+                        string[] values = split.Split('\t');
+                        foreach (String value in values)
+                        {
+                            hrdata[i, j] = int.Parse(value);
+                            i++;
+                            if (i > 5)
+                            {
+                                i = 0;
+                                j++;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+
+           /* avgSpeedpro();
+            maxSpeedpro();
+            avgHRatepro();
+            maxHRatepro();
+            minHRatepro();
+            avgPowerpro();
+            maxPowerpro();
+            avgAltpro();
+            maxAltpro():
+            totalDist();
+            renderGraph(); */
+        }
 
 
 
