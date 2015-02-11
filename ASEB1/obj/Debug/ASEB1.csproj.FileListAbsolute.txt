@@ -13,3 +13,9 @@ C:\Users\mike\Documents\ASEB1\ASEB1\obj\Debug\ASEB1.pdb
 C:\Users\mike\Documents\aseab\ASEB1\bin\Debug\ASEB1.exe.config
 C:\Users\mike\Documents\aseab\ASEB1\obj\Debug\ASEB1.exe
 C:\Users\mike\Documents\aseab\ASEB1\obj\Debug\ASEB1.pdb
+C:\Users\mike\Documents\aseab\ASEB1\obj\Debug\ASEB1.csprojResolveAssemblyReference.cache
+C:\Users\mike\Documents\aseab\ASEB1\obj\Debug\ASEB1.Form1.resources
+C:\Users\mike\Documents\aseab\ASEB1\obj\Debug\ASEB1.Properties.Resources.resources
+C:\Users\mike\Documents\aseab\ASEB1\obj\Debug\ASEB1.csproj.GenerateResource.Cache
+C:\Users\mike\Documents\aseab\ASEB1\bin\Debug\ASEB1.exe
+C:\Users\mike\Documents\aseab\ASEB1\bin\Debug\ASEB1.pdb

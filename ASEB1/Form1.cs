@@ -33,9 +33,9 @@ namespace ASEB1
             InitializeComponent();
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            // Load the HRM FIle 
+             // Load the HRM FIle 
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "Text Document (*.hrm) | *.hrm|All Files (*.*)|*.*";
             DialogResult dialog = op.ShowDialog();
@@ -47,13 +47,15 @@ namespace ASEB1
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        
+           
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         private void readFile()
-        { 
+        {
             //Read the HRM File and Split the values 
             try
             {
@@ -90,18 +92,59 @@ namespace ASEB1
                 Console.WriteLine(err.Message);
             }
 
-           /* avgSpeedpro();
-            maxSpeedpro();
+            avgSpeedpro();
+            //maxSpeedpro();
             avgHRatepro();
-            maxHRatepro();
-            minHRatepro();
-            avgPowerpro();
-            maxPowerpro();
-            avgAltpro();
-            maxAltpro():
-            totalDist();
-            renderGraph(); */
+            //maxHRatepro();
+            //minHRatepro();
+            //avgPowerpro();
+            //maxPowerpro();
+            //avgAltpro();
+            //maxAltpro():
+            //totalDist();
+            //renderGraph();
         }
+            private void avgSpeedpro()
+            {
+                //Calculate the average spped 
+                rowNum = j; 
+                j = 0;
+                speed = 0;
+                string msg;
+                for (i = 0; i < rowNum; i++)
+                {
+                    speed = speed + hrdata[1, j];
+                    j++;
+                }
+                if (rdMph.Checked == true)
+                {
+                    avgSpeed = (speed / 16) / rowNum;
+                    msg = "Mph";
+                }
+                else 
+                {
+                    avgSpeed = (speed / 10) /rowNum;
+                    msg = "Km/h";
+                }
+                lbAvgSpeed.Text = avgSpeed.ToString("N2") + msg;
+            }
+            
+            private void avgHRatepro()
+            {
+                //Calculate the average heart rate 
+                rowNum = j; 
+                j = 0;
+                for (i = 0; i < rowNum; i++)
+                {
+                    HRate = HRate + hrdata[0, j];
+                    j++;
+                }
+                avgHRate = HRate / rowNum;
+                lbAvgHR.Text = avgHRate.ToString("N2") + "Bpm";
+            }
+        }
+
+        
 
 
 
@@ -112,5 +155,5 @@ namespace ASEB1
  }
            
 
- }
+ 
     
