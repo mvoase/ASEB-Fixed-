@@ -37,37 +37,46 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.rdMph = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
             this.lbTotalDist = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbMaxAlt = new System.Windows.Forms.Label();
-            this.lbAvgAlt = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbMaxPower = new System.Windows.Forms.Label();
-            this.lblAvgPower = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbMaxSpeed = new System.Windows.Forms.Label();
-            this.lbAvgSpeed = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tdist = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mnnhrate = new System.Windows.Forms.Label();
+            this.mnhrate = new System.Windows.Forms.Label();
+            this.mhrate = new System.Windows.Forms.Label();
+            this.ahrate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbAvgHR = new System.Windows.Forms.Label();
             this.lbMaxHR = new System.Windows.Forms.Label();
             this.lbMinHR = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.aspeed = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.mspeed = new System.Windows.Forms.Label();
-            this.ahrate = new System.Windows.Forms.Label();
-            this.mhrate = new System.Windows.Forms.Label();
-            this.mnhrate = new System.Windows.Forms.Label();
-            this.mnnhrate = new System.Windows.Forms.Label();
-            this.maxpowerproo = new System.Windows.Forms.Label();
+            this.aspeed = new System.Windows.Forms.Label();
+            this.lbMaxSpeed = new System.Windows.Forms.Label();
+            this.lbAvgSpeed = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.apower = new System.Windows.Forms.Label();
+            this.maxpowerproo = new System.Windows.Forms.Label();
+            this.lbMaxPower = new System.Windows.Forms.Label();
+            this.lblAvgPower = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.malt = new System.Windows.Forms.Label();
+            this.aalt = new System.Windows.Forms.Label();
+            this.lbMaxAlt = new System.Windows.Forms.Label();
+            this.lbAvgAlt = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdMph = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -133,33 +142,12 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.apower);
-            this.tabPage1.Controls.Add(this.maxpowerproo);
-            this.tabPage1.Controls.Add(this.mnnhrate);
-            this.tabPage1.Controls.Add(this.mnhrate);
-            this.tabPage1.Controls.Add(this.mhrate);
-            this.tabPage1.Controls.Add(this.ahrate);
-            this.tabPage1.Controls.Add(this.mspeed);
-            this.tabPage1.Controls.Add(this.aspeed);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.radioButton2);
-            this.tabPage1.Controls.Add(this.rdMph);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.lbTotalDist);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.lbMaxAlt);
-            this.tabPage1.Controls.Add(this.lbAvgAlt);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.lbMaxPower);
-            this.tabPage1.Controls.Add(this.lblAvgPower);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.lbMaxSpeed);
-            this.tabPage1.Controls.Add(this.lbAvgSpeed);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.lbAvgHR);
-            this.tabPage1.Controls.Add(this.lbMaxHR);
-            this.tabPage1.Controls.Add(this.lbMinHR);
-            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -169,179 +157,14 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 20;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(583, 326);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 17);
-            this.radioButton2.TabIndex = 19;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Kilometres";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // rdMph
-            // 
-            this.rdMph.AutoSize = true;
-            this.rdMph.Location = new System.Drawing.Point(583, 295);
-            this.rdMph.Name = "rdMph";
-            this.rdMph.Size = new System.Drawing.Size(49, 17);
-            this.rdMph.TabIndex = 18;
-            this.rdMph.TabStop = true;
-            this.rdMph.Text = "Miles";
-            this.rdMph.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(581, 269);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(31, 13);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Units";
-            // 
             // lbTotalDist
             // 
             this.lbTotalDist.AutoSize = true;
-            this.lbTotalDist.Location = new System.Drawing.Point(580, 112);
+            this.lbTotalDist.Location = new System.Drawing.Point(11, 20);
             this.lbTotalDist.Name = "lbTotalDist";
             this.lbTotalDist.Size = new System.Drawing.Size(34, 13);
             this.lbTotalDist.TabIndex = 16;
             this.lbTotalDist.Text = "Total:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(581, 75);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Distance";
-            // 
-            // lbMaxAlt
-            // 
-            this.lbMaxAlt.AutoSize = true;
-            this.lbMaxAlt.Location = new System.Drawing.Point(358, 326);
-            this.lbMaxAlt.Name = "lbMaxAlt";
-            this.lbMaxAlt.Size = new System.Drawing.Size(54, 13);
-            this.lbMaxAlt.TabIndex = 14;
-            this.lbMaxAlt.Text = "Maximum:";
-            // 
-            // lbAvgAlt
-            // 
-            this.lbAvgAlt.AutoSize = true;
-            this.lbAvgAlt.Location = new System.Drawing.Point(358, 299);
-            this.lbAvgAlt.Name = "lbAvgAlt";
-            this.lbAvgAlt.Size = new System.Drawing.Size(50, 13);
-            this.lbAvgAlt.TabIndex = 13;
-            this.lbAvgAlt.Text = "Average:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(358, 269);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Altitude";
-            // 
-            // lbMaxPower
-            // 
-            this.lbMaxPower.AutoSize = true;
-            this.lbMaxPower.Location = new System.Drawing.Point(358, 179);
-            this.lbMaxPower.Name = "lbMaxPower";
-            this.lbMaxPower.Size = new System.Drawing.Size(54, 13);
-            this.lbMaxPower.TabIndex = 11;
-            this.lbMaxPower.Text = "Maximum:";
-            // 
-            // lblAvgPower
-            // 
-            this.lblAvgPower.AutoSize = true;
-            this.lblAvgPower.Location = new System.Drawing.Point(358, 124);
-            this.lblAvgPower.Name = "lblAvgPower";
-            this.lblAvgPower.Size = new System.Drawing.Size(50, 13);
-            this.lblAvgPower.TabIndex = 10;
-            this.lblAvgPower.Text = "Average:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(358, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Power";
-            // 
-            // lbMaxSpeed
-            // 
-            this.lbMaxSpeed.AutoSize = true;
-            this.lbMaxSpeed.Location = new System.Drawing.Point(76, 326);
-            this.lbMaxSpeed.Name = "lbMaxSpeed";
-            this.lbMaxSpeed.Size = new System.Drawing.Size(54, 13);
-            this.lbMaxSpeed.TabIndex = 8;
-            this.lbMaxSpeed.Text = "Maximum:";
-            // 
-            // lbAvgSpeed
-            // 
-            this.lbAvgSpeed.AutoSize = true;
-            this.lbAvgSpeed.Location = new System.Drawing.Point(76, 299);
-            this.lbAvgSpeed.Name = "lbAvgSpeed";
-            this.lbAvgSpeed.Size = new System.Drawing.Size(50, 13);
-            this.lbAvgSpeed.TabIndex = 7;
-            this.lbAvgSpeed.Text = "Average:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Heart Rate";
-            // 
-            // lbAvgHR
-            // 
-            this.lbAvgHR.AutoSize = true;
-            this.lbAvgHR.Location = new System.Drawing.Point(76, 112);
-            this.lbAvgHR.Name = "lbAvgHR";
-            this.lbAvgHR.Size = new System.Drawing.Size(56, 13);
-            this.lbAvgHR.TabIndex = 3;
-            this.lbAvgHR.Text = "Average : ";
-            // 
-            // lbMaxHR
-            // 
-            this.lbMaxHR.AutoSize = true;
-            this.lbMaxHR.Location = new System.Drawing.Point(76, 146);
-            this.lbMaxHR.Name = "lbMaxHR";
-            this.lbMaxHR.Size = new System.Drawing.Size(54, 13);
-            this.lbMaxHR.TabIndex = 4;
-            this.lbMaxHR.Text = "Maximum:";
-            // 
-            // lbMinHR
-            // 
-            this.lbMinHR.AutoSize = true;
-            this.lbMinHR.Location = new System.Drawing.Point(76, 179);
-            this.lbMinHR.Name = "lbMinHR";
-            this.lbMinHR.Size = new System.Drawing.Size(51, 13);
-            this.lbMinHR.TabIndex = 5;
-            this.lbMinHR.Text = "Minimum:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(76, 269);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Speed";
             // 
             // tabPage2
             // 
@@ -353,69 +176,282 @@
             this.tabPage2.Text = "Graph";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // aspeed
+            // tdist
             // 
-            this.aspeed.AutoSize = true;
-            this.aspeed.Location = new System.Drawing.Point(166, 299);
-            this.aspeed.Name = "aspeed";
-            this.aspeed.Size = new System.Drawing.Size(0, 13);
-            this.aspeed.TabIndex = 21;
+            this.tdist.AutoSize = true;
+            this.tdist.Location = new System.Drawing.Point(51, 20);
+            this.tdist.Name = "tdist";
+            this.tdist.Size = new System.Drawing.Size(0, 13);
+            this.tdist.TabIndex = 2;
             // 
-            // mspeed
+            // groupBox1
             // 
-            this.mspeed.AutoSize = true;
-            this.mspeed.Location = new System.Drawing.Point(166, 326);
-            this.mspeed.Name = "mspeed";
-            this.mspeed.Size = new System.Drawing.Size(0, 13);
-            this.mspeed.TabIndex = 22;
-            // 
-            // ahrate
-            // 
-            this.ahrate.AutoSize = true;
-            this.ahrate.Location = new System.Drawing.Point(166, 112);
-            this.ahrate.Name = "ahrate";
-            this.ahrate.Size = new System.Drawing.Size(0, 13);
-            this.ahrate.TabIndex = 23;
-            // 
-            // mhrate
-            // 
-            this.mhrate.AutoSize = true;
-            this.mhrate.Location = new System.Drawing.Point(166, 146);
-            this.mhrate.Name = "mhrate";
-            this.mhrate.Size = new System.Drawing.Size(0, 13);
-            this.mhrate.TabIndex = 24;
-            // 
-            // mnhrate
-            // 
-            this.mnhrate.AutoSize = true;
-            this.mnhrate.Location = new System.Drawing.Point(166, 179);
-            this.mnhrate.Name = "mnhrate";
-            this.mnhrate.Size = new System.Drawing.Size(0, 13);
-            this.mnhrate.TabIndex = 25;
+            this.groupBox1.Controls.Add(this.mnnhrate);
+            this.groupBox1.Controls.Add(this.mnhrate);
+            this.groupBox1.Controls.Add(this.mhrate);
+            this.groupBox1.Controls.Add(this.ahrate);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lbAvgHR);
+            this.groupBox1.Controls.Add(this.lbMaxHR);
+            this.groupBox1.Controls.Add(this.lbMinHR);
+            this.groupBox1.Location = new System.Drawing.Point(63, 75);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(229, 117);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Heart Rate";
             // 
             // mnnhrate
             // 
             this.mnnhrate.AutoSize = true;
-            this.mnnhrate.Location = new System.Drawing.Point(166, 179);
+            this.mnnhrate.Location = new System.Drawing.Point(106, 87);
             this.mnnhrate.Name = "mnnhrate";
             this.mnnhrate.Size = new System.Drawing.Size(0, 13);
-            this.mnnhrate.TabIndex = 26;
+            this.mnnhrate.TabIndex = 49;
             // 
-            // maxpowerproo
+            // mnhrate
             // 
-            this.maxpowerproo.AutoSize = true;
-            this.maxpowerproo.Location = new System.Drawing.Point(431, 179);
-            this.maxpowerproo.Name = "maxpowerproo";
-            this.maxpowerproo.Size = new System.Drawing.Size(0, 13);
-            this.maxpowerproo.TabIndex = 27;
+            this.mnhrate.AutoSize = true;
+            this.mnhrate.Location = new System.Drawing.Point(106, 87);
+            this.mnhrate.Name = "mnhrate";
+            this.mnhrate.Size = new System.Drawing.Size(0, 13);
+            this.mnhrate.TabIndex = 48;
+            // 
+            // mhrate
+            // 
+            this.mhrate.AutoSize = true;
+            this.mhrate.Location = new System.Drawing.Point(106, 54);
+            this.mhrate.Name = "mhrate";
+            this.mhrate.Size = new System.Drawing.Size(0, 13);
+            this.mhrate.TabIndex = 47;
+            // 
+            // ahrate
+            // 
+            this.ahrate.AutoSize = true;
+            this.ahrate.Location = new System.Drawing.Point(106, 20);
+            this.ahrate.Name = "ahrate";
+            this.ahrate.Size = new System.Drawing.Size(0, 13);
+            this.ahrate.TabIndex = 46;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(97, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 45;
+            // 
+            // lbAvgHR
+            // 
+            this.lbAvgHR.AutoSize = true;
+            this.lbAvgHR.Location = new System.Drawing.Point(16, 20);
+            this.lbAvgHR.Name = "lbAvgHR";
+            this.lbAvgHR.Size = new System.Drawing.Size(56, 13);
+            this.lbAvgHR.TabIndex = 42;
+            this.lbAvgHR.Text = "Average : ";
+            // 
+            // lbMaxHR
+            // 
+            this.lbMaxHR.AutoSize = true;
+            this.lbMaxHR.Location = new System.Drawing.Point(16, 54);
+            this.lbMaxHR.Name = "lbMaxHR";
+            this.lbMaxHR.Size = new System.Drawing.Size(54, 13);
+            this.lbMaxHR.TabIndex = 43;
+            this.lbMaxHR.Text = "Maximum:";
+            // 
+            // lbMinHR
+            // 
+            this.lbMinHR.AutoSize = true;
+            this.lbMinHR.Location = new System.Drawing.Point(16, 87);
+            this.lbMinHR.Name = "lbMinHR";
+            this.lbMinHR.Size = new System.Drawing.Size(51, 13);
+            this.lbMinHR.TabIndex = 44;
+            this.lbMinHR.Text = "Minimum:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.mspeed);
+            this.groupBox2.Controls.Add(this.aspeed);
+            this.groupBox2.Controls.Add(this.lbMaxSpeed);
+            this.groupBox2.Controls.Add(this.lbAvgSpeed);
+            this.groupBox2.Location = new System.Drawing.Point(63, 274);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(229, 95);
+            this.groupBox2.TabIndex = 42;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Speed";
+            // 
+            // mspeed
+            // 
+            this.mspeed.AutoSize = true;
+            this.mspeed.Location = new System.Drawing.Point(90, 59);
+            this.mspeed.Name = "mspeed";
+            this.mspeed.Size = new System.Drawing.Size(0, 13);
+            this.mspeed.TabIndex = 27;
+            // 
+            // aspeed
+            // 
+            this.aspeed.AutoSize = true;
+            this.aspeed.Location = new System.Drawing.Point(90, 32);
+            this.aspeed.Name = "aspeed";
+            this.aspeed.Size = new System.Drawing.Size(0, 13);
+            this.aspeed.TabIndex = 26;
+            // 
+            // lbMaxSpeed
+            // 
+            this.lbMaxSpeed.AutoSize = true;
+            this.lbMaxSpeed.Location = new System.Drawing.Point(12, 61);
+            this.lbMaxSpeed.Name = "lbMaxSpeed";
+            this.lbMaxSpeed.Size = new System.Drawing.Size(54, 13);
+            this.lbMaxSpeed.TabIndex = 25;
+            this.lbMaxSpeed.Text = "Maximum:";
+            // 
+            // lbAvgSpeed
+            // 
+            this.lbAvgSpeed.AutoSize = true;
+            this.lbAvgSpeed.Location = new System.Drawing.Point(12, 32);
+            this.lbAvgSpeed.Name = "lbAvgSpeed";
+            this.lbAvgSpeed.Size = new System.Drawing.Size(50, 13);
+            this.lbAvgSpeed.TabIndex = 24;
+            this.lbAvgSpeed.Text = "Average:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.apower);
+            this.groupBox3.Controls.Add(this.maxpowerproo);
+            this.groupBox3.Controls.Add(this.lbMaxPower);
+            this.groupBox3.Controls.Add(this.lblAvgPower);
+            this.groupBox3.Location = new System.Drawing.Point(326, 75);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 117);
+            this.groupBox3.TabIndex = 43;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Power";
             // 
             // apower
             // 
             this.apower.AutoSize = true;
-            this.apower.Location = new System.Drawing.Point(431, 124);
+            this.apower.Location = new System.Drawing.Point(82, 25);
             this.apower.Name = "apower";
             this.apower.Size = new System.Drawing.Size(0, 13);
-            this.apower.TabIndex = 28;
+            this.apower.TabIndex = 32;
+            // 
+            // maxpowerproo
+            // 
+            this.maxpowerproo.AutoSize = true;
+            this.maxpowerproo.Location = new System.Drawing.Point(82, 54);
+            this.maxpowerproo.Name = "maxpowerproo";
+            this.maxpowerproo.Size = new System.Drawing.Size(0, 13);
+            this.maxpowerproo.TabIndex = 31;
+            // 
+            // lbMaxPower
+            // 
+            this.lbMaxPower.AutoSize = true;
+            this.lbMaxPower.Location = new System.Drawing.Point(9, 54);
+            this.lbMaxPower.Name = "lbMaxPower";
+            this.lbMaxPower.Size = new System.Drawing.Size(54, 13);
+            this.lbMaxPower.TabIndex = 30;
+            this.lbMaxPower.Text = "Maximum:";
+            // 
+            // lblAvgPower
+            // 
+            this.lblAvgPower.AutoSize = true;
+            this.lblAvgPower.Location = new System.Drawing.Point(9, 25);
+            this.lblAvgPower.Name = "lblAvgPower";
+            this.lblAvgPower.Size = new System.Drawing.Size(50, 13);
+            this.lblAvgPower.TabIndex = 29;
+            this.lblAvgPower.Text = "Average:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lbTotalDist);
+            this.groupBox4.Controls.Add(this.tdist);
+            this.groupBox4.Location = new System.Drawing.Point(556, 75);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(120, 54);
+            this.groupBox4.TabIndex = 44;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Distance";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.malt);
+            this.groupBox5.Controls.Add(this.aalt);
+            this.groupBox5.Controls.Add(this.lbMaxAlt);
+            this.groupBox5.Controls.Add(this.lbAvgAlt);
+            this.groupBox5.Location = new System.Drawing.Point(326, 274);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 95);
+            this.groupBox5.TabIndex = 45;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Altitude";
+            // 
+            // malt
+            // 
+            this.malt.AutoSize = true;
+            this.malt.Location = new System.Drawing.Point(69, 57);
+            this.malt.Name = "malt";
+            this.malt.Size = new System.Drawing.Size(0, 13);
+            this.malt.TabIndex = 35;
+            // 
+            // aalt
+            // 
+            this.aalt.AutoSize = true;
+            this.aalt.Location = new System.Drawing.Point(69, 30);
+            this.aalt.Name = "aalt";
+            this.aalt.Size = new System.Drawing.Size(0, 13);
+            this.aalt.TabIndex = 34;
+            // 
+            // lbMaxAlt
+            // 
+            this.lbMaxAlt.AutoSize = true;
+            this.lbMaxAlt.Location = new System.Drawing.Point(9, 57);
+            this.lbMaxAlt.Name = "lbMaxAlt";
+            this.lbMaxAlt.Size = new System.Drawing.Size(54, 13);
+            this.lbMaxAlt.TabIndex = 33;
+            this.lbMaxAlt.Text = "Maximum:";
+            // 
+            // lbAvgAlt
+            // 
+            this.lbAvgAlt.AutoSize = true;
+            this.lbAvgAlt.Location = new System.Drawing.Point(9, 30);
+            this.lbAvgAlt.Name = "lbAvgAlt";
+            this.lbAvgAlt.Size = new System.Drawing.Size(50, 13);
+            this.lbAvgAlt.TabIndex = 32;
+            this.lbAvgAlt.Text = "Average:";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.radioButton2);
+            this.groupBox6.Controls.Add(this.rdMph);
+            this.groupBox6.Location = new System.Drawing.Point(556, 274);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(147, 95);
+            this.groupBox6.TabIndex = 46;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Units";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(14, 56);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(73, 17);
+            this.radioButton2.TabIndex = 48;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Kilometres";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // rdMph
+            // 
+            this.rdMph.AutoSize = true;
+            this.rdMph.Location = new System.Drawing.Point(14, 25);
+            this.rdMph.Name = "rdMph";
+            this.rdMph.Size = new System.Drawing.Size(49, 17);
+            this.rdMph.TabIndex = 47;
+            this.rdMph.TabStop = true;
+            this.rdMph.Text = "Miles";
+            this.rdMph.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -430,7 +466,18 @@
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,33 +497,36 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTotalDist;
+        private System.Windows.Forms.Label tdist;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label mnnhrate;
+        private System.Windows.Forms.Label mnhrate;
+        private System.Windows.Forms.Label mhrate;
+        private System.Windows.Forms.Label ahrate;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbAvgHR;
         private System.Windows.Forms.Label lbMaxHR;
         private System.Windows.Forms.Label lbMinHR;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbAvgSpeed;
-        private System.Windows.Forms.Label lbMaxSpeed;
-        private System.Windows.Forms.Label lblAvgPower;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbMaxPower;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbAvgAlt;
-        private System.Windows.Forms.Label lbMaxAlt;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lbTotalDist;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RadioButton rdMph;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label aspeed;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label mspeed;
-        private System.Windows.Forms.Label ahrate;
-        private System.Windows.Forms.Label mhrate;
-        private System.Windows.Forms.Label mnhrate;
-        private System.Windows.Forms.Label mnnhrate;
-        private System.Windows.Forms.Label maxpowerproo;
+        private System.Windows.Forms.Label aspeed;
+        private System.Windows.Forms.Label lbMaxSpeed;
+        private System.Windows.Forms.Label lbAvgSpeed;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label apower;
+        private System.Windows.Forms.Label maxpowerproo;
+        private System.Windows.Forms.Label lbMaxPower;
+        private System.Windows.Forms.Label lblAvgPower;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label malt;
+        private System.Windows.Forms.Label aalt;
+        private System.Windows.Forms.Label lbMaxAlt;
+        private System.Windows.Forms.Label lbAvgAlt;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdMph;
     }
 }
 

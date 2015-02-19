@@ -84,9 +84,9 @@ namespace ASEB1
             minHRatepro();
             avgPowerpro();
             maxPowerpro();
-            //avgAltpro();
-            //maxAltpro();
-            //totalDist();
+            avgAltpro();
+            maxAltpro();
+            totalDist();
             //renderGraph();
         }
 
@@ -163,7 +163,7 @@ namespace ASEB1
             {
                 msg = "m above sea level";
             }
-            lbAvgAlt.Text = avgAlt.ToString("N2") + msg;
+            aalt.Text = avgAlt.ToString("N2") + msg;
         }
 
         private void totalDist()
@@ -190,7 +190,7 @@ namespace ASEB1
                 msg = " Km";
             }
             dist = speed * time;
-            lbTotalDist.Text = dist.ToString("N2") + msg;
+            tdist.Text = dist.ToString("N2") + msg;
         }
 
         private void maxSpeedpro()
@@ -296,7 +296,7 @@ namespace ASEB1
             {
                 msg = "m above sea level";
             }
-            lbMaxAlt.Text = maxAlt.ToString("N2") + msg;
+            malt.Text = maxAlt.ToString("N2") + msg;
         }
 
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
