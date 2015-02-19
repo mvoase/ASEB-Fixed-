@@ -59,6 +59,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.aspeed = new System.Windows.Forms.Label();
             this.mspeed = new System.Windows.Forms.Label();
+            this.ahrate = new System.Windows.Forms.Label();
+            this.mhrate = new System.Windows.Forms.Label();
+            this.mnhrate = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -127,6 +130,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.mnhrate);
+            this.tabPage1.Controls.Add(this.mhrate);
+            this.tabPage1.Controls.Add(this.ahrate);
             this.tabPage1.Controls.Add(this.mspeed);
             this.tabPage1.Controls.Add(this.aspeed);
             this.tabPage1.Controls.Add(this.label2);
@@ -356,6 +362,30 @@
             this.mspeed.Size = new System.Drawing.Size(0, 13);
             this.mspeed.TabIndex = 22;
             // 
+            // ahrate
+            // 
+            this.ahrate.AutoSize = true;
+            this.ahrate.Location = new System.Drawing.Point(166, 112);
+            this.ahrate.Name = "ahrate";
+            this.ahrate.Size = new System.Drawing.Size(0, 13);
+            this.ahrate.TabIndex = 23;
+            // 
+            // mhrate
+            // 
+            this.mhrate.AutoSize = true;
+            this.mhrate.Location = new System.Drawing.Point(166, 146);
+            this.mhrate.Name = "mhrate";
+            this.mhrate.Size = new System.Drawing.Size(0, 13);
+            this.mhrate.TabIndex = 24;
+            // 
+            // mnhrate
+            // 
+            this.mnhrate.AutoSize = true;
+            this.mnhrate.Location = new System.Drawing.Point(166, 179);
+            this.mnhrate.Name = "mnhrate";
+            this.mnhrate.Size = new System.Drawing.Size(0, 13);
+            this.mnhrate.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +440,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label aspeed;
         private System.Windows.Forms.Label mspeed;
+        private System.Windows.Forms.Label ahrate;
+        private System.Windows.Forms.Label mhrate;
+        private System.Windows.Forms.Label mnhrate;
     }
 }
 

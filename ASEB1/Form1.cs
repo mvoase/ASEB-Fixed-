@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-//using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ASEB1
 {
@@ -79,8 +79,8 @@ namespace ASEB1
             }
             avgSpeedpro();
             maxSpeedpro();
-            //avgHRatepro();
-            //maxHRatepro();
+            avgHRatepro();
+            maxHRatepro();
             //minHRatepro();
             //avgPowerpro();
             //maxPowerpro();
@@ -126,7 +126,7 @@ namespace ASEB1
                 j++;
             }
             avgHRate = HRate / rowNum;
-            lbAvgHR.Text = avgHRate.ToString("N2") + " Bpm";
+            ahrate.Text = avgHRate.ToString("N2") + " Bpm";
         }
 
         private void avgPowerpro()
@@ -236,7 +236,7 @@ namespace ASEB1
                 }
                 j++;
             }
-            lbMaxHR.Text = maxHRate.ToString("N2") + " Bpm";
+            mhrate.Text = maxHRate.ToString("N2") + " Bpm";
         }
 
         private void minHRatepro()
@@ -253,7 +253,7 @@ namespace ASEB1
                 }
                 j++;
             }
-            lbMinHR.Text = minHRate.ToString("N2") + " Bpm";
+            mnhrate.Text = minHRate.ToString("N2") + " Bpm";
         }
 
         private void maxPowerpro()
