@@ -81,9 +81,9 @@ namespace ASEB1
             maxSpeedpro();
             avgHRatepro();
             maxHRatepro();
-            //minHRatepro();
-            //avgPowerpro();
-            //maxPowerpro();
+            minHRatepro();
+            avgPowerpro();
+            maxPowerpro();
             //avgAltpro();
             //maxAltpro();
             //totalDist();
@@ -140,7 +140,7 @@ namespace ASEB1
                 j++;
             }
             avgPower = Power / rowNum;
-            lblAvgPower.Text = avgPower.ToString("N2") + " Watts";
+            apower.Text = avgPower.ToString("N2") + " Watts";
         }
 
         private void avgAltpro()
@@ -253,7 +253,7 @@ namespace ASEB1
                 }
                 j++;
             }
-            mnhrate.Text = minHRate.ToString("N2") + " Bpm";
+            mnnhrate.Text = minHRate.ToString("N2") + " Bpm";
         }
 
         private void maxPowerpro()
@@ -270,7 +270,7 @@ namespace ASEB1
                 }
                 j++;
             }
-            lbMaxPower.Text = maxPower.ToString("N2") + " Watts";
+            maxpowerproo.Text = maxPower.ToString("N2") + " Watts";
         }
 
         private void maxAltpro()
@@ -310,6 +310,11 @@ namespace ASEB1
             {
                 readFile();
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
         /*
         private void rdKm_CheckedChanged(object sender, EventArgs e)

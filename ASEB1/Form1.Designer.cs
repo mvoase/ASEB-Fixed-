@@ -62,6 +62,9 @@
             this.ahrate = new System.Windows.Forms.Label();
             this.mhrate = new System.Windows.Forms.Label();
             this.mnhrate = new System.Windows.Forms.Label();
+            this.mnnhrate = new System.Windows.Forms.Label();
+            this.maxpowerproo = new System.Windows.Forms.Label();
+            this.apower = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -130,6 +133,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.apower);
+            this.tabPage1.Controls.Add(this.maxpowerproo);
+            this.tabPage1.Controls.Add(this.mnnhrate);
             this.tabPage1.Controls.Add(this.mnhrate);
             this.tabPage1.Controls.Add(this.mhrate);
             this.tabPage1.Controls.Add(this.ahrate);
@@ -161,6 +167,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Summary";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label2
             // 
@@ -386,6 +393,30 @@
             this.mnhrate.Size = new System.Drawing.Size(0, 13);
             this.mnhrate.TabIndex = 25;
             // 
+            // mnnhrate
+            // 
+            this.mnnhrate.AutoSize = true;
+            this.mnnhrate.Location = new System.Drawing.Point(166, 179);
+            this.mnnhrate.Name = "mnnhrate";
+            this.mnnhrate.Size = new System.Drawing.Size(0, 13);
+            this.mnnhrate.TabIndex = 26;
+            // 
+            // maxpowerproo
+            // 
+            this.maxpowerproo.AutoSize = true;
+            this.maxpowerproo.Location = new System.Drawing.Point(431, 179);
+            this.maxpowerproo.Name = "maxpowerproo";
+            this.maxpowerproo.Size = new System.Drawing.Size(0, 13);
+            this.maxpowerproo.TabIndex = 27;
+            // 
+            // apower
+            // 
+            this.apower.AutoSize = true;
+            this.apower.Location = new System.Drawing.Point(431, 124);
+            this.apower.Name = "apower";
+            this.apower.Size = new System.Drawing.Size(0, 13);
+            this.apower.TabIndex = 28;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +474,9 @@
         private System.Windows.Forms.Label ahrate;
         private System.Windows.Forms.Label mhrate;
         private System.Windows.Forms.Label mnhrate;
+        private System.Windows.Forms.Label mnnhrate;
+        private System.Windows.Forms.Label maxpowerproo;
+        private System.Windows.Forms.Label apower;
     }
 }
 
