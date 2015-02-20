@@ -316,7 +316,7 @@ namespace ASEB1
         {
 
         }
-        /*
+
         private void rdKm_CheckedChanged(object sender, EventArgs e)
         {
             avgSpeedpro();
@@ -324,13 +324,13 @@ namespace ASEB1
             totalDist();
         }
 
-        private void rdMph_CheckedChanged(object sender, EventArgs e)
+        private void rdMph_CheckedChanged_1(object sender, EventArgs e)
         {
             avgSpeedpro();
             maxSpeedpro();
             totalDist();
         }
-
+/*
         private void renderGraph()
         {
             clearPoints();
