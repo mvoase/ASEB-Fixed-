@@ -8,7 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
-
+// This program calculates pieces of data from the Polar Cycle HRM Files - Displaying averages and min + max
+// including mph and km/h
 namespace ASEB1
 {
     public partial class Form1 : Form
@@ -34,9 +35,21 @@ namespace ASEB1
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //load the hr file
+            OpenFileDialog op = new OpenFileDialog();
+            op.Filter = "Text Document (*.hrm)|*.hrm|All Files (*.*)|*.*";
+            DialogResult dialogres = op.ShowDialog();
+            file_name = op.FileName.ToString();
+            if (file_name != "")
+            {
+                readFile();
+            }
+        }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -53,7 +66,7 @@ namespace ASEB1
 
                     while ((line = sr.ReadLine()) != "[HRData]")
                     {
-                        
+
                     }
 
                     while ((line = sr.ReadLine()) != null)
@@ -87,7 +100,7 @@ namespace ASEB1
             avgAltpro();
             maxAltpro();
             totalDist();
-            //renderGraph();
+            renderGraph();
         }
 
         private void avgSpeedpro()
@@ -299,18 +312,7 @@ namespace ASEB1
             malt.Text = maxAlt.ToString("N2") + msg;
         }
 
-        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //load the hr file
-            OpenFileDialog op = new OpenFileDialog();
-            op.Filter = "Text Document (*.hrm)|*.hrm|All Files (*.*)|*.*";
-            DialogResult dialogres = op.ShowDialog();
-            file_name = op.FileName.ToString();
-            if (file_name != "")
-            {
-                readFile();
-            }
-        }
+       
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -330,7 +332,13 @@ namespace ASEB1
             maxSpeedpro();
             totalDist();
         }
-/*
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+
         private void renderGraph()
         {
             clearPoints();
@@ -359,7 +367,7 @@ namespace ASEB1
             charData.Series["Averages"].Points.Clear();
             charData.Series["Maximums"].Points.Clear();
             charData.Series["Minimums"].Points.Clear();
-            charData.Series["avgHRate"].Points.Clear();
+            /*charData.Series["avgHRate"].Points.Clear();
             charData.Series["minHRate"].Points.Clear();
             charData.Series["maxHRate"].Points.Clear();
             charData.Series["avgSpeed"].Points.Clear();
@@ -367,10 +375,11 @@ namespace ASEB1
             charData.Series["avgAlt"].Points.Clear();
             charData.Series["maxAlt"].Points.Clear();
             charData.Series["avgPower"].Points.Clear();
-            charData.Series["maxPower"].Points.Clear();
+            charData.Series["maxPower"].Points.Clear();*/
         }
 
-        private void chkHRate_CheckedChanged(object sender, EventArgs e)
+        
+        private void chkHRate_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkHRate.Checked == false)
             {
@@ -386,8 +395,9 @@ namespace ASEB1
                 }
             }
         }
+       
 
-        private void chkSpeed_CheckedChanged(object sender, EventArgs e)
+        private void chkSpeed_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkSpeed.Checked == false)
             {
@@ -404,6 +414,7 @@ namespace ASEB1
             }
         }
 
+        /*
         private void chkCadence_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCadence.Checked == false)
@@ -564,6 +575,7 @@ namespace ASEB1
                     }
                 }
             }
-        }*/
+        }
+    }*/
     }
 }
