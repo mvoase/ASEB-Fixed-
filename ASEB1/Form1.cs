@@ -8,14 +8,19 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+
 // This program calculates pieces of data from the Polar Cycle HRM Files - Displaying averages and min + max
 // including mph and km/h
+
 namespace ASEB1
 {
     public partial class Form1 : Form
     {
         int i, j, rowNum;
         int[,] hrdata = new int[6, 10000];
+        private int seconds;
+        private int counter;
+        string[,] prms = new string [2, 22] ;
         string file_name;
         double speed = 0, avgSpeed = 0;
         double Alt = 0, avgAlt = 0;
@@ -26,20 +31,17 @@ namespace ASEB1
         double minHRate = 180, cHRateMin;
         double maxPower = 0, cPower;
         double maxAlt = -250, cAlt;
-        double row = 0;
-
+        
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+           
+            
             //load the hr file
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "Text Document (*.hrm)|*.hrm|All Files (*.*)|*.*";
@@ -50,24 +52,32 @@ namespace ASEB1
                 readFile();
             }
         }
+
+       
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+   
         private void readFile()
         {
+                 
             //read the hr file and split values
             try
             {
                 using (StreamReader sr = new StreamReader(file_name))
                 {
                     string line;
-
-                    while ((line = sr.ReadLine()) != "[HRData]")
+                    
+                    while ((line = sr.ReadLine()) != null)
                     {
-
+                        if (line.Contains("[HRData]"))
+                        {
+                            break;
+                        }
                     }
+
 
                     while ((line = sr.ReadLine()) != null)
                     {
@@ -79,11 +89,22 @@ namespace ASEB1
                             i++;
                             if (i > 5)
                             {
+                                
+                                
+                                
                                 i = 0;
                                 j++;
                             }
                         }
+
+                       
                     }
+
+                  
+
+                    
+
+                    //seconds = Convert.ToInt32(lineinter1);
                 }
             }
             catch (Exception err)
@@ -338,7 +359,7 @@ namespace ASEB1
 
         }
 
-
+        // Graph for next assignment 
         private void renderGraph()
         {
             clearPoints();
@@ -367,7 +388,7 @@ namespace ASEB1
             charData.Series["Averages"].Points.Clear();
             charData.Series["Maximums"].Points.Clear();
             charData.Series["Minimums"].Points.Clear();
-            /*charData.Series["avgHRate"].Points.Clear();
+            charData.Series["avgHRate"].Points.Clear();
             charData.Series["minHRate"].Points.Clear();
             charData.Series["maxHRate"].Points.Clear();
             charData.Series["avgSpeed"].Points.Clear();
@@ -375,7 +396,7 @@ namespace ASEB1
             charData.Series["avgAlt"].Points.Clear();
             charData.Series["maxAlt"].Points.Clear();
             charData.Series["avgPower"].Points.Clear();
-            charData.Series["maxPower"].Points.Clear();*/
+            charData.Series["maxPower"].Points.Clear();
         }
 
         
@@ -414,8 +435,9 @@ namespace ASEB1
             }
         }
 
-        /*
-        private void chkCadence_CheckedChanged(object sender, EventArgs e)
+        
+       
+        private void chkCadence_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkCadence.Checked == false)
             {
@@ -431,10 +453,11 @@ namespace ASEB1
                 }
             }
         }
-
-        private void chkAlt_CheckedChanged(object sender, EventArgs e)
+      
+   
+        private void chkAlt_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chkAlt.Checked == false)
+             if (chkAlt.Checked == false)
             {
                 charData.Series["Altitude"].Points.Clear();
             }
@@ -466,7 +489,7 @@ namespace ASEB1
             }
         }
 
-        private void chkAvg_CheckedChanged(object sender, EventArgs e)
+        private void chkAvg_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkAvg.Checked == false)
             {
@@ -512,7 +535,7 @@ namespace ASEB1
             }
         }
 
-        private void chkMax_CheckedChanged(object sender, EventArgs e)
+        private void chkMax_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkMax.Checked == false)
             {
@@ -558,7 +581,7 @@ namespace ASEB1
             }
         }
 
-        private void chkMin_CheckedChanged(object sender, EventArgs e)
+        private void chkMin_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chkMin.Checked == false)
             {
@@ -576,6 +599,7 @@ namespace ASEB1
                 }
             }
         }
-    }*/
+
+    
     }
-}
+    }

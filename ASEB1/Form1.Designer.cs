@@ -28,18 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.CustomLabel customLabel4 = new System.Windows.Forms.DataVisualization.Charting.CustomLabel();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.CustomLabel customLabel1 = new System.Windows.Forms.DataVisualization.Charting.CustomLabel();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +57,19 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.polarDataSet = new ASEB1.polarDataSet();
+            this.polarDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chkMin = new System.Windows.Forms.CheckBox();
+            this.chkMax = new System.Windows.Forms.CheckBox();
+            this.chkAvg = new System.Windows.Forms.CheckBox();
+            this.chkPower = new System.Windows.Forms.CheckBox();
+            this.chkAlt = new System.Windows.Forms.CheckBox();
+            this.chkCadence = new System.Windows.Forms.CheckBox();
+            this.chkSpeed = new System.Windows.Forms.CheckBox();
+            this.chkHRate = new System.Windows.Forms.CheckBox();
+            this.charData = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -79,19 +101,14 @@
             this.lbAvgHR = new System.Windows.Forms.Label();
             this.lbMaxHR = new System.Windows.Forms.Label();
             this.lbMinHR = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.charData = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chkHRate = new System.Windows.Forms.CheckBox();
-            this.chkSpeed = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.Table = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.charData)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -99,8 +116,9 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.charData)).BeginInit();
+            this.Table.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -128,7 +146,7 @@
             this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
             this.openToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem1.Text = "Open";
-            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
+            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click_1);
             // 
             // exitToolStripMenuItem1
             // 
@@ -153,16 +171,283 @@
             this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
-            // tabControl1
+            // polarDataSet
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 25);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(854, 458);
-            this.tabControl1.TabIndex = 1;
+            this.polarDataSet.DataSetName = "polarDataSet";
+            this.polarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // polarDataSetBindingSource
+            // 
+            this.polarDataSetBindingSource.DataSource = this.polarDataSet;
+            this.polarDataSetBindingSource.Position = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.chkMin);
+            this.tabPage2.Controls.Add(this.chkMax);
+            this.tabPage2.Controls.Add(this.chkAvg);
+            this.tabPage2.Controls.Add(this.chkPower);
+            this.tabPage2.Controls.Add(this.chkAlt);
+            this.tabPage2.Controls.Add(this.chkCadence);
+            this.tabPage2.Controls.Add(this.chkSpeed);
+            this.tabPage2.Controls.Add(this.chkHRate);
+            this.tabPage2.Controls.Add(this.charData);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(827, 450);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Line Graph";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chkMin
+            // 
+            this.chkMin.AutoSize = true;
+            this.chkMin.Checked = true;
+            this.chkMin.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMin.Location = new System.Drawing.Point(723, 350);
+            this.chkMin.Name = "chkMin";
+            this.chkMin.Size = new System.Drawing.Size(72, 17);
+            this.chkMin.TabIndex = 9;
+            this.chkMin.Text = "Minimums";
+            this.chkMin.UseVisualStyleBackColor = true;
+            this.chkMin.CheckedChanged += new System.EventHandler(this.chkMin_CheckedChanged_1);
+            // 
+            // chkMax
+            // 
+            this.chkMax.AutoSize = true;
+            this.chkMax.Checked = true;
+            this.chkMax.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMax.Location = new System.Drawing.Point(723, 327);
+            this.chkMax.Name = "chkMax";
+            this.chkMax.Size = new System.Drawing.Size(75, 17);
+            this.chkMax.TabIndex = 8;
+            this.chkMax.Text = "Maximums";
+            this.chkMax.UseVisualStyleBackColor = true;
+            this.chkMax.CheckedChanged += new System.EventHandler(this.chkMax_CheckedChanged_1);
+            // 
+            // chkAvg
+            // 
+            this.chkAvg.AutoSize = true;
+            this.chkAvg.Checked = true;
+            this.chkAvg.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAvg.Location = new System.Drawing.Point(723, 304);
+            this.chkAvg.Name = "chkAvg";
+            this.chkAvg.Size = new System.Drawing.Size(71, 17);
+            this.chkAvg.TabIndex = 7;
+            this.chkAvg.Text = "Averages";
+            this.chkAvg.UseVisualStyleBackColor = true;
+            this.chkAvg.CheckedChanged += new System.EventHandler(this.chkAvg_CheckedChanged_1);
+            // 
+            // chkPower
+            // 
+            this.chkPower.AutoSize = true;
+            this.chkPower.Checked = true;
+            this.chkPower.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPower.Location = new System.Drawing.Point(723, 281);
+            this.chkPower.Name = "chkPower";
+            this.chkPower.Size = new System.Drawing.Size(56, 17);
+            this.chkPower.TabIndex = 6;
+            this.chkPower.Text = "Power";
+            this.chkPower.UseVisualStyleBackColor = true;
+            this.chkPower.CheckedChanged += new System.EventHandler(this.chkPower_CheckedChanged);
+            // 
+            // chkAlt
+            // 
+            this.chkAlt.AutoSize = true;
+            this.chkAlt.Checked = true;
+            this.chkAlt.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAlt.Location = new System.Drawing.Point(723, 258);
+            this.chkAlt.Name = "chkAlt";
+            this.chkAlt.Size = new System.Drawing.Size(61, 17);
+            this.chkAlt.TabIndex = 5;
+            this.chkAlt.Text = "Altitude";
+            this.chkAlt.UseVisualStyleBackColor = true;
+            this.chkAlt.CheckedChanged += new System.EventHandler(this.chkAlt_CheckedChanged_1);
+            // 
+            // chkCadence
+            // 
+            this.chkCadence.AutoSize = true;
+            this.chkCadence.Checked = true;
+            this.chkCadence.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCadence.Location = new System.Drawing.Point(723, 235);
+            this.chkCadence.Name = "chkCadence";
+            this.chkCadence.Size = new System.Drawing.Size(69, 17);
+            this.chkCadence.TabIndex = 4;
+            this.chkCadence.Text = "Cadence";
+            this.chkCadence.UseVisualStyleBackColor = true;
+            this.chkCadence.CheckedChanged += new System.EventHandler(this.chkCadence_CheckedChanged_1);
+            // 
+            // chkSpeed
+            // 
+            this.chkSpeed.AutoSize = true;
+            this.chkSpeed.Checked = true;
+            this.chkSpeed.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSpeed.Location = new System.Drawing.Point(723, 212);
+            this.chkSpeed.Name = "chkSpeed";
+            this.chkSpeed.Size = new System.Drawing.Size(57, 17);
+            this.chkSpeed.TabIndex = 3;
+            this.chkSpeed.Text = "Speed";
+            this.chkSpeed.UseVisualStyleBackColor = true;
+            this.chkSpeed.CheckedChanged += new System.EventHandler(this.chkSpeed_CheckedChanged_1);
+            // 
+            // chkHRate
+            // 
+            this.chkHRate.AutoSize = true;
+            this.chkHRate.Checked = true;
+            this.chkHRate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkHRate.Location = new System.Drawing.Point(723, 189);
+            this.chkHRate.Name = "chkHRate";
+            this.chkHRate.Size = new System.Drawing.Size(78, 17);
+            this.chkHRate.TabIndex = 2;
+            this.chkHRate.Text = "Heart Rate";
+            this.chkHRate.UseVisualStyleBackColor = true;
+            this.chkHRate.CheckedChanged += new System.EventHandler(this.chkHRate_CheckedChanged_1);
+            // 
+            // charData
+            // 
+            customLabel1.Text = "Measure";
+            chartArea1.AxisX.CustomLabels.Add(customLabel1);
+            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea1.AxisX.LogarithmBase = 500D;
+            chartArea1.AxisX.ScaleBreakStyle.Enabled = true;
+            chartArea1.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
+            chartArea1.AxisX.Title = "Interval";
+            chartArea1.AxisX2.LogarithmBase = 500D;
+            chartArea1.AxisX2.Title = "Interval1";
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.AxisY.LogarithmBase = 200D;
+            chartArea1.AxisY.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.No;
+            chartArea1.AxisY.Title = "Measure";
+            chartArea1.Name = "ChartArea1";
+            this.charData.ChartAreas.Add(chartArea1);
+            this.charData.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.charData.Legends.Add(legend1);
+            this.charData.Location = new System.Drawing.Point(3, 3);
+            this.charData.Name = "charData";
+            series1.BackSecondaryColor = System.Drawing.Color.Red;
+            series1.BorderColor = System.Drawing.Color.Red;
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Heart Rate";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Speed";
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Cadence";
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Altitude";
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.Fuchsia;
+            series5.Legend = "Legend1";
+            series5.Name = "Power";
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Color = System.Drawing.Color.Black;
+            series6.Legend = "Legend1";
+            series6.Name = "Averages";
+            series7.BorderWidth = 2;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series7.Legend = "Legend1";
+            series7.Name = "Maximums";
+            series8.BorderWidth = 2;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "Minimums";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.IsVisibleInLegend = false;
+            series9.Legend = "Legend1";
+            series9.Name = "avgHRate";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.IsVisibleInLegend = false;
+            series10.Legend = "Legend1";
+            series10.Name = "avgSpeed";
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.IsVisibleInLegend = false;
+            series11.Legend = "Legend1";
+            series11.Name = "avgAlt";
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.IsVisibleInLegend = false;
+            series12.Legend = "Legend1";
+            series12.Name = "avgPower";
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.IsVisibleInLegend = false;
+            series13.Legend = "Legend1";
+            series13.Name = "minHRate";
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series14.IsVisibleInLegend = false;
+            series14.Legend = "Legend1";
+            series14.Name = "maxHRate";
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series15.IsVisibleInLegend = false;
+            series15.Legend = "Legend1";
+            series15.Name = "maxSpeed";
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series16.IsVisibleInLegend = false;
+            series16.Legend = "Legend1";
+            series16.Name = "maxAlt";
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series17.IsVisibleInLegend = false;
+            series17.Legend = "Legend1";
+            series17.Name = "maxPower";
+            this.charData.Series.Add(series1);
+            this.charData.Series.Add(series2);
+            this.charData.Series.Add(series3);
+            this.charData.Series.Add(series4);
+            this.charData.Series.Add(series5);
+            this.charData.Series.Add(series6);
+            this.charData.Series.Add(series7);
+            this.charData.Series.Add(series8);
+            this.charData.Series.Add(series9);
+            this.charData.Series.Add(series10);
+            this.charData.Series.Add(series11);
+            this.charData.Series.Add(series12);
+            this.charData.Series.Add(series13);
+            this.charData.Series.Add(series14);
+            this.charData.Series.Add(series15);
+            this.charData.Series.Add(series16);
+            this.charData.Series.Add(series17);
+            this.charData.Size = new System.Drawing.Size(821, 444);
+            this.charData.TabIndex = 1;
+            this.charData.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "Polar Cycle Graph";
+            this.charData.Titles.Add(title1);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -172,10 +457,10 @@
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(738, 444);
+            this.tabPage1.Size = new System.Drawing.Size(827, 450);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Summary";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -199,13 +484,13 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(73, 17);
             this.radioButton2.TabIndex = 48;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Kilometres";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // rdMph
             // 
             this.rdMph.AutoSize = true;
+            this.rdMph.Checked = true;
             this.rdMph.Location = new System.Drawing.Point(14, 25);
             this.rdMph.Name = "rdMph";
             this.rdMph.Size = new System.Drawing.Size(49, 17);
@@ -468,210 +753,55 @@
             this.lbMinHR.TabIndex = 44;
             this.lbMinHR.Text = "Minimum:";
             // 
-            // tabPage2
+            // Table
             // 
-            this.tabPage2.Controls.Add(this.checkBox8);
-            this.tabPage2.Controls.Add(this.checkBox7);
-            this.tabPage2.Controls.Add(this.checkBox6);
-            this.tabPage2.Controls.Add(this.checkBox5);
-            this.tabPage2.Controls.Add(this.checkBox4);
-            this.tabPage2.Controls.Add(this.checkBox3);
-            this.tabPage2.Controls.Add(this.chkSpeed);
-            this.tabPage2.Controls.Add(this.chkHRate);
-            this.tabPage2.Controls.Add(this.charData);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(846, 432);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Graph";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Table.Alignment = System.Windows.Forms.TabAlignment.Right;
+            this.Table.Controls.Add(this.tabPage3);
+            this.Table.Controls.Add(this.tabPage1);
+            this.Table.Controls.Add(this.tabPage2);
+            this.Table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Table.Location = new System.Drawing.Point(0, 25);
+            this.Table.Multiline = true;
+            this.Table.Name = "Table";
+            this.Table.SelectedIndex = 0;
+            this.Table.Size = new System.Drawing.Size(854, 458);
+            this.Table.TabIndex = 1;
             // 
-            // charData
+            // tabPage3
             // 
-            customLabel4.Text = "Measure";
-            chartArea4.AxisX.CustomLabels.Add(customLabel4);
-            chartArea4.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea4.AxisX.LogarithmBase = 500D;
-            chartArea4.AxisX.ScaleBreakStyle.Enabled = true;
-            chartArea4.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
-            chartArea4.AxisX.Title = "Interval";
-            chartArea4.AxisX2.LogarithmBase = 500D;
-            chartArea4.AxisX2.Title = "Interval1";
-            chartArea4.AxisY.IsStartedFromZero = false;
-            chartArea4.AxisY.LogarithmBase = 200D;
-            chartArea4.AxisY.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.No;
-            chartArea4.AxisY.Title = "Measure";
-            chartArea4.Name = "ChartArea1";
-            this.charData.ChartAreas.Add(chartArea4);
-            this.charData.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.charData.Legends.Add(legend4);
-            this.charData.Location = new System.Drawing.Point(3, 3);
-            this.charData.Name = "charData";
-            series25.BackSecondaryColor = System.Drawing.Color.Red;
-            series25.BorderColor = System.Drawing.Color.Red;
-            series25.BorderWidth = 2;
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series25.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series25.Legend = "Legend1";
-            series25.Name = "Heart Rate";
-            series26.BorderWidth = 2;
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series26.Legend = "Legend1";
-            series26.Name = "Speed";
-            series27.BorderWidth = 2;
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series27.Legend = "Legend1";
-            series27.Name = "Cadence";
-            series28.BorderWidth = 2;
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series28.Legend = "Legend1";
-            series28.Name = "Altitude";
-            series29.BorderWidth = 2;
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series29.Color = System.Drawing.Color.Fuchsia;
-            series29.Legend = "Legend1";
-            series29.Name = "Power";
-            series30.BorderWidth = 2;
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series30.Color = System.Drawing.Color.Black;
-            series30.Legend = "Legend1";
-            series30.Name = "Averages";
-            series31.BorderWidth = 2;
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series31.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series31.Legend = "Legend1";
-            series31.Name = "Maximums";
-            series32.BorderWidth = 2;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series32.Legend = "Legend1";
-            series32.Name = "Minimums";
-            this.charData.Series.Add(series25);
-            this.charData.Series.Add(series26);
-            this.charData.Series.Add(series27);
-            this.charData.Series.Add(series28);
-            this.charData.Series.Add(series29);
-            this.charData.Series.Add(series30);
-            this.charData.Series.Add(series31);
-            this.charData.Series.Add(series32);
-            this.charData.Size = new System.Drawing.Size(840, 426);
-            this.charData.TabIndex = 1;
-            this.charData.Text = "chart1";
-            title4.Name = "Title1";
-            title4.Text = "Polar Cycle Graph";
-            this.charData.Titles.Add(title4);
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(827, 450);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Table";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            // 
-            // chkHRate
-            // 
-            this.chkHRate.AutoSize = true;
-            this.chkHRate.Location = new System.Drawing.Point(723, 189);
-            this.chkHRate.Name = "chkHRate";
-            this.chkHRate.Size = new System.Drawing.Size(78, 17);
-            this.chkHRate.TabIndex = 2;
-            this.chkHRate.Text = "Heart Rate";
-            this.chkHRate.UseVisualStyleBackColor = true;
-            this.chkHRate.CheckedChanged += new System.EventHandler(this.chkHRate_CheckedChanged_1);
-            // 
-            // chkSpeed
-            // 
-            this.chkSpeed.AutoSize = true;
-            this.chkSpeed.Location = new System.Drawing.Point(723, 212);
-            this.chkSpeed.Name = "chkSpeed";
-            this.chkSpeed.Size = new System.Drawing.Size(57, 17);
-            this.chkSpeed.TabIndex = 3;
-            this.chkSpeed.Text = "Speed";
-            this.chkSpeed.UseVisualStyleBackColor = true;
-            this.chkSpeed.CheckedChanged += new System.EventHandler(this.chkSpeed_CheckedChanged_1);
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(723, 235);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.Text = "checkBox3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(723, 258);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(80, 17);
-            this.checkBox4.TabIndex = 5;
-            this.checkBox4.Text = "checkBox4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(723, 281);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
-            this.checkBox5.TabIndex = 6;
-            this.checkBox5.Text = "checkBox5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(723, 304);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(80, 17);
-            this.checkBox6.TabIndex = 7;
-            this.checkBox6.Text = "checkBox6";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(723, 327);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(80, 17);
-            this.checkBox7.TabIndex = 8;
-            this.checkBox7.Text = "checkBox7";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(723, 350);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(80, 17);
-            this.checkBox8.TabIndex = 9;
-            this.checkBox8.Text = "checkBox8";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(645, 406);
+            this.dataGridView1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 483);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.Table);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.charData)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -685,9 +815,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.charData)).EndInit();
+            this.Table.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -695,8 +825,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -704,11 +833,41 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.BindingSource polarDataSetBindingSource;
+        private polarDataSet polarDataSet;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox chkMin;
+        private System.Windows.Forms.CheckBox chkMax;
+        private System.Windows.Forms.CheckBox chkAvg;
+        private System.Windows.Forms.CheckBox chkPower;
+        private System.Windows.Forms.CheckBox chkAlt;
+        private System.Windows.Forms.CheckBox chkCadence;
+        private System.Windows.Forms.CheckBox chkSpeed;
+        private System.Windows.Forms.CheckBox chkHRate;
+        private System.Windows.Forms.DataVisualization.Charting.Chart charData;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdMph;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label malt;
+        private System.Windows.Forms.Label aalt;
+        private System.Windows.Forms.Label lbMaxAlt;
+        private System.Windows.Forms.Label lbAvgAlt;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lbTotalDist;
         private System.Windows.Forms.Label tdist;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label apower;
+        private System.Windows.Forms.Label maxpowerproo;
+        private System.Windows.Forms.Label lbMaxPower;
+        private System.Windows.Forms.Label lblAvgPower;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label mspeed;
+        private System.Windows.Forms.Label aspeed;
+        private System.Windows.Forms.Label lbMaxSpeed;
+        private System.Windows.Forms.Label lbAvgSpeed;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label mnnhrate;
         private System.Windows.Forms.Label mnhrate;
@@ -718,35 +877,9 @@
         private System.Windows.Forms.Label lbAvgHR;
         private System.Windows.Forms.Label lbMaxHR;
         private System.Windows.Forms.Label lbMinHR;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label mspeed;
-        private System.Windows.Forms.Label aspeed;
-        private System.Windows.Forms.Label lbMaxSpeed;
-        private System.Windows.Forms.Label lbAvgSpeed;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label apower;
-        private System.Windows.Forms.Label maxpowerproo;
-        private System.Windows.Forms.Label lbMaxPower;
-        private System.Windows.Forms.Label lblAvgPower;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label malt;
-        private System.Windows.Forms.Label aalt;
-        private System.Windows.Forms.Label lbMaxAlt;
-        private System.Windows.Forms.Label lbAvgAlt;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton rdMph;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart charData;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox chkSpeed;
-        private System.Windows.Forms.CheckBox chkHRate;
+        private System.Windows.Forms.TabControl Table;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
