@@ -29,48 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.CustomLabel customLabel2 = new System.Windows.Forms.DataVisualization.Charting.CustomLabel();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polarDataSet = new ASEB1.polarDataSet();
             this.polarDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.chkMin = new System.Windows.Forms.CheckBox();
-            this.chkMax = new System.Windows.Forms.CheckBox();
-            this.chkAvg = new System.Windows.Forms.CheckBox();
-            this.chkPower = new System.Windows.Forms.CheckBox();
-            this.chkAlt = new System.Windows.Forms.CheckBox();
-            this.chkCadence = new System.Windows.Forms.CheckBox();
-            this.chkSpeed = new System.Windows.Forms.CheckBox();
-            this.chkHRate = new System.Windows.Forms.CheckBox();
-            this.charData = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.rdMph = new System.Windows.Forms.RadioButton();
@@ -101,58 +64,38 @@
             this.lbAvgHR = new System.Windows.Forms.Label();
             this.lbMaxHR = new System.Windows.Forms.Label();
             this.lbMinHR = new System.Windows.Forms.Label();
-            this.Table = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
+            this.radBrowseEditor1 = new Telerik.WinControls.UI.RadBrowseEditor();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStrip1.SuspendLayout();
+            this.heartRateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speedCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cadenceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.altitudeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pressureCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.powerCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
+            this.polarDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.charData)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.Table.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radBrowseEditor1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            this.radPageViewPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
+            this.radPageView1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(854, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem1,
-            this.exitToolStripMenuItem1});
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(38, 22);
-            this.toolStripDropDownButton1.Text = "File";
-            // 
-            // openToolStripMenuItem1
-            // 
-            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
-            this.openToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem1.Text = "Open";
-            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
-            // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
             // 
             // saveToolStripMenuItem
             // 
@@ -180,233 +123,6 @@
             // 
             this.polarDataSetBindingSource.DataSource = this.polarDataSet;
             this.polarDataSetBindingSource.Position = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.chkMin);
-            this.tabPage2.Controls.Add(this.chkMax);
-            this.tabPage2.Controls.Add(this.chkAvg);
-            this.tabPage2.Controls.Add(this.chkPower);
-            this.tabPage2.Controls.Add(this.chkAlt);
-            this.tabPage2.Controls.Add(this.chkCadence);
-            this.tabPage2.Controls.Add(this.chkSpeed);
-            this.tabPage2.Controls.Add(this.chkHRate);
-            this.tabPage2.Controls.Add(this.charData);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(827, 450);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Line Graph";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // chkMin
-            // 
-            this.chkMin.Location = new System.Drawing.Point(0, 0);
-            this.chkMin.Name = "chkMin";
-            this.chkMin.Size = new System.Drawing.Size(104, 24);
-            this.chkMin.TabIndex = 0;
-            // 
-            // chkMax
-            // 
-            this.chkMax.Location = new System.Drawing.Point(0, 0);
-            this.chkMax.Name = "chkMax";
-            this.chkMax.Size = new System.Drawing.Size(104, 24);
-            this.chkMax.TabIndex = 1;
-            // 
-            // chkAvg
-            // 
-            this.chkAvg.Location = new System.Drawing.Point(0, 0);
-            this.chkAvg.Name = "chkAvg";
-            this.chkAvg.Size = new System.Drawing.Size(104, 24);
-            this.chkAvg.TabIndex = 2;
-            // 
-            // chkPower
-            // 
-            this.chkPower.Location = new System.Drawing.Point(0, 0);
-            this.chkPower.Name = "chkPower";
-            this.chkPower.Size = new System.Drawing.Size(104, 24);
-            this.chkPower.TabIndex = 3;
-            // 
-            // chkAlt
-            // 
-            this.chkAlt.Location = new System.Drawing.Point(0, 0);
-            this.chkAlt.Name = "chkAlt";
-            this.chkAlt.Size = new System.Drawing.Size(104, 24);
-            this.chkAlt.TabIndex = 4;
-            // 
-            // chkCadence
-            // 
-            this.chkCadence.Location = new System.Drawing.Point(0, 0);
-            this.chkCadence.Name = "chkCadence";
-            this.chkCadence.Size = new System.Drawing.Size(104, 24);
-            this.chkCadence.TabIndex = 5;
-            // 
-            // chkSpeed
-            // 
-            this.chkSpeed.Location = new System.Drawing.Point(0, 0);
-            this.chkSpeed.Name = "chkSpeed";
-            this.chkSpeed.Size = new System.Drawing.Size(104, 24);
-            this.chkSpeed.TabIndex = 6;
-            // 
-            // chkHRate
-            // 
-            this.chkHRate.Location = new System.Drawing.Point(0, 0);
-            this.chkHRate.Name = "chkHRate";
-            this.chkHRate.Size = new System.Drawing.Size(104, 24);
-            this.chkHRate.TabIndex = 7;
-            // 
-            // charData
-            // 
-            customLabel2.Text = "Measure";
-            chartArea2.AxisX.CustomLabels.Add(customLabel2);
-            chartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea2.AxisX.LogarithmBase = 500D;
-            chartArea2.AxisX.ScaleBreakStyle.Enabled = true;
-            chartArea2.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
-            chartArea2.AxisX.Title = "Interval";
-            chartArea2.AxisX2.LogarithmBase = 500D;
-            chartArea2.AxisX2.Title = "Interval1";
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.LogarithmBase = 200D;
-            chartArea2.AxisY.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.No;
-            chartArea2.AxisY.Title = "Measure";
-            chartArea2.Name = "ChartArea1";
-            this.charData.ChartAreas.Add(chartArea2);
-            this.charData.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.charData.Legends.Add(legend2);
-            this.charData.Location = new System.Drawing.Point(3, 3);
-            this.charData.Name = "charData";
-            series18.BackSecondaryColor = System.Drawing.Color.Red;
-            series18.BorderColor = System.Drawing.Color.Red;
-            series18.BorderWidth = 2;
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series18.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series18.Legend = "Legend1";
-            series18.Name = "Heart Rate";
-            series19.BorderWidth = 2;
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series19.Legend = "Legend1";
-            series19.Name = "Speed";
-            series20.BorderWidth = 2;
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series20.Legend = "Legend1";
-            series20.Name = "Cadence";
-            series21.BorderWidth = 2;
-            series21.ChartArea = "ChartArea1";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series21.Legend = "Legend1";
-            series21.Name = "Altitude";
-            series22.BorderWidth = 2;
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series22.Color = System.Drawing.Color.Fuchsia;
-            series22.Legend = "Legend1";
-            series22.Name = "Power";
-            series23.BorderWidth = 2;
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series23.Color = System.Drawing.Color.Black;
-            series23.Legend = "Legend1";
-            series23.Name = "Averages";
-            series24.BorderWidth = 2;
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series24.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series24.Legend = "Legend1";
-            series24.Name = "Maximums";
-            series25.BorderWidth = 2;
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series25.Legend = "Legend1";
-            series25.Name = "Minimums";
-            series26.ChartArea = "ChartArea1";
-            series26.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series26.IsVisibleInLegend = false;
-            series26.Legend = "Legend1";
-            series26.Name = "avgHRate";
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series27.IsVisibleInLegend = false;
-            series27.Legend = "Legend1";
-            series27.Name = "avgSpeed";
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series28.IsVisibleInLegend = false;
-            series28.Legend = "Legend1";
-            series28.Name = "avgAlt";
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series29.IsVisibleInLegend = false;
-            series29.Legend = "Legend1";
-            series29.Name = "avgPower";
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series30.IsVisibleInLegend = false;
-            series30.Legend = "Legend1";
-            series30.Name = "minHRate";
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series31.IsVisibleInLegend = false;
-            series31.Legend = "Legend1";
-            series31.Name = "maxHRate";
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series32.IsVisibleInLegend = false;
-            series32.Legend = "Legend1";
-            series32.Name = "maxSpeed";
-            series33.ChartArea = "ChartArea1";
-            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series33.IsVisibleInLegend = false;
-            series33.Legend = "Legend1";
-            series33.Name = "maxAlt";
-            series34.ChartArea = "ChartArea1";
-            series34.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series34.IsVisibleInLegend = false;
-            series34.Legend = "Legend1";
-            series34.Name = "maxPower";
-            this.charData.Series.Add(series18);
-            this.charData.Series.Add(series19);
-            this.charData.Series.Add(series20);
-            this.charData.Series.Add(series21);
-            this.charData.Series.Add(series22);
-            this.charData.Series.Add(series23);
-            this.charData.Series.Add(series24);
-            this.charData.Series.Add(series25);
-            this.charData.Series.Add(series26);
-            this.charData.Series.Add(series27);
-            this.charData.Series.Add(series28);
-            this.charData.Series.Add(series29);
-            this.charData.Series.Add(series30);
-            this.charData.Series.Add(series31);
-            this.charData.Series.Add(series32);
-            this.charData.Series.Add(series33);
-            this.charData.Series.Add(series34);
-            this.charData.Size = new System.Drawing.Size(821, 444);
-            this.charData.TabIndex = 1;
-            this.charData.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Polar Cycle Graph";
-            this.charData.Titles.Add(title2);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(827, 450);
-            this.tabPage1.TabIndex = 3;
             // 
             // groupBox6
             // 
@@ -689,63 +405,136 @@
             this.lbMinHR.TabIndex = 44;
             this.lbMinHR.Text = "Minimum:";
             // 
-            // Table
+            // radBrowseEditor1
             // 
-            this.Table.Alignment = System.Windows.Forms.TabAlignment.Right;
-            this.Table.Controls.Add(this.tabPage3);
-            this.Table.Controls.Add(this.tabPage1);
-            this.Table.Controls.Add(this.tabPage2);
-            this.Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Table.Location = new System.Drawing.Point(0, 25);
-            this.Table.Multiline = true;
-            this.Table.Name = "Table";
-            this.Table.SelectedIndex = 0;
-            this.Table.Size = new System.Drawing.Size(854, 458);
-            this.Table.TabIndex = 1;
+            this.radBrowseEditor1.Location = new System.Drawing.Point(133, 11);
+            this.radBrowseEditor1.Name = "radBrowseEditor1";
+            this.radBrowseEditor1.Size = new System.Drawing.Size(237, 20);
+            this.radBrowseEditor1.TabIndex = 4;
+            this.radBrowseEditor1.Text = "radBrowseEditor1";
+            this.radBrowseEditor1.ValueChanged += new System.EventHandler(this.radBrowseEditor1_ValueChanged);
             // 
-            // tabPage3
+            // radLabel2
             // 
-            this.tabPage3.Controls.Add(this.richTextBox1);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(827, 450);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Table";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.radLabel2.Location = new System.Drawing.Point(12, 11);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(103, 18);
+            this.radLabel2.TabIndex = 4;
+            this.radLabel2.Text = "Add HRM File here:";
+            this.radLabel2.ThemeName = "ControlDefault";
+            // 
+            // radPageViewPage3
+            // 
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(75F, 25F);
+            this.radPageViewPage3.Location = new System.Drawing.Point(5, 31);
+            this.radPageViewPage3.Name = "radPageViewPage3";
+            this.radPageViewPage3.Size = new System.Drawing.Size(978, 399);
+            this.radPageViewPage3.Text = "Graph Data";
+            // 
+            // radPageViewPage1
+            // 
+            this.radPageViewPage1.Controls.Add(this.richTextBox1);
+            this.radPageViewPage1.Controls.Add(this.dataGridView1);
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(64F, 25F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(5, 31);
+            this.radPageViewPage1.Name = "radPageViewPage1";
+            this.radPageViewPage1.Size = new System.Drawing.Size(982, 437);
+            this.radPageViewPage1.Text = "Raw Data";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(666, 11);
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.Location = new System.Drawing.Point(765, 0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(158, 163);
-            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Size = new System.Drawing.Size(210, 205);
+            this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 11);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.heartRateCol,
+            this.speedCol,
+            this.cadenceCol,
+            this.altitudeCol,
+            this.pressureCol,
+            this.powerCol,
+            this.Date});
+            this.dataGridView1.Location = new System.Drawing.Point(7, 8);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(649, 431);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Size = new System.Drawing.Size(752, 391);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // heartRateCol
+            // 
+            this.heartRateCol.HeaderText = "HeartRate";
+            this.heartRateCol.Name = "heartRateCol";
+            // 
+            // speedCol
+            // 
+            this.speedCol.HeaderText = "Speed";
+            this.speedCol.Name = "speedCol";
+            // 
+            // cadenceCol
+            // 
+            this.cadenceCol.HeaderText = "Cadence";
+            this.cadenceCol.Name = "cadenceCol";
+            // 
+            // altitudeCol
+            // 
+            this.altitudeCol.HeaderText = "Altitude";
+            this.altitudeCol.Name = "altitudeCol";
+            // 
+            // pressureCol
+            // 
+            this.pressureCol.HeaderText = "Pressure";
+            this.pressureCol.Name = "pressureCol";
+            // 
+            // powerCol
+            // 
+            this.powerCol.HeaderText = "Power";
+            this.powerCol.Name = "powerCol";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date/Time";
+            this.Date.Name = "Date";
+            // 
+            // radPageView1
+            // 
+            this.radPageView1.Controls.Add(this.radPageViewPage1);
+            this.radPageView1.Controls.Add(this.radPageViewPage3);
+            this.radPageView1.DefaultPage = this.radPageViewPage1;
+            this.radPageView1.Location = new System.Drawing.Point(0, 36);
+            this.radPageView1.Name = "radPageView1";
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.Size = new System.Drawing.Size(992, 473);
+            this.radPageView1.TabIndex = 1;
+            this.radPageView1.Text = "radPageView1";
+            this.radPageView1.ThemeName = "EvalFormTheme";
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.None;
+            // 
+            // polarDataSetBindingSource1
+            // 
+            this.polarDataSetBindingSource1.DataSource = this.polarDataSet;
+            this.polarDataSetBindingSource1.Position = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 483);
-            this.Controls.Add(this.Table);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(1004, 506);
+            this.Controls.Add(this.radLabel2);
+            this.Controls.Add(this.radBrowseEditor1);
+            this.Controls.Add(this.radPageView1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.charData)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -758,9 +547,13 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.Table.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radBrowseEditor1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            this.radPageViewPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
+            this.radPageView1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,28 +561,11 @@
 
         #endregion
 
-        
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.BindingSource polarDataSetBindingSource;
         private polarDataSet polarDataSet;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox chkMin;
-        private System.Windows.Forms.CheckBox chkMax;
-        private System.Windows.Forms.CheckBox chkAvg;
-        private System.Windows.Forms.CheckBox chkPower;
-        private System.Windows.Forms.CheckBox chkAlt;
-        private System.Windows.Forms.CheckBox chkCadence;
-        private System.Windows.Forms.CheckBox chkSpeed;
-        private System.Windows.Forms.CheckBox chkHRate;
-        private System.Windows.Forms.DataVisualization.Charting.Chart charData;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rdMph;
@@ -820,10 +596,22 @@
         private System.Windows.Forms.Label lbAvgHR;
         private System.Windows.Forms.Label lbMaxHR;
         private System.Windows.Forms.Label lbMinHR;
-        private System.Windows.Forms.TabControl Table;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private Telerik.WinControls.RadThemeManager radThemeManager1;
+        private Telerik.WinControls.UI.RadBrowseEditor radBrowseEditor1;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage3;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heartRateCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn speedCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cadenceCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn altitudeCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pressureCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn powerCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private Telerik.WinControls.UI.RadPageView radPageView1;
+        private System.Windows.Forms.BindingSource polarDataSetBindingSource1;
     }
 }
 
