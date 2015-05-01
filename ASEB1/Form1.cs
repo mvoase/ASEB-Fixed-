@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Data;
 
 namespace ASEB1
 {
@@ -22,7 +24,7 @@ namespace ASEB1
                 openFileDialog.Title = @"Open .HRM File";
                 openFileDialog.InitialDirectory = @"C:\Users\mike\Desktop";
                 openFileDialog.Filter = @"HRM files (*.hrm)|*.hrm|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
+                openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
 
                 
@@ -36,7 +38,20 @@ namespace ASEB1
                     HRM.Active.Raw = reader.ReadToEnd();
                 }
             }
+          /* Code For Chart*/
+            DataTable dt = new DataTable();
+            dt.Clear();
+            
+            
+            dt.Columns.Add("HeartRate");
+            dt.Columns.Add("Speed");
+            dt.Columns.Add("Cadence");
+            dt.Columns.Add("Altitude");
+            dt.Columns.Add("Pressure");
+            dt.Columns.Add("Power");
+            dt.Columns.Add("DateTime");
 
+            /* Code For Chart*/
 
             int lineIndex = HRM.Active.Raw.IndexOf("Date=");
             string lineDate = HRM.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
@@ -77,10 +92,16 @@ namespace ASEB1
                     Power = double.Parse(line.Split('\t')[4]),
                     Pressure = double.Parse(line.Split('\t')[4]),
                     DateTime = HRM.Active.DateTime.AddSeconds(HRM.Active.DataRows.Count)
+                    
                 };
 
-                HRM.Active.DataRows.Add(dataRow);
-
+               HRM.Active.DataRows.Add(dataRow);
+              
+                /* Code For Chart*/
+               dt.Rows.Add(dataRow.HeartRate,dataRow.Speed,dataRow.Cadence,dataRow.Altitude,dataRow.Pressure,dataRow.Power,dataRow.DateTime);
+               /* Code For Chart*/
+              
+               
                dataGridView1.Rows.Add(
                     dataRow.HeartRate,
                     dataRow.Speed,
@@ -89,10 +110,61 @@ namespace ASEB1
                     dataRow.Pressure,
                     dataRow.Power,
                     dataRow.DateTime);
-
-               
+                              
             }
 
+
+            /* Code For Chart*/
+            chart1.DataSource = dt;
+            chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
+            chart1.Series["Series1"].XValueMember = "DateTime";
+            chart1.Series["Series1"].YValueMembers = "HeartRate";
+
+            chart1.Series["Series2"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series2"].YValueMembers = "Speed";
+            
+            chart1.Series["Series3"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series3"].YValueMembers = "Cadence";
+            
+            chart1.Series["Series4"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series4"].YValueMembers = "Altitude";
+            
+            chart1.Series["Series5"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series5"].YValueMembers = "Pressure";
+            
+            chart1.Series["Series6"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series6"].YValueMembers = "Power";
+
+            
+
+            chart1.Series["Series1"].LegendText = "Heart Rate";
+
+            chart1.Series["Series1"].ToolTip = "Heart Rate:#VALY\nAverage:#AVG\nMinimum:#MIN\nMaximum:#MAX ";
+
+            chart1.Series["Series2"].LegendText = "Speed";
+            chart1.Series["Series2"].ToolTip = "Speed(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart1.Series["Series3"].LegendText = "Cadence";
+            chart1.Series["Series3"].ToolTip = "Cadence:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart1.Series["Series4"].LegendText = "Altitude";
+            chart1.Series["Series4"].ToolTip = "Altitude(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart1.Series["Series5"].LegendText = "Pressure";
+            chart1.Series["Series5"].ToolTip = "Pressure:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart1.Series["Series6"].LegendText = "Power";
+            chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+
+
+            
+            chart1.DataBind();
+
+            
+
+            /* Code For Chart*/
 
             richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
@@ -116,10 +188,18 @@ namespace ASEB1
             
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        
         
        
 
-       
+      
 
 
 

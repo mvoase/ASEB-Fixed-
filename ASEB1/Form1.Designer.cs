@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +76,7 @@
             this.radBrowseEditor1 = new Telerik.WinControls.UI.RadBrowseEditor();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -80,6 +89,7 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.polarDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.polarDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -90,11 +100,14 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radBrowseEditor1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            this.radPageViewPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.radPageViewPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // saveToolStripMenuItem
@@ -425,11 +438,52 @@
             // 
             // radPageViewPage3
             // 
+            this.radPageViewPage3.Controls.Add(this.chart1);
             this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(75F, 25F);
             this.radPageViewPage3.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage3.Name = "radPageViewPage3";
-            this.radPageViewPage3.Size = new System.Drawing.Size(978, 399);
+            this.radPageViewPage3.Size = new System.Drawing.Size(1235, 471);
             this.radPageViewPage3.Text = "Graph Data";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(32, 55);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.CustomProperties = "IsXAxisQuantitative=False";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series3";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series4";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series5";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series6";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(1174, 386);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // radPageViewPage1
             // 
@@ -438,7 +492,7 @@
             this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(64F, 25F);
             this.radPageViewPage1.Location = new System.Drawing.Point(5, 31);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(982, 437);
+            this.radPageViewPage1.Size = new System.Drawing.Size(1235, 471);
             this.radPageViewPage1.Text = "Raw Data";
             // 
             // richTextBox1
@@ -446,6 +500,7 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.Location = new System.Drawing.Point(765, 0);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(210, 205);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
@@ -509,8 +564,8 @@
             this.radPageView1.DefaultPage = this.radPageViewPage1;
             this.radPageView1.Location = new System.Drawing.Point(0, 36);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
-            this.radPageView1.Size = new System.Drawing.Size(992, 473);
+            this.radPageView1.SelectedPage = this.radPageViewPage3;
+            this.radPageView1.Size = new System.Drawing.Size(1245, 507);
             this.radPageView1.TabIndex = 1;
             this.radPageView1.Text = "radPageView1";
             this.radPageView1.ThemeName = "EvalFormTheme";
@@ -523,11 +578,16 @@
             this.polarDataSetBindingSource1.DataSource = this.polarDataSet;
             this.polarDataSetBindingSource1.Position = 0;
             // 
+            // polarDataSetBindingSource2
+            // 
+            this.polarDataSetBindingSource2.DataSource = this.polarDataSet;
+            this.polarDataSetBindingSource2.Position = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 506);
+            this.ClientSize = new System.Drawing.Size(1257, 555);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radBrowseEditor1);
             this.Controls.Add(this.radPageView1);
@@ -549,11 +609,14 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radBrowseEditor1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            this.radPageViewPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.radPageViewPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
             this.radPageView1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,6 +675,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private Telerik.WinControls.UI.RadPageView radPageView1;
         private System.Windows.Forms.BindingSource polarDataSetBindingSource1;
+        private System.Windows.Forms.BindingSource polarDataSetBindingSource2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
