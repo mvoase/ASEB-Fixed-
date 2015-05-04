@@ -1,6 +1,6 @@
 ﻿namespace ASEB1
 {
-    partial class Form1
+    partial class CycleSoft
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CycleSoft));
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,10 +77,32 @@
             this.radBrowseEditor1 = new Telerik.WinControls.UI.RadBrowseEditor();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radCheckBox6 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox5 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox4 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox3 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox2 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
+            this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radCalendar1 = new Telerik.WinControls.UI.RadCalendar();
+            this.polarDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.polarDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.breezeTheme1 = new Telerik.WinControls.Themes.BreezeTheme();
+            this.desertTheme1 = new Telerik.WinControls.Themes.DesertTheme();
+            this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
+            this.office2007BlackTheme1 = new Telerik.WinControls.Themes.Office2007BlackTheme();
+            this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
+            this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
+            this.telerikMetroTouchTheme1 = new Telerik.WinControls.Themes.TelerikMetroTouchTheme();
+            this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.heartRateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.speedCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cadenceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,9 +110,6 @@
             this.pressureCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.powerCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
-            this.polarDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.polarDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -101,13 +121,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.radBrowseEditor1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             this.radPageViewPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.radPageViewPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
+            this.radPageViewPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             this.SuspendLayout();
             // 
             // saveToolStripMenuItem
@@ -420,94 +450,191 @@
             // 
             // radBrowseEditor1
             // 
-            this.radBrowseEditor1.Location = new System.Drawing.Point(133, 11);
+            this.radBrowseEditor1.Location = new System.Drawing.Point(178, 15);
+            this.radBrowseEditor1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radBrowseEditor1.Name = "radBrowseEditor1";
-            this.radBrowseEditor1.Size = new System.Drawing.Size(237, 20);
+            this.radBrowseEditor1.Size = new System.Drawing.Size(314, 20);
             this.radBrowseEditor1.TabIndex = 4;
             this.radBrowseEditor1.Text = "radBrowseEditor1";
+            this.radBrowseEditor1.ThemeName = "Breeze";
             this.radBrowseEditor1.ValueChanged += new System.EventHandler(this.radBrowseEditor1_ValueChanged);
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(12, 11);
+            this.radLabel2.Location = new System.Drawing.Point(16, 15);
+            this.radLabel2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(103, 18);
             this.radLabel2.TabIndex = 4;
             this.radLabel2.Text = "Add HRM File here:";
-            this.radLabel2.ThemeName = "ControlDefault";
             // 
             // radPageViewPage3
             // 
+            this.radPageViewPage3.Controls.Add(this.radCheckBox6);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox5);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox4);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox3);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox2);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox1);
             this.radPageViewPage3.Controls.Add(this.chart1);
-            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(75F, 25F);
-            this.radPageViewPage3.Location = new System.Drawing.Point(5, 31);
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(88F, 32F);
+            this.radPageViewPage3.Location = new System.Drawing.Point(8, 39);
+            this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageViewPage3.Name = "radPageViewPage3";
-            this.radPageViewPage3.Size = new System.Drawing.Size(1235, 471);
+            this.radPageViewPage3.Size = new System.Drawing.Size(1658, 713);
             this.radPageViewPage3.Text = "Graph Data";
+            // 
+            // radCheckBox6
+            // 
+            this.radCheckBox6.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox6.Location = new System.Drawing.Point(1458, 429);
+            this.radCheckBox6.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCheckBox6.Name = "radCheckBox6";
+            this.radCheckBox6.Size = new System.Drawing.Size(58, 22);
+            this.radCheckBox6.TabIndex = 5;
+            this.radCheckBox6.Text = "Power";
+            this.radCheckBox6.ThemeName = "Breeze";
+            this.radCheckBox6.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox6.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox6_ToggleStateChanged);
+            // 
+            // radCheckBox5
+            // 
+            this.radCheckBox5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox5.Location = new System.Drawing.Point(1458, 396);
+            this.radCheckBox5.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCheckBox5.Name = "radCheckBox5";
+            this.radCheckBox5.Size = new System.Drawing.Size(75, 22);
+            this.radCheckBox5.TabIndex = 5;
+            this.radCheckBox5.Text = "Pressure";
+            this.radCheckBox5.ThemeName = "Breeze";
+            this.radCheckBox5.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox5.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox5_ToggleStateChanged);
+            // 
+            // radCheckBox4
+            // 
+            this.radCheckBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox4.Location = new System.Drawing.Point(1458, 363);
+            this.radCheckBox4.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCheckBox4.Name = "radCheckBox4";
+            this.radCheckBox4.Size = new System.Drawing.Size(73, 22);
+            this.radCheckBox4.TabIndex = 6;
+            this.radCheckBox4.Text = "Altitude";
+            this.radCheckBox4.ThemeName = "Breeze";
+            this.radCheckBox4.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox4.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox4_ToggleStateChanged);
+            // 
+            // radCheckBox3
+            // 
+            this.radCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox3.Location = new System.Drawing.Point(1458, 328);
+            this.radCheckBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCheckBox3.Name = "radCheckBox3";
+            this.radCheckBox3.Size = new System.Drawing.Size(72, 22);
+            this.radCheckBox3.TabIndex = 5;
+            this.radCheckBox3.Text = "Cadence";
+            this.radCheckBox3.ThemeName = "Breeze";
+            this.radCheckBox3.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox3.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox3_ToggleStateChanged);
+            // 
+            // radCheckBox2
+            // 
+            this.radCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox2.Location = new System.Drawing.Point(1458, 296);
+            this.radCheckBox2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCheckBox2.Name = "radCheckBox2";
+            this.radCheckBox2.Size = new System.Drawing.Size(60, 22);
+            this.radCheckBox2.TabIndex = 4;
+            this.radCheckBox2.Text = "Speed";
+            this.radCheckBox2.ThemeName = "Breeze";
+            this.radCheckBox2.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox2.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox2_ToggleStateChanged);
+            // 
+            // radCheckBox1
+            // 
+            this.radCheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox1.Location = new System.Drawing.Point(1458, 263);
+            this.radCheckBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCheckBox1.Name = "radCheckBox1";
+            this.radCheckBox1.Size = new System.Drawing.Size(91, 22);
+            this.radCheckBox1.TabIndex = 3;
+            this.radCheckBox1.Text = "Heart Rate";
+            this.radCheckBox1.ThemeName = "Breeze";
+            this.radCheckBox1.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox1.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox1_ToggleStateChanged);
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(32, 55);
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart1.Legends.Add(legend7);
+            this.chart1.Location = new System.Drawing.Point(42, 76);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.CustomProperties = "IsXAxisQuantitative=False";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series3";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series4";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series5";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series6";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Size = new System.Drawing.Size(1174, 386);
+            series37.ChartArea = "ChartArea1";
+            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series37.CustomProperties = "IsXAxisQuantitative=False";
+            series37.Legend = "Legend1";
+            series37.Name = "Series1";
+            series37.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series38.ChartArea = "ChartArea1";
+            series38.Legend = "Legend1";
+            series38.Name = "Series2";
+            series39.ChartArea = "ChartArea1";
+            series39.Legend = "Legend1";
+            series39.Name = "Series3";
+            series40.ChartArea = "ChartArea1";
+            series40.Legend = "Legend1";
+            series40.Name = "Series4";
+            series41.ChartArea = "ChartArea1";
+            series41.Legend = "Legend1";
+            series41.Name = "Series5";
+            series42.ChartArea = "ChartArea1";
+            series42.Legend = "Legend1";
+            series42.Name = "Series6";
+            this.chart1.Series.Add(series37);
+            this.chart1.Series.Add(series38);
+            this.chart1.Series.Add(series39);
+            this.chart1.Series.Add(series40);
+            this.chart1.Series.Add(series41);
+            this.chart1.Series.Add(series42);
+            this.chart1.Size = new System.Drawing.Size(1566, 536);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // radPageViewPage1
             // 
+            this.radPageViewPage1.Controls.Add(this.radLabel1);
+            this.radPageViewPage1.Controls.Add(this.pictureBox1);
             this.radPageViewPage1.Controls.Add(this.richTextBox1);
             this.radPageViewPage1.Controls.Add(this.dataGridView1);
-            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(64F, 25F);
-            this.radPageViewPage1.Location = new System.Drawing.Point(5, 31);
+            this.radPageViewPage1.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(75F, 32F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(8, 39);
+            this.radPageViewPage1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(1235, 471);
+            this.radPageViewPage1.Size = new System.Drawing.Size(1658, 713);
             this.radPageViewPage1.Text = "Raw Data";
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.Location = new System.Drawing.Point(765, 0);
+            this.richTextBox1.Location = new System.Drawing.Point(1053, 457);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(210, 205);
+            this.richTextBox1.Size = new System.Drawing.Size(492, 234);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.heartRateCol,
@@ -517,10 +644,94 @@
             this.pressureCol,
             this.powerCol,
             this.Date});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 8);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 11);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(752, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(1038, 680);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // radPageView1
+            // 
+            this.radPageView1.Controls.Add(this.radPageViewPage1);
+            this.radPageView1.Controls.Add(this.radPageViewPage3);
+            this.radPageView1.Controls.Add(this.radPageViewPage2);
+            this.radPageView1.Controls.Add(this.radPageViewPage4);
+            this.radPageView1.DefaultPage = this.radPageViewPage1;
+            this.radPageView1.Location = new System.Drawing.Point(0, 50);
+            this.radPageView1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radPageView1.Name = "radPageView1";
+            this.radPageView1.SelectedPage = this.radPageViewPage4;
+            this.radPageView1.Size = new System.Drawing.Size(1674, 760);
+            this.radPageView1.TabIndex = 1;
+            this.radPageView1.Text = "radPageView1";
+            this.radPageView1.ThemeName = "Breeze";
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.None;
+            // 
+            // radPageViewPage2
+            // 
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(111F, 32F);
+            this.radPageViewPage2.Location = new System.Drawing.Point(8, 39);
+            this.radPageViewPage2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radPageViewPage2.Name = "radPageViewPage2";
+            this.radPageViewPage2.Size = new System.Drawing.Size(1658, 713);
+            this.radPageViewPage2.Text = "TSS Calculator ";
+            // 
+            // radPageViewPage4
+            // 
+            this.radPageViewPage4.Controls.Add(this.radCalendar1);
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(145F, 32F);
+            this.radPageViewPage4.Location = new System.Drawing.Point(8, 39);
+            this.radPageViewPage4.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radPageViewPage4.Name = "radPageViewPage4";
+            this.radPageViewPage4.Size = new System.Drawing.Size(1658, 713);
+            this.radPageViewPage4.Text = "Cycle Race Recorder";
+            // 
+            // radCalendar1
+            // 
+            this.radCalendar1.CellAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.radCalendar1.DayNameFormat = Telerik.WinControls.UI.DayNameFormat.Full;
+            this.radCalendar1.FocusedDate = new System.DateTime(2015, 5, 4, 0, 0, 0, 0);
+            this.radCalendar1.Location = new System.Drawing.Point(2, 85);
+            this.radCalendar1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.radCalendar1.Name = "radCalendar1";
+            this.radCalendar1.SelectedDates.AddRange(new System.DateTime[] {
+            new System.DateTime(2015, 5, 4, 13, 40, 36, 0)});
+            this.radCalendar1.Size = new System.Drawing.Size(1638, 604);
+            this.radCalendar1.TabIndex = 0;
+            this.radCalendar1.Text = "radCalendar1";
+            this.radCalendar1.ThemeName = "Breeze";
+            // 
+            // polarDataSetBindingSource1
+            // 
+            this.polarDataSetBindingSource1.DataSource = this.polarDataSet;
+            this.polarDataSetBindingSource1.Position = 0;
+            // 
+            // polarDataSetBindingSource2
+            // 
+            this.polarDataSetBindingSource2.DataSource = this.polarDataSet;
+            this.polarDataSetBindingSource2.Position = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1062, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(483, 210);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.ForeColor = System.Drawing.Color.Turquoise;
+            this.radLabel1.Location = new System.Drawing.Point(1116, 317);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(368, 51);
+            this.radLabel1.TabIndex = 6;
+            this.radLabel1.Text = "Welcome to CycleSoft ";
             // 
             // heartRateCol
             // 
@@ -554,45 +765,25 @@
             // 
             // Date
             // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Date.HeaderText = "Date/Time";
             this.Date.Name = "Date";
+            this.Date.Width = 97;
             // 
-            // radPageView1
+            // CycleSoft
             // 
-            this.radPageView1.Controls.Add(this.radPageViewPage1);
-            this.radPageView1.Controls.Add(this.radPageViewPage3);
-            this.radPageView1.DefaultPage = this.radPageViewPage1;
-            this.radPageView1.Location = new System.Drawing.Point(0, 36);
-            this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage3;
-            this.radPageView1.Size = new System.Drawing.Size(1245, 507);
-            this.radPageView1.TabIndex = 1;
-            this.radPageView1.Text = "radPageView1";
-            this.radPageView1.ThemeName = "EvalFormTheme";
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemAlignment = Telerik.WinControls.UI.StripViewItemAlignment.Near;
-            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.radPageView1.GetChildAt(0))).ItemFitMode = Telerik.WinControls.UI.StripViewItemFitMode.None;
-            // 
-            // polarDataSetBindingSource1
-            // 
-            this.polarDataSetBindingSource1.DataSource = this.polarDataSet;
-            this.polarDataSetBindingSource1.Position = 0;
-            // 
-            // polarDataSetBindingSource2
-            // 
-            this.polarDataSetBindingSource2.DataSource = this.polarDataSet;
-            this.polarDataSetBindingSource2.Position = 0;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 555);
+            this.ClientSize = new System.Drawing.Size(1680, 817);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radBrowseEditor1);
             this.Controls.Add(this.radPageView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.Name = "CycleSoft";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cycle Soft";
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
@@ -610,13 +801,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.radBrowseEditor1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             this.radPageViewPage3.ResumeLayout(false);
+            this.radPageViewPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.radPageViewPage1.ResumeLayout(false);
+            this.radPageViewPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
             this.radPageView1.ResumeLayout(false);
+            this.radPageViewPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,6 +869,29 @@
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Telerik.WinControls.UI.RadPageView radPageView1;
+        private System.Windows.Forms.BindingSource polarDataSetBindingSource1;
+        private System.Windows.Forms.BindingSource polarDataSetBindingSource2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage2;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage4;
+        private Telerik.WinControls.UI.RadCheckBox radCheckBox1;
+        private Telerik.WinControls.UI.RadCheckBox radCheckBox2;
+        private Telerik.WinControls.UI.RadCheckBox radCheckBox3;
+        private Telerik.WinControls.UI.RadCheckBox radCheckBox4;
+        private Telerik.WinControls.UI.RadCheckBox radCheckBox5;
+        private Telerik.WinControls.UI.RadCheckBox radCheckBox6;
+        private Telerik.WinControls.UI.RadCalendar radCalendar1;
+        private Telerik.WinControls.Themes.BreezeTheme breezeTheme1;
+        private Telerik.WinControls.Themes.DesertTheme desertTheme1;
+        private Telerik.WinControls.Themes.HighContrastBlackTheme highContrastBlackTheme1;
+        private Telerik.WinControls.Themes.Office2007BlackTheme office2007BlackTheme1;
+        private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
+        private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
+        private Telerik.WinControls.Themes.TelerikMetroTouchTheme telerikMetroTouchTheme1;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn heartRateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn speedCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn cadenceCol;
@@ -673,10 +899,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pressureCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn powerCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private Telerik.WinControls.UI.RadPageView radPageView1;
-        private System.Windows.Forms.BindingSource polarDataSetBindingSource1;
-        private System.Windows.Forms.BindingSource polarDataSetBindingSource2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

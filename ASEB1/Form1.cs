@@ -5,14 +5,15 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Data;
+using System.Drawing;
 
 namespace ASEB1
 {
-    public partial class Form1 : Form
+    public partial class CycleSoft : Form
     {
         
 
-        public Form1()
+        public CycleSoft()
         {
             InitializeComponent();
         }
@@ -24,7 +25,7 @@ namespace ASEB1
                 openFileDialog.Title = @"Open .HRM File";
                 openFileDialog.InitialDirectory = @"C:\Users\mike\Desktop";
                 openFileDialog.Filter = @"HRM files (*.hrm)|*.hrm|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 1;
+                openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 
                 
@@ -38,20 +39,7 @@ namespace ASEB1
                     HRM.Active.Raw = reader.ReadToEnd();
                 }
             }
-          /* Code For Chart*/
-            DataTable dt = new DataTable();
-            dt.Clear();
-            
-            
-            dt.Columns.Add("HeartRate");
-            dt.Columns.Add("Speed");
-            dt.Columns.Add("Cadence");
-            dt.Columns.Add("Altitude");
-            dt.Columns.Add("Pressure");
-            dt.Columns.Add("Power");
-            dt.Columns.Add("DateTime");
-
-            /* Code For Chart*/
+          
 
             int lineIndex = HRM.Active.Raw.IndexOf("Date=");
             string lineDate = HRM.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
@@ -96,12 +84,10 @@ namespace ASEB1
                 };
 
                HRM.Active.DataRows.Add(dataRow);
-              
-                /* Code For Chart*/
-               dt.Rows.Add(dataRow.HeartRate,dataRow.Speed,dataRow.Cadence,dataRow.Altitude,dataRow.Pressure,dataRow.Power,dataRow.DateTime);
-               /* Code For Chart*/
-              
+
                
+
+
                dataGridView1.Rows.Add(
                     dataRow.HeartRate,
                     dataRow.Speed,
@@ -110,33 +96,95 @@ namespace ASEB1
                     dataRow.Pressure,
                     dataRow.Power,
                     dataRow.DateTime);
-                              
+
+             
+
+            }
+                                                                      
+            richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
+            richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
+            richTextBox1.AppendText("\n" + "Heart Maximum : " + HRM.Active.DataRows.Max(r => r.HeartRate) + "\n");
+
+            richTextBox1.AppendText("\n" + "Average Speed (KM/H): " + HRM.Active.DataRows.Average(r => r.Speed) + "\n");
+            richTextBox1.AppendText("\n" + "Maximum Speed : " + HRM.Active.DataRows.Max(r => r.Speed) + "\n");
+            richTextBox1.AppendText(Environment.NewLine + " - (MPH): " + "");
+
+            richTextBox1.AppendText("\n" + "Average Power: " + HRM.Active.DataRows.Average(r => r.Power) + "\n");
+            richTextBox1.AppendText("\n" + "Maximum Power : " + HRM.Active.DataRows.Max(r => r.Power) + "\n");
+
+            richTextBox1.AppendText("\n" + "Average Altitude (KM/H): " + HRM.Active.DataRows.Average(r => r.Altitude) + "\n");
+            richTextBox1.AppendText("\n" + "Maximum Altitude : " + HRM.Active.DataRows.Max(r => r.Altitude) + "\n");
+
+            richTextBox1.AppendText("\n" + "Cadence Average : " + HRM.Active.DataRows.Average(r => r.Cadence) + "\n");
+            richTextBox1.AppendText("\n" + "Cadence Maximum : " + HRM.Active.DataRows.Max(r => r.Cadence) + "\n");
+
+            richTextBox1.AppendText("\n" + "Pressure Average : " + HRM.Active.DataRows.Average(r => r.Pressure) + "\n");
+            richTextBox1.AppendText("\n" + "Pressue Maximum : " + HRM.Active.DataRows.Max(r => r.Pressure) + "\n");
+
+            /*Fuction Call */
+            drawChart();
+            /*Fuction Call */
+            
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /*Function Definition to Draw Chart */
+        protected void drawChart()
+        {
+
+           
+            DataTable dt = new DataTable();
+            dt.Clear();
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                dt.Columns.Add(col.HeaderText);
             }
 
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataRow dRow = dt.NewRow();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dRow[cell.ColumnIndex] = cell.Value;
+                }
+                dt.Rows.Add(dRow);
+            }
+            
 
-            /* Code For Chart*/
+            chart1.DataBind();
+
             chart1.DataSource = dt;
             chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
-            chart1.Series["Series1"].XValueMember = "DateTime";
+            chart1.Series["Series1"].XValueMember = "Date/Time";
+            
             chart1.Series["Series1"].YValueMembers = "HeartRate";
-
+           
             chart1.Series["Series2"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series2"].XValueMember = "Date/Time";
             chart1.Series["Series2"].YValueMembers = "Speed";
-            
-            chart1.Series["Series3"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series3"].YValueMembers = "Cadence";
-            
-            chart1.Series["Series4"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series4"].YValueMembers = "Altitude";
-            
-            chart1.Series["Series5"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series5"].YValueMembers = "Pressure";
-            
-            chart1.Series["Series6"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series6"].YValueMembers = "Power";
 
-            
+            chart1.Series["Series3"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series3"].XValueMember = "Date/Time";
+            chart1.Series["Series3"].YValueMembers = "Cadence";
+
+            chart1.Series["Series4"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series4"].XValueMember = "Date/Time";
+            chart1.Series["Series4"].YValueMembers = "Altitude";
+
+            chart1.Series["Series5"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series5"].XValueMember = "Date/Time";
+            chart1.Series["Series5"].YValueMembers = "Pressure";
+
+            chart1.Series["Series6"].ChartType = SeriesChartType.Line;
+            chart1.Series["Series6"].XValueMember = "Date/Time";
+            chart1.Series["Series6"].YValueMembers = "Power";
 
             chart1.Series["Series1"].LegendText = "Heart Rate";
 
@@ -157,45 +205,56 @@ namespace ASEB1
             chart1.Series["Series6"].LegendText = "Power";
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
-
+            ChartArea CA = chart1.ChartAreas[0];  // quick reference
+            CA.AxisX.ScaleView.Zoomable = true;
+            CA.CursorX.AutoScroll = true;
+            CA.CursorX.IsUserSelectionEnabled = true;
 
             
-            chart1.DataBind();
+       }
 
-            
-
-            /* Code For Chart*/
-
-            richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
-            richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
-            richTextBox1.AppendText("\n" + "Heart Maximum : " + HRM.Active.DataRows.Max(r => r.HeartRate) + "\n");
-
-            richTextBox1.AppendText("\n" + "Average Speed (KM/H): " + HRM.Active.DataRows.Average(r => r.Speed) + "\n");
-            richTextBox1.AppendText("\n" + "Maximum Speed : " + HRM.Active.DataRows.Max(r => r.Speed) + "\n");
-            richTextBox1.AppendText(Environment.NewLine + " - (MPH): " + "");
-
-            richTextBox1.AppendText("\n" + "Average Power: " + HRM.Active.DataRows.Average(r => r.Power) + "\n");
-            richTextBox1.AppendText("\n" + "Maximum Power : " + HRM.Active.DataRows.Max(r => r.Power) + "\n");
-
-            richTextBox1.AppendText("\n" + "Average Altitude (KM/H): " + HRM.Active.DataRows.Average(r => r.Altitude) + "\n");
-            richTextBox1.AppendText("\n" + "Maximum Altitude : " + HRM.Active.DataRows.Max(r => r.Altitude) + "\n");
-
-            richTextBox1.AppendText("\n" + "Cadence Average : " + HRM.Active.DataRows.Average(r => r.Cadence) + "\n");
-            richTextBox1.AppendText("\n" + "Cadence Maximum : " + HRM.Active.DataRows.Max(r => r.Cadence) + "\n");
-
-            richTextBox1.AppendText("\n" + "Pressure Average : " + HRM.Active.DataRows.Average(r => r.Pressure) + "\n");
-            richTextBox1.AppendText("\n" + "Pressue Maximum : " + HRM.Active.DataRows.Max(r => r.Pressure) + "\n");
-            
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
+        private void radCheckBox1_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            
+            Series sz = chart1.Series["Series1"];
+            sz.Enabled = radCheckBox1.Checked;
+         }
+
+        private void radCheckBox2_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            Series sz = chart1.Series["Series2"];
+            sz.Enabled = radCheckBox2.Checked;
         }
 
-        
+        private void radCheckBox3_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            Series sz = chart1.Series["Series3"];
+            sz.Enabled = radCheckBox3.Checked;
+        }
 
-        
+        private void radCheckBox4_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            Series sz = chart1.Series["Series4"];
+            sz.Enabled = radCheckBox4.Checked;
+        }
+
+        private void radCheckBox5_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            Series sz = chart1.Series["Series5"];
+            sz.Enabled = radCheckBox5.Checked;
+        }
+
+        private void radCheckBox6_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            Series sz = chart1.Series["Series6"];
+            sz.Enabled = radCheckBox6.Checked;
+        }
+
+
+
+       
+
+
+        /*Function Definition to Draw Chart */
         
        
 
