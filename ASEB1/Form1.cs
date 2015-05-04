@@ -7,6 +7,18 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Data;
 using System.Drawing;
 
+/*
+ * 
+ *          This piece of software was developed in order to aid the need of cyclists so they can monitor their HR data, speed, cadence, power, pressure and altitude.
+ *                      A third year university project developed in C# with the use of Telerik Controls by Michael Voase (C3366381) 
+ *                          
+ * 
+ * 
+ * 
+ * */
+
+
+
 namespace ASEB1
 {
     public partial class CycleSoft : Form
@@ -62,7 +74,7 @@ namespace ASEB1
             //richTextBox1.AppendText(Environment.NewLine);
 
             HRM.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
-
+            //Puts Data into a List and Substring for prepartion for Grid. 
             List<string> hrmRows = HRM.Active.Raw
                 .Substring(HRM.Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
                 .Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
@@ -87,7 +99,7 @@ namespace ASEB1
 
                
 
-
+                //Adds rows to DataGridView
                dataGridView1.Rows.Add(
                     dataRow.HeartRate,
                     dataRow.Speed,
@@ -100,7 +112,7 @@ namespace ASEB1
              
 
             }
-                                                                      
+            //AVERAGES                                                    
             richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Maximum : " + HRM.Active.DataRows.Max(r => r.HeartRate) + "\n");
@@ -156,10 +168,11 @@ namespace ASEB1
                 dt.Rows.Add(dRow);
             }
             
-
+            //Binds Data to Chart. 
             chart1.DataBind();
 
             chart1.DataSource = dt;
+            
             chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
             chart1.Series["Series1"].XValueMember = "Date/Time";
@@ -187,24 +200,30 @@ namespace ASEB1
             chart1.Series["Series6"].YValueMembers = "Power";
 
             chart1.Series["Series1"].LegendText = "Heart Rate";
-
+            //Tooltip to show averages 
             chart1.Series["Series1"].ToolTip = "Heart Rate:#VALY\nAverage:#AVG\nMinimum:#MIN\nMaximum:#MAX ";
 
             chart1.Series["Series2"].LegendText = "Speed";
+            //Tooltip to show averages
             chart1.Series["Series2"].ToolTip = "Speed(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series3"].LegendText = "Cadence";
+            //Tooltip to show averages
             chart1.Series["Series3"].ToolTip = "Cadence:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series4"].LegendText = "Altitude";
+            //Tooltip to show avergaes
             chart1.Series["Series4"].ToolTip = "Altitude(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series5"].LegendText = "Pressure";
+            //Tooltip to show avergaes
             chart1.Series["Series5"].ToolTip = "Pressure:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series6"].LegendText = "Power";
+            //Tooltip to show averages
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
+            //Chart Zoom functions (Selectable Data)
             ChartArea CA = chart1.ChartAreas[0];  // quick reference
             CA.AxisX.ScaleView.Zoomable = true;
             CA.CursorX.AutoScroll = true;
@@ -212,44 +231,43 @@ namespace ASEB1
 
             
        }
-
+        //Added CheckBoxes for Chart (Enabling and Disabling)
+        //Heart Rate
         private void radCheckBox1_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series1"];
             sz.Enabled = radCheckBox1.Checked;
          }
-
+        //Speed
         private void radCheckBox2_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series2"];
             sz.Enabled = radCheckBox2.Checked;
         }
-
+        //Cadence
         private void radCheckBox3_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series3"];
             sz.Enabled = radCheckBox3.Checked;
         }
-
+        //Altitude
         private void radCheckBox4_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series4"];
             sz.Enabled = radCheckBox4.Checked;
         }
-
+        //Pressure
         private void radCheckBox5_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series5"];
             sz.Enabled = radCheckBox5.Checked;
         }
-
+        //Power
         private void radCheckBox6_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series6"];
             sz.Enabled = radCheckBox6.Checked;
         }
-
-        
 
 
 

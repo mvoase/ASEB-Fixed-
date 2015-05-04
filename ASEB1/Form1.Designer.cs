@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CycleSoft));
             Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
@@ -44,7 +44,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.polarDataSet = new ASEB1.polarDataSet();
+  
             this.polarDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -102,6 +102,7 @@
             this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radTextBox4 = new Telerik.WinControls.UI.RadTextBox();
             this.radTextBox3 = new Telerik.WinControls.UI.RadTextBox();
             this.radDateTimePicker1 = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
@@ -125,16 +126,7 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.telerikMetroTouchTheme1 = new Telerik.WinControls.Themes.TelerikMetroTouchTheme();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
-            this.radDateTimePicker2 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
-            this.radTimePicker2 = new Telerik.WinControls.UI.RadTimePicker();
-            this.radDateTimePicker3 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
-            this.radTimePicker3 = new Telerik.WinControls.UI.RadTimePicker();
-            this.radDateTimePicker4 = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radDateTimePicker5 = new Telerik.WinControls.UI.RadDateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).BeginInit();
+          
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -158,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
             this.radPageView1.SuspendLayout();
             this.radPageViewPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
@@ -174,16 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
-            this.radLabel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
-            this.radLabel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker5)).BeginInit();
             this.SuspendLayout();
             // 
             // saveToolStripMenuItem
@@ -203,16 +186,7 @@
             this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
-            // polarDataSet
-            // 
-            this.polarDataSet.DataSetName = "polarDataSet";
-            this.polarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // polarDataSetBindingSource
-            // 
-            this.polarDataSetBindingSource.DataSource = this.polarDataSet;
-            this.polarDataSetBindingSource.Position = 0;
-            // 
+          
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.radioButton2);
@@ -610,40 +584,40 @@
             // 
             // chart1
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(42, 76);
             this.chart1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.chart1.Name = "chart1";
-            series37.ChartArea = "ChartArea1";
-            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series37.CustomProperties = "IsXAxisQuantitative=False";
-            series37.Legend = "Legend1";
-            series37.Name = "Series1";
-            series37.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series38.ChartArea = "ChartArea1";
-            series38.Legend = "Legend1";
-            series38.Name = "Series2";
-            series39.ChartArea = "ChartArea1";
-            series39.Legend = "Legend1";
-            series39.Name = "Series3";
-            series40.ChartArea = "ChartArea1";
-            series40.Legend = "Legend1";
-            series40.Name = "Series4";
-            series41.ChartArea = "ChartArea1";
-            series41.Legend = "Legend1";
-            series41.Name = "Series5";
-            series42.ChartArea = "ChartArea1";
-            series42.Legend = "Legend1";
-            series42.Name = "Series6";
-            this.chart1.Series.Add(series37);
-            this.chart1.Series.Add(series38);
-            this.chart1.Series.Add(series39);
-            this.chart1.Series.Add(series40);
-            this.chart1.Series.Add(series41);
-            this.chart1.Series.Add(series42);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.CustomProperties = "IsXAxisQuantitative=False";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series3";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series4";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series5";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series6";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(1566, 536);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
@@ -763,7 +737,7 @@
             this.radPageView1.Location = new System.Drawing.Point(0, 50);
             this.radPageView1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage4;
+            this.radPageView1.SelectedPage = this.radPageViewPage3;
             this.radPageView1.Size = new System.Drawing.Size(1674, 760);
             this.radPageView1.TabIndex = 1;
             this.radPageView1.Text = "radPageView1";
@@ -783,11 +757,7 @@
             // 
             // radPageViewPage4
             // 
-            this.radPageViewPage4.Controls.Add(this.radDateTimePicker5);
-            this.radPageViewPage4.Controls.Add(this.radLabel10);
-            this.radPageViewPage4.Controls.Add(this.radDateTimePicker3);
-            this.radPageViewPage4.Controls.Add(this.radLabel9);
-            this.radPageViewPage4.Controls.Add(this.radDateTimePicker2);
+            this.radPageViewPage4.Controls.Add(this.radTextBox4);
             this.radPageViewPage4.Controls.Add(this.radTextBox3);
             this.radPageViewPage4.Controls.Add(this.radDateTimePicker1);
             this.radPageViewPage4.Controls.Add(this.radDropDownList1);
@@ -807,9 +777,17 @@
             this.radPageViewPage4.Size = new System.Drawing.Size(1658, 713);
             this.radPageViewPage4.Text = "Cycle Race Recorder";
             // 
+            // radTextBox4
+            // 
+            this.radTextBox4.Location = new System.Drawing.Point(771, 59);
+            this.radTextBox4.Name = "radTextBox4";
+            this.radTextBox4.Size = new System.Drawing.Size(168, 26);
+            this.radTextBox4.TabIndex = 11;
+            this.radTextBox4.ThemeName = "Breeze";
+            // 
             // radTextBox3
             // 
-            this.radTextBox3.Location = new System.Drawing.Point(411, 96);
+            this.radTextBox3.Location = new System.Drawing.Point(772, 16);
             this.radTextBox3.Name = "radTextBox3";
             this.radTextBox3.Size = new System.Drawing.Size(168, 26);
             this.radTextBox3.TabIndex = 10;
@@ -817,13 +795,12 @@
             // 
             // radDateTimePicker1
             // 
-            this.radDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.radDateTimePicker1.Location = new System.Drawing.Point(410, 58);
+            this.radDateTimePicker1.Location = new System.Drawing.Point(410, 63);
             this.radDateTimePicker1.Name = "radDateTimePicker1";
             this.radDateTimePicker1.Size = new System.Drawing.Size(169, 24);
             this.radDateTimePicker1.TabIndex = 9;
             this.radDateTimePicker1.TabStop = false;
-            this.radDateTimePicker1.Text = "04/05/2015";
+            this.radDateTimePicker1.Text = "04 May 2015";
             this.radDateTimePicker1.ThemeName = "Breeze";
             this.radDateTimePicker1.Value = new System.DateTime(2015, 5, 4, 16, 18, 2, 591);
             // 
@@ -861,11 +838,11 @@
             // 
             this.radLabel8.Controls.Add(this.radTimePicker1);
             this.radLabel8.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel8.Location = new System.Drawing.Point(654, 18);
+            this.radLabel8.Location = new System.Drawing.Point(654, 63);
             this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(81, 22);
+            this.radLabel8.Size = new System.Drawing.Size(111, 22);
             this.radLabel8.TabIndex = 4;
-            this.radLabel8.Text = "Start Time:";
+            this.radLabel8.Text = "Completed Time:";
             this.radLabel8.ThemeName = "ControlDefault";
             // 
             // radTimePicker1
@@ -883,7 +860,7 @@
             // radLabel7
             // 
             this.radLabel7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(309, 100);
+            this.radLabel7.Location = new System.Drawing.Point(670, 16);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(95, 22);
             this.radLabel7.TabIndex = 5;
@@ -893,7 +870,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(335, 58);
+            this.radLabel6.Location = new System.Drawing.Point(335, 64);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(41, 22);
             this.radLabel6.TabIndex = 4;
@@ -945,111 +922,7 @@
             this.radCalendar1.Text = "radCalendar1";
             this.radCalendar1.ThemeName = "Breeze";
             // 
-            // polarDataSetBindingSource1
-            // 
-            this.polarDataSetBindingSource1.DataSource = this.polarDataSet;
-            this.polarDataSetBindingSource1.Position = 0;
-            // 
-            // polarDataSetBindingSource2
-            // 
-            this.polarDataSetBindingSource2.DataSource = this.polarDataSet;
-            this.polarDataSetBindingSource2.Position = 0;
-            // 
-            // radDateTimePicker2
-            // 
-            this.radDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.radDateTimePicker2.Location = new System.Drawing.Point(741, 16);
-            this.radDateTimePicker2.Name = "radDateTimePicker2";
-            this.radDateTimePicker2.Size = new System.Drawing.Size(169, 24);
-            this.radDateTimePicker2.TabIndex = 11;
-            this.radDateTimePicker2.TabStop = false;
-            this.radDateTimePicker2.Text = "16:18:02";
-            this.radDateTimePicker2.ThemeName = "Breeze";
-            this.radDateTimePicker2.Value = new System.DateTime(2015, 5, 4, 16, 18, 2, 591);
-            // 
-            // radLabel9
-            // 
-            this.radLabel9.Controls.Add(this.radTimePicker2);
-            this.radLabel9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.Location = new System.Drawing.Point(654, 62);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(69, 22);
-            this.radLabel9.TabIndex = 12;
-            this.radLabel9.Text = "End Time:";
-            this.radLabel9.ThemeName = "ControlDefault";
-            // 
-            // radTimePicker2
-            // 
-            this.radTimePicker2.Location = new System.Drawing.Point(117, 0);
-            this.radTimePicker2.MaxValue = new System.DateTime(9999, 12, 31, 23, 59, 59, 0);
-            this.radTimePicker2.MinValue = new System.DateTime(((long)(0)));
-            this.radTimePicker2.Name = "radTimePicker2";
-            this.radTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.radTimePicker2.TabIndex = 11;
-            this.radTimePicker2.TabStop = false;
-            this.radTimePicker2.Text = "radTimePicker2";
-            this.radTimePicker2.Value = new System.DateTime(2015, 5, 4, 16, 30, 34, 285);
-            // 
-            // radDateTimePicker3
-            // 
-            this.radDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.radDateTimePicker3.Location = new System.Drawing.Point(741, 62);
-            this.radDateTimePicker3.Name = "radDateTimePicker3";
-            this.radDateTimePicker3.Size = new System.Drawing.Size(169, 24);
-            this.radDateTimePicker3.TabIndex = 13;
-            this.radDateTimePicker3.TabStop = false;
-            this.radDateTimePicker3.Text = "16:18:02";
-            this.radDateTimePicker3.ThemeName = "Breeze";
-            this.radDateTimePicker3.Value = new System.DateTime(2015, 5, 4, 16, 18, 2, 591);
-            // 
-            // radLabel10
-            // 
-            this.radLabel10.Controls.Add(this.radDateTimePicker4);
-            this.radLabel10.Controls.Add(this.radTimePicker3);
-            this.radLabel10.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel10.Location = new System.Drawing.Point(654, 103);
-            this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(44, 22);
-            this.radLabel10.TabIndex = 14;
-            this.radLabel10.Text = "Total:";
-            this.radLabel10.ThemeName = "ControlDefault";
-            // 
-            // radTimePicker3
-            // 
-            this.radTimePicker3.Location = new System.Drawing.Point(117, 0);
-            this.radTimePicker3.MaxValue = new System.DateTime(9999, 12, 31, 23, 59, 59, 0);
-            this.radTimePicker3.MinValue = new System.DateTime(((long)(0)));
-            this.radTimePicker3.Name = "radTimePicker3";
-            this.radTimePicker3.Size = new System.Drawing.Size(100, 20);
-            this.radTimePicker3.TabIndex = 11;
-            this.radTimePicker3.TabStop = false;
-            this.radTimePicker3.Text = "radTimePicker3";
-            this.radTimePicker3.Value = new System.DateTime(2015, 5, 4, 16, 30, 34, 285);
-            // 
-            // radDateTimePicker4
-            // 
-            this.radDateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.radDateTimePicker4.Location = new System.Drawing.Point(117, 0);
-            this.radDateTimePicker4.Name = "radDateTimePicker4";
-            this.radDateTimePicker4.Size = new System.Drawing.Size(169, 24);
-            this.radDateTimePicker4.TabIndex = 15;
-            this.radDateTimePicker4.TabStop = false;
-            this.radDateTimePicker4.Text = "16:18:02";
-            this.radDateTimePicker4.ThemeName = "Breeze";
-            this.radDateTimePicker4.Value = new System.DateTime(2015, 5, 4, 16, 18, 2, 591);
-            // 
-            // radDateTimePicker5
-            // 
-            this.radDateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.radDateTimePicker5.Location = new System.Drawing.Point(741, 101);
-            this.radDateTimePicker5.Name = "radDateTimePicker5";
-            this.radDateTimePicker5.Size = new System.Drawing.Size(169, 24);
-            this.radDateTimePicker5.TabIndex = 15;
-            this.radDateTimePicker5.TabStop = false;
-            this.radDateTimePicker5.Text = "16:18:02";
-            this.radDateTimePicker5.ThemeName = "Breeze";
-            this.radDateTimePicker5.Value = new System.DateTime(2015, 5, 4, 16, 18, 2, 591);
-            // 
+         
             // CycleSoft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -1064,8 +937,7 @@
             this.Name = "CycleSoft";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cycle Soft";
-            ((System.ComponentModel.ISupportInitialize)(this.polarDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource)).EndInit();
+        
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1098,6 +970,7 @@
             this.radPageView1.ResumeLayout(false);
             this.radPageViewPage4.ResumeLayout(false);
             this.radPageViewPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
@@ -1115,18 +988,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radCalendar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polarDataSetBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
-            this.radLabel9.ResumeLayout(false);
-            this.radLabel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
-            this.radLabel10.ResumeLayout(false);
-            this.radLabel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTimePicker3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDateTimePicker5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1138,7 +999,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.BindingSource polarDataSetBindingSource;
-        private polarDataSet polarDataSet;
+      
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rdMph;
@@ -1218,14 +1079,7 @@
         private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker1;
         private Telerik.WinControls.UI.RadTextBox radTextBox3;
         private Telerik.WinControls.UI.RadTimePicker radTimePicker1;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker2;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker3;
-        private Telerik.WinControls.UI.RadLabel radLabel9;
-        private Telerik.WinControls.UI.RadTimePicker radTimePicker2;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker4;
-        private Telerik.WinControls.UI.RadLabel radLabel10;
-        private Telerik.WinControls.UI.RadTimePicker radTimePicker3;
-        private Telerik.WinControls.UI.RadDateTimePicker radDateTimePicker5;
+        private Telerik.WinControls.UI.RadTextBox radTextBox4;
     }
 }
 
