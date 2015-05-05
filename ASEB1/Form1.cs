@@ -13,8 +13,6 @@ using System.Drawing;
  *                      A third year university project developed in C# with the use of Telerik Controls by Michael Voase (C3366381) 
  *                          
  * 
- * 
- * 
  * */
 
 
@@ -212,16 +210,26 @@ namespace ASEB1
             chart1.Series["Series3"].ToolTip = "Cadence:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series4"].LegendText = "Altitude";
-            //Tooltip to show avergaes
+            //Tooltip to show averages
             chart1.Series["Series4"].ToolTip = "Altitude(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series5"].LegendText = "Pressure";
-            //Tooltip to show avergaes
+            //Tooltip to show averages
             chart1.Series["Series5"].ToolTip = "Pressure:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series6"].LegendText = "Power";
             //Tooltip to show averages
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            //Automatic Interval Highlighting 
+            Series ser = chart1.Series.Add("Interval");
+            ser.ChartType = SeriesChartType.Point;
+            ser.Color = Color.Red;
+            ser.BorderWidth = 3;
+
+            foreach(DataPoint dp in chart1.Series[0].Points){
+                if (dp.YValues[0] == 0) ser.Points.AddXY(dp.XValue, 0);
+            }
 
             //Chart Zoom functions (Selectable Data)
             ChartArea CA = chart1.ChartAreas[0];  // quick reference
@@ -261,13 +269,15 @@ namespace ASEB1
         {
             Series sz = chart1.Series["Series5"];
             sz.Enabled = radCheckBox5.Checked;
-        }
+        } 
         //Power
         private void radCheckBox6_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series6"];
             sz.Enabled = radCheckBox6.Checked;
         }
+
+        
 
 
 
