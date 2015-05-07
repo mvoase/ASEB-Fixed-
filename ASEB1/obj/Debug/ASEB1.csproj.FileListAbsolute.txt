@@ -73,3 +73,13 @@ C:\Users\Mike\Source\Repos\ASEB-Fixed-\ASEB1\obj\Debug\ASEB1.csproj.GenerateReso
 C:\Users\Mike\Source\Repos\ASEB-Fixed-\ASEB1\obj\Debug\ASEB1.exe.licenses
 C:\Users\Mike\Source\Repos\ASEB-Fixed-\ASEB1\obj\Debug\ASEB1.exe
 C:\Users\Mike\Source\Repos\ASEB-Fixed-\ASEB1\obj\Debug\ASEB1.pdb
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\bin\Debug\ASEB1.exe.config
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.CycleSoft.resources
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.Properties.Resources.resources
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.csproj.GenerateResource.Cache
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.exe.licenses
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\bin\Debug\ASEB1.exe
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\bin\Debug\ASEB1.pdb
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.exe
+C:\Users\Mike\Source\Repos\ASEB-Fixed-2\ASEB1\obj\Debug\ASEB1.pdb

@@ -7,16 +7,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Data;
 using System.Drawing;
 
-/*
- * 
- *          This piece of software was developed in order to aid the need of cyclists so they can monitor their HR data, speed, cadence, power, pressure and altitude.
- *                      A third year university project developed in C# with the use of Telerik Controls by Michael Voase (C3366381) 
- *                          
- * 
- * */
-
-
-
 namespace ASEB1
 {
     public partial class CycleSoft : Form
@@ -72,7 +62,7 @@ namespace ASEB1
             //richTextBox1.AppendText(Environment.NewLine);
 
             HRM.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
-            //Puts Data into a List and Substring for prepartion for Grid. 
+
             List<string> hrmRows = HRM.Active.Raw
                 .Substring(HRM.Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
                 .Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
@@ -97,7 +87,7 @@ namespace ASEB1
 
                
 
-                //Adds rows to DataGridView
+
                dataGridView1.Rows.Add(
                     dataRow.HeartRate,
                     dataRow.Speed,
@@ -110,7 +100,7 @@ namespace ASEB1
              
 
             }
-            //AVERAGES                                                    
+                                                                      
             richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Maximum : " + HRM.Active.DataRows.Max(r => r.HeartRate) + "\n");
@@ -134,6 +124,22 @@ namespace ASEB1
             /*Fuction Call */
             drawChart();
             /*Fuction Call */
+
+            //New Code Aded to show NP, IF and TSS in TextBox
+            float NP = calcNP();
+
+            richTextBox1.AppendText("\n" + "NP : "+ Math.Round(NP,2)+ "\n");
+
+            float IntFact = calcIFact();
+
+            richTextBox1.AppendText("\n" + "IF : " + Math.Round(IntFact, 2) + "\n");
+
+            float TSS = calcTSS();
+
+            richTextBox1.AppendText("\n" + "TSS : " + Math.Round(TSS, 4) + "\n");
+
+            //New Code Aded to show NP, IF and TSS in TextBox
+
             
         }
 
@@ -166,11 +172,10 @@ namespace ASEB1
                 dt.Rows.Add(dRow);
             }
             
-            //Binds Data to Chart. 
+
             chart1.DataBind();
 
             chart1.DataSource = dt;
-            
             chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
             chart1.Series["Series1"].XValueMember = "Date/Time";
@@ -198,40 +203,24 @@ namespace ASEB1
             chart1.Series["Series6"].YValueMembers = "Power";
 
             chart1.Series["Series1"].LegendText = "Heart Rate";
-            //Tooltip to show averages 
+
             chart1.Series["Series1"].ToolTip = "Heart Rate:#VALY\nAverage:#AVG\nMinimum:#MIN\nMaximum:#MAX ";
 
             chart1.Series["Series2"].LegendText = "Speed";
-            //Tooltip to show averages
             chart1.Series["Series2"].ToolTip = "Speed(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series3"].LegendText = "Cadence";
-            //Tooltip to show averages
             chart1.Series["Series3"].ToolTip = "Cadence:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series4"].LegendText = "Altitude";
-            //Tooltip to show averages
             chart1.Series["Series4"].ToolTip = "Altitude(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series5"].LegendText = "Pressure";
-            //Tooltip to show averages
             chart1.Series["Series5"].ToolTip = "Pressure:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
             chart1.Series["Series6"].LegendText = "Power";
-            //Tooltip to show averages
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
-            //Automatic Interval Highlighting 
-            Series ser = chart1.Series.Add("Interval");
-            ser.ChartType = SeriesChartType.Point;
-            ser.Color = Color.Red;
-            ser.BorderWidth = 3;
-
-            foreach(DataPoint dp in chart1.Series[0].Points){
-                if (dp.YValues[0] == 0) ser.Points.AddXY(dp.XValue, 0);
-            }
-
-            //Chart Zoom functions (Selectable Data)
             ChartArea CA = chart1.ChartAreas[0];  // quick reference
             CA.AxisX.ScaleView.Zoomable = true;
             CA.CursorX.AutoScroll = true;
@@ -239,56 +228,191 @@ namespace ASEB1
 
             
        }
-        //Added CheckBoxes for Chart (Enabling and Disabling)
-        //Heart Rate
+        /*Function Definition to Draw Chart */
+
         private void radCheckBox1_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series1"];
             sz.Enabled = radCheckBox1.Checked;
          }
-        //Speed
+
         private void radCheckBox2_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series2"];
             sz.Enabled = radCheckBox2.Checked;
         }
-        //Cadence
+
         private void radCheckBox3_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series3"];
             sz.Enabled = radCheckBox3.Checked;
         }
-        //Altitude
+
         private void radCheckBox4_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series4"];
             sz.Enabled = radCheckBox4.Checked;
         }
-        //Pressure
+
         private void radCheckBox5_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series5"];
             sz.Enabled = radCheckBox5.Checked;
-        } 
-        //Power
+        }
+
         private void radCheckBox6_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series6"];
             sz.Enabled = radCheckBox6.Checked;
         }
 
-        
 
 
+
+//Function to Calculate NP
+      public float calcNP()
+        {
+
+            int rowcount = dataGridView1.Rows.Count;
+           
+            int[] colB=new int[rowcount];
+            float[] NP = new float[rowcount];
+            float avgNP = 0;
+            for (int i = 0; i < rowcount; i++)
+            {
+                colB[i] =Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+              
+
+            }
+
+            float min = colB.Min();
+            float max = colB.Max();
+            float a = 1, b = 10;
+
+            for (int i = 0; i < rowcount; i++)
+            {
+               NP[i]= (a + (colB[i] - min) * (b - a)) / (max - min);
+               avgNP = NP[i] + avgNP;
+           
+              
+
+            }
+
+            avgNP = avgNP / rowcount;
+            return  avgNP;
+        }
+
+//Function to Calculate NP
+
+
+//Function to Calculate IF
+      public float calcIFact()
+      {
+          
+          float ftp = calcFTP();
+          float NP = calcNP();
+          float IntFact = NP / ftp;
+         
+          return IntFact;
+
+
+      }
+//Function to Calculate IF
+
+//Function of Calculate FTP
+      public float calcFTP()
+      {
+
+          float ftp = 0;
+
+          if (chkFTP.Checked == true)
+          {
+              ftp =(float)Convert.ToDouble(txtFTP.Text)/100;
+             
+          }
+
+          if (chkFTP.Checked == false)
+          {
+              int rowcount = dataGridView1.Rows.Count;
+              
+              int[] colB = new int[rowcount];
+
+
+              for (int i = 0; i < rowcount; i++)
+              {
+                  colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+                  
+
+              }
+              ftp = colB.Max() / 100;
+              
+          }
+
+          return ftp;
+      }
+//Function of Calculate FTP
+
+
+
+
+//Function to Calculate TSS
+      public float calcTSS()
+      {
+          int duration = dataGridView1.Rows.Count;
+          float NP = calcNP();
+          float IntFact = calcIFact();
+          float ftp = calcFTP();
+          float TSS = (duration * NP * IntFact) / ((ftp * 3600) * 100) * 100;
+          return TSS;
+
+      }
+
+      //Function to Calculate TSS
+
+
+       //Handing FTP Checkbox Check Unchek Event
+      private void chkFTP_CheckedChanged(object sender, EventArgs e)
+      {
+          if (chkFTP.Checked == true)
+          {
+              txtFTP.Enabled = true;
+              btnFindTSS.Enabled = true;
+
+          }
+
+          if (chkFTP.Checked == false)
+          {
+              txtFTP.Enabled = false;
+              btnFindTSS.Enabled = false;
+
+          }
+      }
+
+      //Handing FTP Checkbox Check Unchek Event
+
+
+
+     //Calculating TSS for TSS Tab with User Entered FTP Value
+      private void btnFindTSS_Click(object sender, EventArgs e)
+      {
+          int duration = dataGridView1.Rows.Count;
+          float NP = calcNP();
+          float IntFact = calcIFact();
+          float ftp = calcFTP();
+          float TSS = (duration * NP * IntFact) / ((ftp * 3600) * 100) * 100;
+          
+          txtNP.Text = Convert.ToString(Math.Round(NP,2));
+
+          txtIF.Text = Convert.ToString(Math.Round(IntFact, 2));
+
+          txtTSS.Text = Convert.ToString(Math.Round(TSS, 4));
+
+
+      }
+        //Calculating TSS for TSS Tab with User Entered FTP Value
 
        
 
-
-        /*Function Definition to Draw Chart */
-        
-       
-
-      
 
 
 
