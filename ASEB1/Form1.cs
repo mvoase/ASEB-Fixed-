@@ -204,6 +204,8 @@ namespace ASEB1
             chart1.Series["Series6"].YValueMembers = "Power";
 
             chart1.Series["Series1"].LegendText = "Heart Rate";
+
+            
             //Sets tooltips for selectable data. 
             chart1.Series["Series1"].ToolTip = "Heart Rate:#VALY\nAverage:#AVG\nMinimum:#MIN\nMaximum:#MAX ";
 
@@ -221,6 +223,60 @@ namespace ASEB1
 
             chart1.Series["Series6"].LegendText = "Power";
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+
+            //Chart2 
+            chart2.DataBind();
+            chart2.DataSource = dt;
+            chart2.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
+            //chart2.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
+
+           chart2.Series["Series1"].XValueMember = "Date/Time";
+            
+            chart2.Series["Series1"].YValueMembers = "HeartRate";
+           
+            //chart2.Series["Series2"].ChartType = SeriesChartType.Pie;
+            chart2.Series["Series2"].XValueMember = "Date/Time";
+            chart2.Series["Series2"].YValueMembers = "Speed";
+
+            //chart2.Series["Series3"].ChartType = SeriesChartType.Pie;
+            chart2.Series["Series3"].XValueMember = "Date/Time";
+            chart2.Series["Series3"].YValueMembers = "Cadence";
+
+            //chart2.Series["Series4"].ChartType = SeriesChartType.Pie;
+            chart2.Series["Series4"].XValueMember = "Date/Time";
+            chart2.Series["Series4"].YValueMembers = "Altitude";
+
+            //chart2.Series["Series5"].ChartType = SeriesChartType.Pie;
+            chart2.Series["Series5"].XValueMember = "Date/Time";
+            chart2.Series["Series5"].YValueMembers = "Pressure";
+
+            //chart2.Series["Series6"].ChartType = SeriesChartType.Pie;
+            chart2.Series["Series6"].XValueMember = "Date/Time";
+            chart2.Series["Series6"].YValueMembers = "Power";
+
+            chart2.Series["Series1"].LegendText = "Heart Rate";
+
+            
+            //Sets tooltips for selectable data. 
+            chart2.Series["Series1"].ToolTip = "Heart Rate:#VALY\nAverage:#AVG\nMinimum:#MIN\nMaximum:#MAX ";
+
+            chart2.Series["Series2"].LegendText = "Speed";
+            chart2.Series["Series2"].ToolTip = "Speed(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart2.Series["Series3"].LegendText = "Cadence";
+            chart2.Series["Series3"].ToolTip = "Cadence:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart2.Series["Series4"].LegendText = "Altitude";
+            chart2.Series["Series4"].ToolTip = "Altitude(KM/H):#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart2.Series["Series5"].LegendText = "Pressure";
+            chart2.Series["Series5"].ToolTip = "Pressure:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+            chart2.Series["Series6"].LegendText = "Power";
+            chart2.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
+
+
 
             //Zoomable Function - Selectable Data. 
             ChartArea CA = chart1.ChartAreas[0];  
@@ -410,6 +466,42 @@ namespace ASEB1
           txtTSS.Text = Convert.ToString(Math.Round(TSS, 2));
 
 
+      }
+
+      private void radCheckBox12_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      {
+          Series sz = chart2.Series["Series1"];
+          sz.Enabled = radCheckBox12.Checked;
+      }
+
+      private void radCheckBox11_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      {
+          Series sz = chart2.Series["Series2"];
+          sz.Enabled = radCheckBox11.Checked;
+      }
+
+      private void radCheckBox10_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      {
+          Series sz = chart2.Series["Series3"];
+          sz.Enabled = radCheckBox10.Checked;
+      }
+
+      private void radCheckBox9_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      {
+          Series sz = chart2.Series["Series4"];
+          sz.Enabled = radCheckBox9.Checked;
+      }
+
+      private void radCheckBox8_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      {
+          Series sz = chart2.Series["Series5"];
+          sz.Enabled = radCheckBox8.Checked;
+      }
+
+      private void radCheckBox7_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      {
+          Series sz = chart2.Series["Series6"];
+          sz.Enabled = radCheckBox7.Checked;
       }
 
      
