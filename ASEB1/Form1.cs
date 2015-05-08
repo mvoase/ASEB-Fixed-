@@ -7,6 +7,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Data;
 using System.Drawing;
 
+
+//////////////////////////////// This software allows the user to load HRM files to view Cycle Data from their monitor//////////////////////
 namespace ASEB1
 {
     public partial class CycleSoft : Form
@@ -18,6 +20,7 @@ namespace ASEB1
             InitializeComponent();
         }
 
+        //ERROR OPENS AND ASKS FOR FILE TWICE (NEEDS FIXING)
         private void radBrowseEditor1_ValueChanged(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -49,17 +52,15 @@ namespace ASEB1
 
             lineIndex = HRM.Active.Raw.IndexOf("StartTime=");
             string lineTime = HRM.Active.Raw.Substring(lineIndex + 10, 8); // 8 characters= hh:mm:ss
-            //richTextBox1.AppendText(Environment.NewLine + " Time started: " + lineTime);
+            
 
             lineIndex = HRM.Active.Raw.IndexOf("Interval="); //eg: StartTime=14:26:18.0
             string lineinter1 = HRM.Active.Raw.Substring(lineIndex + 9, 1); // 8 characters= hh:mm:ss
-            //richTextBox1.AppendText(Environment.NewLine + " New entery every " + lineinter1 + " Second(s)");
+            
 
             lineIndex = HRM.Active.Raw.IndexOf("Length="); //eg: Length=14:26:18.0
             string lineLength = HRM.Active.Raw.Substring(lineIndex + 7, 8); // 8 characters= hh:mm:ss
-            //richTextBox1.AppendText(Environment.NewLine + " Length of workout: " + lineLength);
-
-            //richTextBox1.AppendText(Environment.NewLine);
+            
 
             HRM.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
 
@@ -70,7 +71,7 @@ namespace ASEB1
             foreach (var line in hrmRows.TakeWhile(line => !string.IsNullOrWhiteSpace(line)))
             {
                 
-                
+                //Splitting the data ready for each row. 
                 Data dataRow = new Data()
                 {
                     HeartRate = double.Parse(line.Split('\t')[0]),
@@ -87,7 +88,7 @@ namespace ASEB1
 
                
 
-
+               //Adding rows to DataGridView
                dataGridView1.Rows.Add(
                     dataRow.HeartRate,
                     dataRow.Speed,
@@ -100,7 +101,7 @@ namespace ASEB1
              
 
             }
-                                                                      
+            //To show the Data from file into the TextBox                                                          
             richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
             richTextBox1.AppendText("\n" + "Heart Maximum : " + HRM.Active.DataRows.Max(r => r.HeartRate) + "\n");
@@ -119,26 +120,26 @@ namespace ASEB1
             richTextBox1.AppendText("\n" + "Cadence Maximum : " + HRM.Active.DataRows.Max(r => r.Cadence) + "\n");
 
             richTextBox1.AppendText("\n" + "Pressure Average : " + HRM.Active.DataRows.Average(r => r.Pressure) + "\n");
-            richTextBox1.AppendText("\n" + "Pressue Maximum : " + HRM.Active.DataRows.Max(r => r.Pressure) + "\n");
+            richTextBox1.AppendText("\n" + "Pressure Maximum : " + HRM.Active.DataRows.Max(r => r.Pressure) + "\n");
 
-            /*Fuction Call */
+            //Function Call 
             drawChart();
-            /*Fuction Call */
+            //Function Call
 
-            //New Code Aded to show NP, IF and TSS in TextBox
+            //New Code Added to show NP, IF and TSS in TextBox
             float NP = calcNP();
 
-            richTextBox1.AppendText("\n" + "NP : "+ Math.Round(NP,2)+ "\n");
+            richTextBox1.AppendText("\n" + "NP : "+ Math.Round(NP, 4)+ "\n");
 
             float IntFact = calcIFact();
 
             richTextBox1.AppendText("\n" + "IF : " + Math.Round(IntFact, 2) + "\n");
 
-            float TSS = calcTSS();
+            double TSS = calcTSS();
 
             richTextBox1.AppendText("\n" + "TSS : " + Math.Round(TSS, 4) + "\n");
 
-            //New Code Aded to show NP, IF and TSS in TextBox
+            //New Code Added to show NP, IF and TSS in TextBox
 
             
         }
@@ -172,7 +173,7 @@ namespace ASEB1
                 dt.Rows.Add(dRow);
             }
             
-
+            //Binds DataGridView to Chart to produce data 
             chart1.DataBind();
 
             chart1.DataSource = dt;
@@ -203,7 +204,7 @@ namespace ASEB1
             chart1.Series["Series6"].YValueMembers = "Power";
 
             chart1.Series["Series1"].LegendText = "Heart Rate";
-
+            //Sets tooltips for selectable data. 
             chart1.Series["Series1"].ToolTip = "Heart Rate:#VALY\nAverage:#AVG\nMinimum:#MIN\nMaximum:#MAX ";
 
             chart1.Series["Series2"].LegendText = "Speed";
@@ -221,7 +222,8 @@ namespace ASEB1
             chart1.Series["Series6"].LegendText = "Power";
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
-            ChartArea CA = chart1.ChartAreas[0];  // quick reference
+            //Zoomable Function - Selectable Data. 
+            ChartArea CA = chart1.ChartAreas[0];  
             CA.AxisX.ScaleView.Zoomable = true;
             CA.CursorX.AutoScroll = true;
             CA.CursorX.IsUserSelectionEnabled = true;
@@ -229,38 +231,38 @@ namespace ASEB1
             
        }
         /*Function Definition to Draw Chart */
-
-        private void radCheckBox1_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        //Checkboxes enabled in order to switch charts on and off
+        private void radCheckBox1_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series1"];
             sz.Enabled = radCheckBox1.Checked;
          }
 
-        private void radCheckBox2_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void radCheckBox2_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series2"];
             sz.Enabled = radCheckBox2.Checked;
         }
 
-        private void radCheckBox3_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void radCheckBox3_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series3"];
             sz.Enabled = radCheckBox3.Checked;
         }
 
-        private void radCheckBox4_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void radCheckBox4_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series4"];
             sz.Enabled = radCheckBox4.Checked;
         }
 
-        private void radCheckBox5_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void radCheckBox5_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series5"];
             sz.Enabled = radCheckBox5.Checked;
         }
 
-        private void radCheckBox6_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void radCheckBox6_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
             Series sz = chart1.Series["Series6"];
             sz.Enabled = radCheckBox6.Checked;
@@ -291,7 +293,7 @@ namespace ASEB1
 
             for (int i = 0; i < rowcount; i++)
             {
-               NP[i]= (a + (colB[i] - min) * (b - a)) / (max - min);
+               NP[i]= (a + (colB[i] - min) * (b - a)) / (max - min) * 100;
                avgNP = NP[i] + avgNP;
            
               
@@ -302,10 +304,10 @@ namespace ASEB1
             return  avgNP;
         }
 
-//Function to Calculate NP
+            //Function to Calculate NP
 
 
-//Function to Calculate IF
+            //Function to Calculate IF
       public float calcIFact()
       {
           
@@ -317,9 +319,9 @@ namespace ASEB1
 
 
       }
-//Function to Calculate IF
+        //Function to Calculate IF
 
-//Function of Calculate FTP
+        //Function of Calculate FTP
       public float calcFTP()
       {
 
@@ -349,20 +351,20 @@ namespace ASEB1
           }
 
           return ftp;
-      }
-//Function of Calculate FTP
+         }
+        //Function of Calculate FTP
 
 
 
 
-//Function to Calculate TSS
+        //Function to Calculate TSS
       public float calcTSS()
       {
           int duration = dataGridView1.Rows.Count;
           float NP = calcNP();
           float IntFact = calcIFact();
           float ftp = calcFTP();
-          float TSS = (duration * NP * IntFact) / ((ftp * 3600) * 100) * 100;
+          float TSS = (duration * NP * IntFact) / ((ftp * 3600) *100);
           return TSS;
 
       }
@@ -370,7 +372,7 @@ namespace ASEB1
       //Function to Calculate TSS
 
 
-       //Handing FTP Checkbox Check Unchek Event
+      //Handling FTP Checkbox Check Uncheck Event
       private void chkFTP_CheckedChanged(object sender, EventArgs e)
       {
           if (chkFTP.Checked == true)
@@ -399,16 +401,24 @@ namespace ASEB1
           float NP = calcNP();
           float IntFact = calcIFact();
           float ftp = calcFTP();
-          float TSS = (duration * NP * IntFact) / ((ftp * 3600) * 100) * 100;
+          float TSS = (duration * NP * IntFact) / ((ftp * 3600) * 100);
           
-          txtNP.Text = Convert.ToString(Math.Round(NP,2));
+          txtNP.Text = Convert.ToString(Math.Round(NP, 2));
 
           txtIF.Text = Convert.ToString(Math.Round(IntFact, 2));
 
-          txtTSS.Text = Convert.ToString(Math.Round(TSS, 4));
+          txtTSS.Text = Convert.ToString(Math.Round(TSS, 2));
 
 
       }
+
+     
+
+    
+
+      
+
+      
         //Calculating TSS for TSS Tab with User Entered FTP Value
 
        
