@@ -328,18 +328,18 @@ namespace ASEB1
 
 
 //Function to Calculate NP
-      public float calcNP()
+        public float calcNP()
         {
 
             int rowcount = dataGridView1.Rows.Count;
-           
-            int[] colB=new int[rowcount];
+
+            int[] colB = new int[rowcount];
             float[] NP = new float[rowcount];
             float avgNP = 0;
             for (int i = 0; i < rowcount; i++)
             {
-                colB[i] =Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
-              
+                colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+
 
             }
 
@@ -349,124 +349,131 @@ namespace ASEB1
 
             for (int i = 0; i < rowcount; i++)
             {
-               NP[i]= (a + (colB[i] - min) * (b - a)) / (max - min) * 100;
-               avgNP = NP[i] + avgNP;
-           
-              
+                NP[i] = (a + (colB[i] - min) * (b - a)) / (max - min);
+                avgNP = NP[i] + avgNP;
+
+
 
             }
 
-            avgNP = avgNP / rowcount;
-            return  avgNP;
+            avgNP = (avgNP / rowcount) * 100;
+            return avgNP;
         }
 
             //Function to Calculate NP
 
 
             //Function to Calculate IF
-      public float calcIFact()
-      {
-          
-          float ftp = calcFTP();
-          float NP = calcNP();
-          float IntFact = NP / ftp;
-         
-          return IntFact;
+        public float calcIFact()
+        {
+
+            float ftp = calcFTP();
+            float NP = calcNP();
+            float IntFact = NP / ftp;
+
+            return IntFact;
 
 
-      }
+        }
         //Function to Calculate IF
 
         //Function of Calculate FTP
-      public float calcFTP()
-      {
+        public float calcFTP()
+        {
 
-          float ftp = 0;
+            float ftp = 0;
 
-          if (chkFTP.Checked == true)
-          {
-              ftp =(float)Convert.ToDouble(txtFTP.Text)/100;
-             
-          }
+            if (chkFTP.Checked == true)
+            {
+                //  ftp =(float)Convert.ToDouble(txtFTP.Text)/100;
+                ftp = (float)Convert.ToDouble(txtFTP.Text);
 
-          if (chkFTP.Checked == false)
-          {
-              int rowcount = dataGridView1.Rows.Count;
-              
-              int[] colB = new int[rowcount];
+            }
+
+            if (chkFTP.Checked == false)
+            {
+                int rowcount = dataGridView1.Rows.Count;
+
+                int[] colB = new int[rowcount];
 
 
-              for (int i = 0; i < rowcount; i++)
-              {
-                  colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
-                  
+                for (int i = 0; i < rowcount; i++)
+                {
+                    colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
 
-              }
-              ftp = colB.Max() / 100;
-              
-          }
 
-          return ftp;
-         }
+                }
+                //  ftp = colB.Max() / 100;
+
+                ftp = colB.Max();
+            }
+
+            return ftp;
+        }
         //Function of Calculate FTP
 
 
 
 
         //Function to Calculate TSS
-      public float calcTSS()
-      {
-          int duration = dataGridView1.Rows.Count;
-          float NP = calcNP();
-          float IntFact = calcIFact();
-          float ftp = calcFTP();
-          float TSS = (duration * NP * IntFact) / ((ftp * 3600) *100);
-          return TSS;
+        public float calcTSS()
+        {
+            int duration = dataGridView1.Rows.Count;
+            float NP = calcNP();
+            float IntFact = calcIFact();
+            float ftp = calcFTP();
+            // float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
+            float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
 
-      }
+
+            return TSS;
+
+        }
 
       //Function to Calculate TSS
 
 
       //Handling FTP Checkbox Check Uncheck Event
-      private void chkFTP_CheckedChanged(object sender, EventArgs e)
-      {
-          if (chkFTP.Checked == true)
-          {
-              txtFTP.Enabled = true;
-              btnFindTSS.Enabled = true;
+        private void chkFTP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFTP.Checked == true)
+            {
+                txtFTP.Enabled = true;
+                btnFindTSS.Enabled = true;
 
-          }
+            }
 
-          if (chkFTP.Checked == false)
-          {
-              txtFTP.Enabled = false;
-              btnFindTSS.Enabled = false;
+            if (chkFTP.Checked == false)
+            {
+                txtFTP.Enabled = false;
+                btnFindTSS.Enabled = false;
 
-          }
-      }
+            }
+        }
 
       //Handing FTP Checkbox Check Unchek Event
 
 
 
      //Calculating TSS for TSS Tab with User Entered FTP Value
-      private void btnFindTSS_Click(object sender, EventArgs e)
-      {
-          int duration = dataGridView1.Rows.Count;
-          float NP = calcNP();
-          float IntFact = calcIFact();
-          float ftp = calcFTP();
-          float TSS = (duration * NP * IntFact) / ((ftp * 3600) * 100);
-          
-          txtNP.Text = Convert.ToString(Math.Round(NP, 2));
+        private void btnFindTSS_Click(object sender, EventArgs e)
+        {
+            int duration = dataGridView1.Rows.Count;
+            float NP = calcNP();
+            float IntFact = calcIFact();
+            float ftp = calcFTP();
+            //  float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
 
-          txtIF.Text = Convert.ToString(Math.Round(IntFact, 2));
+            float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
 
-          txtTSS.Text = Convert.ToString(Math.Round(TSS, 2));
+            txtNP.Text = Convert.ToString(Math.Round(NP, 0));
+
+            txtIF.Text = Convert.ToString(Math.Round(IntFact, 2));
+
+            txtTSS.Text = Convert.ToString(Math.Round(TSS, 0));
 
 
-      }
+        }
 
       private void radCheckBox12_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
