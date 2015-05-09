@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASEB1", "ASEB1\ASEB1.csproj", "{8B78AA79-767C-48AC-8874-E63350757DE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleSoftTesting", "CycleSoftTesting\CycleSoftTesting.csproj", "{EBDEBA2A-D9BE-48B2-B8DD-31EE7B150F54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8B78AA79-767C-48AC-8874-E63350757DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B78AA79-767C-48AC-8874-E63350757DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B78AA79-767C-48AC-8874-E63350757DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDEBA2A-D9BE-48B2-B8DD-31EE7B150F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDEBA2A-D9BE-48B2-B8DD-31EE7B150F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDEBA2A-D9BE-48B2-B8DD-31EE7B150F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDEBA2A-D9BE-48B2-B8DD-31EE7B150F54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

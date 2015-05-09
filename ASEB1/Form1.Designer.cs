@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CycleSoft));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series45 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series46 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series47 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series48 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,10 +82,16 @@
             this.lbMinHR = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radCheckBox3 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox4 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox6 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox5 = new Telerik.WinControls.UI.RadCheckBox();
-            this.radCheckBox4 = new Telerik.WinControls.UI.RadCheckBox();
-            this.radCheckBox3 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox2 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -142,10 +148,10 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.radPageViewPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -470,10 +476,16 @@
             // radPageViewPage3
             // 
             this.radPageViewPage3.AutoSize = true;
-            this.radPageViewPage3.Controls.Add(this.radCheckBox6);
+            this.radPageViewPage3.Controls.Add(this.label10);
+            this.radPageViewPage3.Controls.Add(this.label11);
+            this.radPageViewPage3.Controls.Add(this.label8);
+            this.radPageViewPage3.Controls.Add(this.label9);
+            this.radPageViewPage3.Controls.Add(this.label7);
+            this.radPageViewPage3.Controls.Add(this.label6);
             this.radPageViewPage3.Controls.Add(this.radCheckBox5);
-            this.radPageViewPage3.Controls.Add(this.radCheckBox4);
             this.radPageViewPage3.Controls.Add(this.radCheckBox3);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox4);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox6);
             this.radPageViewPage3.Controls.Add(this.radCheckBox2);
             this.radPageViewPage3.Controls.Add(this.radCheckBox1);
             this.radPageViewPage3.Controls.Add(this.chart1);
@@ -481,57 +493,112 @@
             this.radPageViewPage3.Location = new System.Drawing.Point(8, 39);
             this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageViewPage3.Name = "radPageViewPage3";
-            this.radPageViewPage3.Size = new System.Drawing.Size(1332, 639);
+            this.radPageViewPage3.Size = new System.Drawing.Size(1332, 746);
             this.radPageViewPage3.Text = "Graph Data";
             // 
-            // radCheckBox6
+            // label10
             // 
-            this.radCheckBox6.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox6.Location = new System.Drawing.Point(1190, 303);
-            this.radCheckBox6.Name = "radCheckBox6";
-            this.radCheckBox6.Size = new System.Drawing.Size(58, 22);
-            this.radCheckBox6.TabIndex = 7;
-            this.radCheckBox6.Text = "Power";
-            this.radCheckBox6.ThemeName = "Breeze";
-            this.radCheckBox6.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(491, 647);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 18);
+            this.label10.TabIndex = 19;
             // 
-            // radCheckBox5
+            // label11
             // 
-            this.radCheckBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox5.Location = new System.Drawing.Point(1190, 279);
-            this.radCheckBox5.Name = "radCheckBox5";
-            this.radCheckBox5.Size = new System.Drawing.Size(75, 22);
-            this.radCheckBox5.TabIndex = 8;
-            this.radCheckBox5.Text = "Pressure";
-            this.radCheckBox5.ThemeName = "Breeze";
-            this.radCheckBox5.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(381, 647);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 18);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Avg Cadence: ";
             // 
-            // radCheckBox4
+            // label8
             // 
-            this.radCheckBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox4.Location = new System.Drawing.Point(1190, 255);
-            this.radCheckBox4.Name = "radCheckBox4";
-            this.radCheckBox4.Size = new System.Drawing.Size(73, 22);
-            this.radCheckBox4.TabIndex = 9;
-            this.radCheckBox4.Text = "Altitude";
-            this.radCheckBox4.ThemeName = "Breeze";
-            this.radCheckBox4.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(177, 680);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 18);
+            this.label8.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(67, 680);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 18);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Avg Speed:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(177, 647);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 18);
+            this.label7.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(67, 647);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Avg Heart Rate:";
             // 
             // radCheckBox3
             // 
             this.radCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox3.Location = new System.Drawing.Point(1190, 231);
+            this.radCheckBox3.Location = new System.Drawing.Point(1184, 107);
             this.radCheckBox3.Name = "radCheckBox3";
             this.radCheckBox3.Size = new System.Drawing.Size(72, 22);
             this.radCheckBox3.TabIndex = 11;
             this.radCheckBox3.Text = "Cadence";
             this.radCheckBox3.ThemeName = "Breeze";
             this.radCheckBox3.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox3.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox3_ToggleStateChanged_1);
+            // 
+            // radCheckBox4
+            // 
+            this.radCheckBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox4.Location = new System.Drawing.Point(1184, 131);
+            this.radCheckBox4.Name = "radCheckBox4";
+            this.radCheckBox4.Size = new System.Drawing.Size(73, 22);
+            this.radCheckBox4.TabIndex = 9;
+            this.radCheckBox4.Text = "Altitude";
+            this.radCheckBox4.ThemeName = "Breeze";
+            this.radCheckBox4.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox4.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox4_ToggleStateChanged);
+            // 
+            // radCheckBox6
+            // 
+            this.radCheckBox6.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox6.Location = new System.Drawing.Point(1184, 179);
+            this.radCheckBox6.Name = "radCheckBox6";
+            this.radCheckBox6.Size = new System.Drawing.Size(58, 22);
+            this.radCheckBox6.TabIndex = 7;
+            this.radCheckBox6.Text = "Power";
+            this.radCheckBox6.ThemeName = "Breeze";
+            this.radCheckBox6.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox6.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox6_ToggleStateChanged_1);
+            // 
+            // radCheckBox5
+            // 
+            this.radCheckBox5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox5.Location = new System.Drawing.Point(1184, 155);
+            this.radCheckBox5.Name = "radCheckBox5";
+            this.radCheckBox5.Size = new System.Drawing.Size(75, 22);
+            this.radCheckBox5.TabIndex = 8;
+            this.radCheckBox5.Text = "Pressure";
+            this.radCheckBox5.ThemeName = "Breeze";
+            this.radCheckBox5.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox5.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox5_ToggleStateChanged_1);
             // 
             // radCheckBox2
             // 
             this.radCheckBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox2.Location = new System.Drawing.Point(1190, 207);
+            this.radCheckBox2.Location = new System.Drawing.Point(1184, 83);
             this.radCheckBox2.Name = "radCheckBox2";
             this.radCheckBox2.Size = new System.Drawing.Size(60, 22);
             this.radCheckBox2.TabIndex = 10;
@@ -543,7 +610,7 @@
             // radCheckBox1
             // 
             this.radCheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox1.Location = new System.Drawing.Point(1190, 183);
+            this.radCheckBox1.Location = new System.Drawing.Point(1184, 59);
             this.radCheckBox1.Name = "radCheckBox1";
             this.radCheckBox1.Size = new System.Drawing.Size(91, 22);
             this.radCheckBox1.TabIndex = 6;
@@ -554,43 +621,45 @@
             // 
             // chart1
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
+            chartArea1.CursorX.SelectionColor = System.Drawing.Color.Orange;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(18, 39);
             this.chart1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.chart1.Name = "chart1";
-            series37.ChartArea = "ChartArea1";
-            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series37.CustomProperties = "IsXAxisQuantitative=False";
-            series37.Legend = "Legend1";
-            series37.Name = "Series1";
-            series37.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series38.ChartArea = "ChartArea1";
-            series38.Legend = "Legend1";
-            series38.Name = "Series2";
-            series39.ChartArea = "ChartArea1";
-            series39.Legend = "Legend1";
-            series39.Name = "Series3";
-            series40.ChartArea = "ChartArea1";
-            series40.Legend = "Legend1";
-            series40.Name = "Series4";
-            series41.ChartArea = "ChartArea1";
-            series41.Legend = "Legend1";
-            series41.Name = "Series5";
-            series42.ChartArea = "ChartArea1";
-            series42.Legend = "Legend1";
-            series42.Name = "Series6";
-            this.chart1.Series.Add(series37);
-            this.chart1.Series.Add(series38);
-            this.chart1.Series.Add(series39);
-            this.chart1.Series.Add(series40);
-            this.chart1.Series.Add(series41);
-            this.chart1.Series.Add(series42);
-            this.chart1.Size = new System.Drawing.Size(1292, 489);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.CustomProperties = "IsXAxisQuantitative=False";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series3";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series4";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series5";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series6";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(1140, 588);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
+            this.chart1.AxisViewChanged += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ViewEventArgs>(this.chart1_AxisViewChanged);
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // radPageViewPage1
@@ -604,7 +673,7 @@
             this.radPageViewPage1.Location = new System.Drawing.Point(8, 39);
             this.radPageViewPage1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageViewPage1.Name = "radPageViewPage1";
-            this.radPageViewPage1.Size = new System.Drawing.Size(1332, 639);
+            this.radPageViewPage1.Size = new System.Drawing.Size(1332, 746);
             this.radPageViewPage1.Text = "Raw Data";
             // 
             // radLabel1
@@ -708,7 +777,7 @@
             this.radPageView1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageView1.Name = "radPageView1";
             this.radPageView1.SelectedPage = this.radPageViewPage3;
-            this.radPageView1.Size = new System.Drawing.Size(1348, 686);
+            this.radPageView1.Size = new System.Drawing.Size(1348, 793);
             this.radPageView1.TabIndex = 1;
             this.radPageView1.Text = "radPageView1";
             this.radPageView1.ThemeName = "Breeze";
@@ -805,45 +874,45 @@
             // 
             // chart2
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart2.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(8, 14);
             this.chart2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.chart2.Name = "chart2";
-            series43.ChartArea = "ChartArea1";
-            series43.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series43.CustomProperties = "IsXAxisQuantitative=False";
-            series43.Legend = "Legend1";
-            series43.Name = "Series1";
-            series43.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series44.ChartArea = "ChartArea1";
-            series44.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series44.Legend = "Legend1";
-            series44.Name = "Series2";
-            series45.ChartArea = "ChartArea1";
-            series45.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series45.Legend = "Legend1";
-            series45.Name = "Series3";
-            series46.ChartArea = "ChartArea1";
-            series46.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series46.Legend = "Legend1";
-            series46.Name = "Series4";
-            series47.ChartArea = "ChartArea1";
-            series47.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series47.Legend = "Legend1";
-            series47.Name = "Series5";
-            series48.ChartArea = "ChartArea1";
-            series48.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series48.Legend = "Legend1";
-            series48.Name = "Series6";
-            this.chart2.Series.Add(series43);
-            this.chart2.Series.Add(series44);
-            this.chart2.Series.Add(series45);
-            this.chart2.Series.Add(series46);
-            this.chart2.Series.Add(series47);
-            this.chart2.Series.Add(series48);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series7.CustomProperties = "IsXAxisQuantitative=False";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series8.Legend = "Legend1";
+            series8.Name = "Series2";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series9.Legend = "Legend1";
+            series9.Name = "Series3";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series10.Legend = "Legend1";
+            series10.Name = "Series4";
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series11.Legend = "Legend1";
+            series11.Name = "Series5";
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series12.Legend = "Legend1";
+            series12.Name = "Series6";
+            this.chart2.Series.Add(series7);
+            this.chart2.Series.Add(series8);
+            this.chart2.Series.Add(series9);
+            this.chart2.Series.Add(series10);
+            this.chart2.Series.Add(series11);
+            this.chart2.Series.Add(series12);
             this.chart2.Size = new System.Drawing.Size(1311, 575);
             this.chart2.TabIndex = 3;
             this.chart2.Text = "chart2";
@@ -968,7 +1037,7 @@
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1359, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1508, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -986,7 +1055,7 @@
             // openToolStripMenuItem1
             // 
             this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
-            this.openToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem1.Text = "Open";
             this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
             // 
@@ -994,7 +1063,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 741);
+            this.ClientSize = new System.Drawing.Size(1508, 857);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.radPageView1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1019,10 +1088,10 @@
             this.groupBox1.PerformLayout();
             this.radPageViewPage3.ResumeLayout(false);
             this.radPageViewPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -1145,6 +1214,12 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 

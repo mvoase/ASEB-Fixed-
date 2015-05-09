@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Data;
-using System.Drawing;
+
+
+using System.Globalization;
+// ReSharper disable ReturnValueOfPureMethodIsNotUsed
 
 
 //////////////////////////////// This software allows the user to load HRM files to view Cycle Data from their monitor//////////////////////
@@ -25,7 +27,7 @@ namespace ASEB1
           
              private void openToolStripMenuItem1_Click(object sender, EventArgs e)
                {
-                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                 using (var openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Title = @"Open .HRM File";
                 openFileDialog.InitialDirectory = @"C:\Users\mike\Desktop";
@@ -39,59 +41,53 @@ namespace ASEB1
 
                 }
 
-                using (StreamReader reader = new StreamReader(openFileDialog.FileName, System.Text.Encoding.Default))
+                using (var reader = new StreamReader(openFileDialog.FileName, System.Text.Encoding.Default))
                 {
                     HRM.Active.Raw = reader.ReadToEnd();
                 }
             }
               
 
-            int lineIndex = HRM.Active.Raw.IndexOf("Date=");
-            string lineDate = HRM.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
+            var lineIndex = HRM.Active.Raw.IndexOf("Date=", StringComparison.Ordinal);
+            var lineDate = HRM.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
 
             lineDate = lineDate.Insert(4, "-"); // add hyphen after yyyy
             lineDate = lineDate.Insert(7, "-"); // add hyphen after MM
 
-            lineIndex = HRM.Active.Raw.IndexOf("StartTime=");
-            string lineTime = HRM.Active.Raw.Substring(lineIndex + 10, 8); // 8 characters= hh:mm:ss
+            lineIndex = HRM.Active.Raw.IndexOf("StartTime=", StringComparison.Ordinal);
+            var lineTime = HRM.Active.Raw.Substring(lineIndex + 10, 8); // 8 characters= hh:mm:ss
             
 
-            lineIndex = HRM.Active.Raw.IndexOf("Interval="); //eg: StartTime=14:26:18.0
-            string lineinter1 = HRM.Active.Raw.Substring(lineIndex + 9, 1); // 8 characters= hh:mm:ss
-            
+            HRM.Active.Raw.IndexOf("Interval=", StringComparison.Ordinal); //eg: StartTime=14:26:18.0
 
-            lineIndex = HRM.Active.Raw.IndexOf("Length="); //eg: Length=14:26:18.0
-            string lineLength = HRM.Active.Raw.Substring(lineIndex + 7, 8); // 8 characters= hh:mm:ss
-            
 
-            HRM.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
+                 HRM.Active.Raw.IndexOf("Length=", StringComparison.Ordinal); //eg: Length=14:26:18.0
 
-            List<string> hrmRows = HRM.Active.Raw
+
+                 HRM.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
+
+            var hrmRows = HRM.Active.Raw
                 .Substring(HRM.Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
                 .Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
 
-            foreach (var line in hrmRows.TakeWhile(line => !string.IsNullOrWhiteSpace(line)))
+            foreach (var dataRow in hrmRows.TakeWhile(line => !string.IsNullOrWhiteSpace(line)).Select(line => new Data()
             {
-                
-                //Splitting the data ready for each row. 
-                Data dataRow = new Data()
-                {
-                    HeartRate = double.Parse(line.Split('\t')[0]),
-                    Speed = double.Parse(line.Split('\t')[1]),
-                    Cadence = double.Parse(line.Split('\t')[2]),
-                    Altitude = double.Parse(line.Split('\t')[3]),
-                    Power = double.Parse(line.Split('\t')[4]),
-                    Pressure = double.Parse(line.Split('\t')[4]),
-                    DateTime = HRM.Active.DateTime.AddSeconds(HRM.Active.DataRows.Count)
+                HeartRate = double.Parse(line.Split('\t')[0]),
+                Speed = double.Parse(line.Split('\t')[1]),
+                Cadence = double.Parse(line.Split('\t')[2]),
+                Altitude = double.Parse(line.Split('\t')[3]),
+                Power = double.Parse(line.Split('\t')[4]),
+                Pressure = double.Parse(line.Split('\t')[4]),
+                DateTime = HRM.Active.DateTime.AddSeconds(HRM.Active.DataRows.Count)
                     
-                };
-
-               HRM.Active.DataRows.Add(dataRow);
+            }))
+            {
+                HRM.Active.DataRows.Add(dataRow);
 
                
 
-               //Adding rows to DataGridView
-               dataGridView1.Rows.Add(
+                //Adding rows to DataGridView
+                dataGridView1.Rows.Add(
                     dataRow.HeartRate,
                     dataRow.Speed,
                     dataRow.Cadence,
@@ -99,9 +95,6 @@ namespace ASEB1
                     dataRow.Pressure,
                     dataRow.Power,
                     dataRow.DateTime);
-
-             
-
             }
             //To show the Data from file into the TextBox                                                          
             richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
@@ -125,21 +118,21 @@ namespace ASEB1
             richTextBox1.AppendText("\n" + "Pressure Maximum : " + HRM.Active.DataRows.Max(r => r.Pressure) + "\n");
 
             //Function Call 
-            drawChart();
+            DrawChart();
             //Function Call
 
             //New Code Added to show NP, IF and TSS in TextBox
-            float NP = calcNP();
+            var np = CalcNp();
 
-            richTextBox1.AppendText("\n" + "NP : "+ Math.Round(NP, 4)+ "\n");
+            richTextBox1.AppendText("\n" + "NP : "+ Math.Round(np, 4)+ "\n");
 
-            float IntFact = calcIFact();
+            var intFact = CalcIFact();
 
-            richTextBox1.AppendText("\n" + "IF : " + Math.Round(IntFact, 2) + "\n");
+            richTextBox1.AppendText("\n" + "IF : " + Math.Round(intFact, 2) + "\n");
 
-            double TSS = calcTSS();
+            double tss = CalcTss();
 
-            richTextBox1.AppendText("\n" + "TSS : " + Math.Round(TSS, 4) + "\n");
+            richTextBox1.AppendText("\n" + "TSS : " + Math.Round(tss, 4) + "\n");
 
             //New Code Added to show NP, IF and TSS in TextBox
 
@@ -153,11 +146,11 @@ namespace ASEB1
 
 
         /*Function Definition to Draw Chart */
-        protected void drawChart()
+        protected void DrawChart()
         {
 
            
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Clear();
 
             foreach (DataGridViewColumn col in dataGridView1.Columns)
@@ -167,7 +160,7 @@ namespace ASEB1
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                DataRow dRow = dt.NewRow();
+                var dRow = dt.NewRow();
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     dRow[cell.ColumnIndex] = cell.Value;
@@ -282,69 +275,69 @@ namespace ASEB1
 
 
             //Zoomable Function - Chart1  
-            ChartArea CA = chart1.ChartAreas[0];  
-            CA.AxisX.ScaleView.Zoomable = true;
-            CA.CursorX.AutoScroll = true;
-            CA.CursorX.IsUserSelectionEnabled = true;
+            var ca = chart1.ChartAreas[0];  
+            ca.AxisX.ScaleView.Zoomable = true;
+            ca.CursorX.AutoScroll = true;
+            ca.CursorX.IsUserSelectionEnabled = true;
 
             //Zoomable Function Chart 2
-            ChartArea CA1 = chart2.ChartAreas[0];
-            CA1.AxisX.ScaleView.Zoomable = true;
-            CA1.CursorX.AutoScroll = true;
-            CA1.CursorX.IsUserSelectionEnabled = true;
+            var ca1 = chart2.ChartAreas[0];
+            ca1.AxisX.ScaleView.Zoomable = true;
+            ca1.CursorX.AutoScroll = true;
+            ca1.CursorX.IsUserSelectionEnabled = true;
             
        }
+
+        
         /*Function Definition to Draw Chart */
         //Checkboxes enabled in order to switch charts on and off
         private void radCheckBox1_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            Series sz = chart1.Series["Series1"];
+            var sz = chart1.Series["Series1"];
             sz.Enabled = radCheckBox1.Checked;
          }
 
         private void radCheckBox2_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            Series sz = chart1.Series["Series2"];
+            var sz = chart1.Series["Series2"];
             sz.Enabled = radCheckBox2.Checked;
         }
 
         private void radCheckBox3_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            Series sz = chart1.Series["Series3"];
+            var sz = chart1.Series["Series3"];
             sz.Enabled = radCheckBox3.Checked;
         }
-
-        private void radCheckBox4_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+      
+        private void radCheckBox4_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            Series sz = chart1.Series["Series4"];
+            var sz = chart1.Series["Series4"];
             sz.Enabled = radCheckBox4.Checked;
         }
-
         private void radCheckBox5_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            Series sz = chart1.Series["Series5"];
+            var sz = chart1.Series["Series5"];
             sz.Enabled = radCheckBox5.Checked;
         }
 
         private void radCheckBox6_ToggleStateChanged_1(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            Series sz = chart1.Series["Series6"];
+            var sz = chart1.Series["Series6"];
             sz.Enabled = radCheckBox6.Checked;
         }
 
 
 
-
 //Function to Calculate NP
-        public float calcNP()
+        public float CalcNp()
         {
 
-            int rowcount = dataGridView1.Rows.Count;
+            var rowcount = dataGridView1.Rows.Count;
 
-            int[] colB = new int[rowcount];
-            float[] NP = new float[rowcount];
-            float avgNP = 0;
-            for (int i = 0; i < rowcount; i++)
+            var colB = new int[rowcount];
+            var np = new float[rowcount];
+            float avgNp = 0;
+            for (var i = 0; i < rowcount; i++)
             {
                 colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
 
@@ -353,68 +346,67 @@ namespace ASEB1
 
             float min = colB.Min();
             float max = colB.Max();
-            float a = 1, b = 10;
+            const float a = 1;
+            const float b = 10;
 
-            for (int i = 0; i < rowcount; i++)
+            for (var i = 0; i < rowcount; i++)
             {
-                NP[i] = (a + (colB[i] - min) * (b - a)) / (max - min);
-                avgNP = NP[i] + avgNP;
+                np[i] = (a + (colB[i] - min) * (b - a)) / (max - min);
+                avgNp = np[i] + avgNp;
 
 
 
             }
 
-            avgNP = (avgNP / rowcount) * 100;
-            return avgNP;
+            avgNp = (avgNp / rowcount) * 100;
+            return avgNp;
         }
 
             //Function to Calculate NP
 
 
             //Function to Calculate IF
-        public float calcIFact()
+        public float CalcIFact()
         {
 
-            float ftp = calcFTP();
-            float NP = calcNP();
-            float IntFact = NP / ftp;
+            var ftp = CalcFtp();
+            var np = CalcNp();
+            var intFact = np / ftp;
 
-            return IntFact;
+            return intFact;
 
 
         }
         //Function to Calculate IF
 
         //Function of Calculate FTP
-        public float calcFTP()
+        public float CalcFtp()
         {
 
             float ftp = 0;
 
-            if (chkFTP.Checked == true)
+            if (chkFTP.Checked)
             {
                 //  ftp =(float)Convert.ToDouble(txtFTP.Text)/100;
                 ftp = (float)Convert.ToDouble(txtFTP.Text);
 
             }
 
-            if (chkFTP.Checked == false)
+            if (chkFTP.Checked) return ftp;
+            var rowcount = dataGridView1.Rows.Count;
+
+            var colB = new int[rowcount];
+
+
+            for (var i = 0; i < rowcount; i++)
             {
-                int rowcount = dataGridView1.Rows.Count;
-
-                int[] colB = new int[rowcount];
+                colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
 
 
-                for (int i = 0; i < rowcount; i++)
-                {
-                    colB[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
-
-
-                }
-                //  ftp = colB.Max() / 100;
-
-                ftp = colB.Max();
             }
+            //  ftp = colB.Max() / 100;
+
+            ftp = colB.Max();
 
             return ftp;
         }
@@ -424,17 +416,17 @@ namespace ASEB1
 
 
         //Function to Calculate TSS
-        public float calcTSS()
+        public float CalcTss()
         {
-            int duration = dataGridView1.Rows.Count;
-            float NP = calcNP();
-            float IntFact = calcIFact();
-            float ftp = calcFTP();
+            var duration = dataGridView1.Rows.Count;
+            var np = CalcNp();
+            var intFact = CalcIFact();
+            var ftp = CalcFtp();
             // float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
-            float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
+            var tss = ((duration * np * intFact) / (ftp * 3600)) * 100;
 
 
-            return TSS;
+            return tss;
 
         }
 
@@ -444,19 +436,16 @@ namespace ASEB1
       //Handling FTP Checkbox Check Uncheck Event
         private void chkFTP_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkFTP.Checked == true)
+            if (chkFTP.Checked)
             {
                 txtFTP.Enabled = true;
                 btnFindTSS.Enabled = true;
 
             }
 
-            if (chkFTP.Checked == false)
-            {
-                txtFTP.Enabled = false;
-                btnFindTSS.Enabled = false;
-
-            }
+            if (chkFTP.Checked) return;
+            txtFTP.Enabled = false;
+            btnFindTSS.Enabled = false;
         }
 
       //Handing FTP Checkbox Check Unchek Event
@@ -466,67 +455,97 @@ namespace ASEB1
      //Calculating TSS for TSS Tab with User Entered FTP Value
         private void btnFindTSS_Click(object sender, EventArgs e)
         {
-            int duration = dataGridView1.Rows.Count;
-            float NP = calcNP();
-            float IntFact = calcIFact();
-            float ftp = calcFTP();
+            var duration = dataGridView1.Rows.Count;
+            var np = CalcNp();
+            var intFact = CalcIFact();
+            var ftp = CalcFtp();
             //  float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
 
-            float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
+            var tss = ((duration * np * intFact) / (ftp * 3600)) * 100;
 
-            txtNP.Text = Convert.ToString(Math.Round(NP, 2));
+            txtNP.Text = Convert.ToString(Math.Round(np, 2), CultureInfo.InvariantCulture);
 
-            txtIF.Text = Convert.ToString(Math.Round(IntFact, 2));
+            txtIF.Text = Convert.ToString(Math.Round(intFact, 2), CultureInfo.InvariantCulture);
 
-            txtTSS.Text = Convert.ToString(Math.Round(TSS,2));
+            txtTSS.Text = Convert.ToString(Math.Round(tss,2), CultureInfo.InvariantCulture);
 
 
         }
 
       private void radCheckBox12_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
-          Series sz = chart2.Series["Series1"];
+          var sz = chart2.Series["Series1"];
           sz.Enabled = radCheckBox12.Checked;
       }
 
       private void radCheckBox11_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
-          Series sz = chart2.Series["Series2"];
+          var sz = chart2.Series["Series2"];
           sz.Enabled = radCheckBox11.Checked;
       }
 
       private void radCheckBox10_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
-          Series sz = chart2.Series["Series3"];
+          var sz = chart2.Series["Series3"];
           sz.Enabled = radCheckBox10.Checked;
       }
 
       private void radCheckBox9_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
-          Series sz = chart2.Series["Series4"];
+          var sz = chart2.Series["Series4"];
           sz.Enabled = radCheckBox9.Checked;
       }
 
       private void radCheckBox8_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
-          Series sz = chart2.Series["Series5"];
+          var sz = chart2.Series["Series5"];
           sz.Enabled = radCheckBox8.Checked;
       }
 
       private void radCheckBox7_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
       {
-          Series sz = chart2.Series["Series6"];
+          var sz = chart2.Series["Series6"];
           sz.Enabled = radCheckBox7.Checked;
       }
 
 
-      private void chart1_SelectionRangeChanged(object sender, CursorEventArgs e)
-      {
-          
+        
+        static double GetAverage(Chart chart, Series series, ViewEventArgs e)
+        {
+            if (chart != null) throw new ArgumentNullException("chart");
+            var ca = e.ChartArea;  // short..
+          var s = series;           // references  
+
+           
+            var pt0 = s.Points.Select(x => x)
+                                  .Where(x => x.XValue >= ca.AxisX.ScaleView.ViewMinimum)
+                                  .DefaultIfEmpty(s.Points.First()).First();
+          var pt1 = s.Points.Select(x => x)
+                                  .Where(x => x.XValue <= ca.AxisX.ScaleView.ViewMaximum)
+                                  .DefaultIfEmpty(s.Points.Last()).Last();
+          double sum = 0;
+          for (var i = s.Points.IndexOf(pt0); i < s.Points.IndexOf(pt1); i++)
+              sum += s.Points[i].YValues[0];
+
+          return sum / (s.Points.IndexOf(pt1) - s.Points.IndexOf(pt0) + 1);
       }
 
-     
+      private void chart1_AxisViewChanged(object sender, ViewEventArgs e)
+      {
+          label7.Text = "" + GetAverage(chart1, chart1.Series[0], e);
+          label8.Text = "" + GetAverage(chart1, chart1.Series[1], e);
+          label10.Text = "" + GetAverage(chart1, chart1.Series[2], e);
+      }
+
+      
+
+      
+
     
+
+    
+
+     
 
       
 
