@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Data;
 
-
 using System.Globalization;
 // ReSharper disable ReturnValueOfPureMethodIsNotUsed
 
@@ -23,8 +22,6 @@ namespace ASEB1
         }
 
         
-            
-          
              private void openToolStripMenuItem1_Click(object sender, EventArgs e)
                {
                  using (var openFileDialog = new OpenFileDialog())
@@ -43,31 +40,31 @@ namespace ASEB1
 
                 using (var reader = new StreamReader(openFileDialog.FileName, System.Text.Encoding.Default))
                 {
-                    HRM.Active.Raw = reader.ReadToEnd();
+                    Hrm.Active.Raw = reader.ReadToEnd();
                 }
             }
               
 
-            var lineIndex = HRM.Active.Raw.IndexOf("Date=", StringComparison.Ordinal);
-            var lineDate = HRM.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
+            var lineIndex = Hrm.Active.Raw.IndexOf("Date=", StringComparison.Ordinal);
+            var lineDate = Hrm.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
 
             lineDate = lineDate.Insert(4, "-"); // add hyphen after yyyy
             lineDate = lineDate.Insert(7, "-"); // add hyphen after MM
 
-            lineIndex = HRM.Active.Raw.IndexOf("StartTime=", StringComparison.Ordinal);
-            var lineTime = HRM.Active.Raw.Substring(lineIndex + 10, 8); // 8 characters= hh:mm:ss
+            lineIndex = Hrm.Active.Raw.IndexOf("StartTime=", StringComparison.Ordinal);
+            var lineTime = Hrm.Active.Raw.Substring(lineIndex + 10, 8); // 8 characters= hh:mm:ss
             
 
-            HRM.Active.Raw.IndexOf("Interval=", StringComparison.Ordinal); //eg: StartTime=14:26:18.0
+            Hrm.Active.Raw.IndexOf("Interval=", StringComparison.Ordinal); //eg: StartTime=14:26:18.0
 
 
-                 HRM.Active.Raw.IndexOf("Length=", StringComparison.Ordinal); //eg: Length=14:26:18.0
+                 Hrm.Active.Raw.IndexOf("Length=", StringComparison.Ordinal); //eg: Length=14:26:18.0
 
 
-                 HRM.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
+                 Hrm.Active.DateTime = DateTime.ParseExact(lineDate + " " + lineTime, "yyyy-MM-dd HH:mm:ss", null);
 
-            var hrmRows = HRM.Active.Raw
-                .Substring(HRM.Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
+            var hrmRows = Hrm.Active.Raw
+                .Substring(Hrm.Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
                 .Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
 
             foreach (var dataRow in hrmRows.TakeWhile(line => !string.IsNullOrWhiteSpace(line)).Select(line => new Data()
@@ -78,11 +75,11 @@ namespace ASEB1
                 Altitude = double.Parse(line.Split('\t')[3]),
                 Power = double.Parse(line.Split('\t')[4]),
                 Pressure = double.Parse(line.Split('\t')[4]),
-                DateTime = HRM.Active.DateTime.AddSeconds(HRM.Active.DataRows.Count)
+                DateTime = Hrm.Active.DateTime.AddSeconds(Hrm.Active.DataRows.Count)
                     
             }))
             {
-                HRM.Active.DataRows.Add(dataRow);
+                Hrm.Active.DataRows.Add(dataRow);
 
                
 
@@ -97,25 +94,25 @@ namespace ASEB1
                     dataRow.DateTime);
             }
             //To show the Data from file into the TextBox                                                          
-            richTextBox1.AppendText("\n" + "Heart Average : " + HRM.Active.DataRows.Average(r => r.HeartRate) + "\n");
-            richTextBox1.AppendText("\n" + "Heart Minimum : " + HRM.Active.DataRows.Min(r => r.HeartRate) + "\n");
-            richTextBox1.AppendText("\n" + "Heart Maximum : " + HRM.Active.DataRows.Max(r => r.HeartRate) + "\n");
+            richTextBox1.AppendText("\n" + "Heart Average : " + Hrm.Active.DataRows.Average(r => r.HeartRate) + "\n");
+            richTextBox1.AppendText("\n" + "Heart Minimum : " + Hrm.Active.DataRows.Min(r => r.HeartRate) + "\n");
+            richTextBox1.AppendText("\n" + "Heart Maximum : " + Hrm.Active.DataRows.Max(r => r.HeartRate) + "\n");
 
-            richTextBox1.AppendText("\n" + "Average Speed (KM/H): " + HRM.Active.DataRows.Average(r => r.Speed) + "\n");
-            richTextBox1.AppendText("\n" + "Maximum Speed : " + HRM.Active.DataRows.Max(r => r.Speed) + "\n");
+            richTextBox1.AppendText("\n" + "Average Speed (KM/H): " + Hrm.Active.DataRows.Average(r => r.Speed) + "\n");
+            richTextBox1.AppendText("\n" + "Maximum Speed : " + Hrm.Active.DataRows.Max(r => r.Speed) + "\n");
             richTextBox1.AppendText(Environment.NewLine + " - (MPH): " + "");
 
-            richTextBox1.AppendText("\n" + "Average Power: " + HRM.Active.DataRows.Average(r => r.Power) + "\n");
-            richTextBox1.AppendText("\n" + "Maximum Power : " + HRM.Active.DataRows.Max(r => r.Power) + "\n");
+            richTextBox1.AppendText("\n" + "Average Power: " + Hrm.Active.DataRows.Average(r => r.Power) + "\n");
+            richTextBox1.AppendText("\n" + "Maximum Power : " + Hrm.Active.DataRows.Max(r => r.Power) + "\n");
 
-            richTextBox1.AppendText("\n" + "Average Altitude (KM/H): " + HRM.Active.DataRows.Average(r => r.Altitude) + "\n");
-            richTextBox1.AppendText("\n" + "Maximum Altitude : " + HRM.Active.DataRows.Max(r => r.Altitude) + "\n");
+            richTextBox1.AppendText("\n" + "Average Altitude (KM/H): " + Hrm.Active.DataRows.Average(r => r.Altitude) + "\n");
+            richTextBox1.AppendText("\n" + "Maximum Altitude : " + Hrm.Active.DataRows.Max(r => r.Altitude) + "\n");
 
-            richTextBox1.AppendText("\n" + "Cadence Average : " + HRM.Active.DataRows.Average(r => r.Cadence) + "\n");
-            richTextBox1.AppendText("\n" + "Cadence Maximum : " + HRM.Active.DataRows.Max(r => r.Cadence) + "\n");
+            richTextBox1.AppendText("\n" + "Cadence Average : " + Hrm.Active.DataRows.Average(r => r.Cadence) + "\n");
+            richTextBox1.AppendText("\n" + "Cadence Maximum : " + Hrm.Active.DataRows.Max(r => r.Cadence) + "\n");
 
-            richTextBox1.AppendText("\n" + "Pressure Average : " + HRM.Active.DataRows.Average(r => r.Pressure) + "\n");
-            richTextBox1.AppendText("\n" + "Pressure Maximum : " + HRM.Active.DataRows.Max(r => r.Pressure) + "\n");
+            richTextBox1.AppendText("\n" + "Pressure Average : " + Hrm.Active.DataRows.Average(r => r.Pressure) + "\n");
+            richTextBox1.AppendText("\n" + "Pressure Maximum : " + Hrm.Active.DataRows.Max(r => r.Pressure) + "\n");
 
             //Function Call 
             DrawChart();
@@ -174,8 +171,9 @@ namespace ASEB1
             chart1.DataSource = dt;
             chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
+            chart1.Series["Series1"].Sort(PointSortOrder.Ascending, "X");
             chart1.Series["Series1"].XValueMember = "Date/Time";
-            
+           
             chart1.Series["Series1"].YValueMembers = "HeartRate";
            
             chart1.Series["Series2"].ChartType = SeriesChartType.Line;
@@ -510,58 +508,93 @@ namespace ASEB1
 
 
         
-        static double GetAverage(Chart chart, Series series, ViewEventArgs e)
-        {
-            if (chart != null) throw new ArgumentNullException("chart");
-            var ca = e.ChartArea;  // short..
-          var s = series;           // references  
-
-           
-            var pt0 = s.Points.Select(x => x)
-                                  .Where(x => x.XValue >= ca.AxisX.ScaleView.ViewMinimum)
-                                  .DefaultIfEmpty(s.Points.First()).First();
-          var pt1 = s.Points.Select(x => x)
-                                  .Where(x => x.XValue <= ca.AxisX.ScaleView.ViewMaximum)
-                                  .DefaultIfEmpty(s.Points.Last()).Last();
-          double sum = 0;
-          for (var i = s.Points.IndexOf(pt0); i < s.Points.IndexOf(pt1); i++)
-              sum += s.Points[i].YValues[0];
-
-          return sum / (s.Points.IndexOf(pt1) - s.Points.IndexOf(pt0) + 1);
-      }
-
+       
       private void chart1_AxisViewChanged(object sender, ViewEventArgs e)
       {
-          label7.Text = "" + GetAverage(chart1, chart1.Series[0], e);
-          label8.Text = "" + GetAverage(chart1, chart1.Series[1], e);
-          label10.Text = "" + GetAverage(chart1, chart1.Series[2], e);
+          UpdateStats();
+          
+         
       }
 
-      
+        private int getVisiblePoint(Chart chart, Series series, bool first)
+        {
+            var s = series;
+            var ca = chart.ChartAreas[s.ChartArea];
+            DataPoint pt;
+            if (first) pt = s.Points.Select(x => x)
+                             .Where(x => x.XValue >= ca.AxisX.ScaleView.ViewMinimum)
+                             .DefaultIfEmpty(s.Points.First()).First();
+            else pt = s.Points.Select(x => x)
+                             .Where(x => x.XValue <= ca.AxisX.ScaleView.ViewMaximum)
+                             .DefaultIfEmpty(s.Points.Last()).Last();
+            return s.Points.IndexOf(pt);
+        }
 
-      
+        private void UpdateStats()
+        {
+            var firstPt = getVisiblePoint(chart1, chart1.Series[0], true);
+            var lastPt = getVisiblePoint(chart1, chart1.Series[0], false);
+            var sCount = chart1.Series.Count;
+            var avg = new double[sCount];
+            var min = new double[sCount];
+            var max = new double[sCount];
 
-    
+            for (var i = 0; i < sCount; i++)
+            {
+                var s = chart1.Series[i];
+                avg[i] = getAverage(s, firstPt, lastPt);
+                min[i] = GetMixMax(s, firstPt, lastPt, true);
+                max[i] = GetMixMax(s, firstPt, lastPt, false);
+            }
 
-    
+            label7.Text = "" + getAverage(chart1.Series[0], firstPt, lastPt);
+            label12.Text = "" + getAverage(chart1.Series[1], firstPt, lastPt);
 
-     
+        }
 
-      
+        private double getAverage(Series series, int first, int last)
+        {
+            double sum = 0;
+            for (var i = first; i < last; i++) sum += series.Points[i].YValues[0];
+            return sum/(last - first + 1);
+        }
 
-      
-  
+        static double GetMixMax(Series series, int first, int last, bool min)
+        {
+            double val = 0;
 
-       
+            for (var i = first; i < last; i++)
+            {
+                var v = series.Points[i].YValues[0];
+                if ((min && val > v) || (!min && val >= v)) val = v;
+            }
+            return val;
+        }
 
 
 
 
-        
 
-       
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

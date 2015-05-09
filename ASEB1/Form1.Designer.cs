@@ -82,16 +82,20 @@
             this.lbMinHR = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.radCheckBox3 = new Telerik.WinControls.UI.RadCheckBox();
-            this.radCheckBox4 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox6 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox5 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox3 = new Telerik.WinControls.UI.RadCheckBox();
+            this.radCheckBox4 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox2 = new Telerik.WinControls.UI.RadCheckBox();
             this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -148,10 +152,10 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.radPageViewPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -476,25 +480,63 @@
             // radPageViewPage3
             // 
             this.radPageViewPage3.AutoSize = true;
+            this.radPageViewPage3.Controls.Add(this.label14);
+            this.radPageViewPage3.Controls.Add(this.label15);
+            this.radPageViewPage3.Controls.Add(this.label12);
+            this.radPageViewPage3.Controls.Add(this.label13);
             this.radPageViewPage3.Controls.Add(this.label10);
             this.radPageViewPage3.Controls.Add(this.label11);
             this.radPageViewPage3.Controls.Add(this.label8);
             this.radPageViewPage3.Controls.Add(this.label9);
             this.radPageViewPage3.Controls.Add(this.label7);
             this.radPageViewPage3.Controls.Add(this.label6);
+            this.radPageViewPage3.Controls.Add(this.radCheckBox6);
             this.radPageViewPage3.Controls.Add(this.radCheckBox5);
             this.radPageViewPage3.Controls.Add(this.radCheckBox3);
             this.radPageViewPage3.Controls.Add(this.radCheckBox4);
-            this.radPageViewPage3.Controls.Add(this.radCheckBox6);
             this.radPageViewPage3.Controls.Add(this.radCheckBox2);
             this.radPageViewPage3.Controls.Add(this.radCheckBox1);
             this.radPageViewPage3.Controls.Add(this.chart1);
             this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(88F, 32F);
-            this.radPageViewPage3.Location = new System.Drawing.Point(8, 39);
+            this.radPageViewPage3.Location = new System.Drawing.Point(8, 45);
             this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(1332, 746);
             this.radPageViewPage3.Text = "Graph Data";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(177, 701);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 18);
+            this.label14.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(67, 701);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 18);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Max Heart Rate:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(177, 674);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 18);
+            this.label12.TabIndex = 21;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(67, 674);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(104, 18);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Min Heart Rate:";
             // 
             // label10
             // 
@@ -516,7 +558,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(177, 680);
+            this.label8.Location = new System.Drawing.Point(177, 719);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(0, 18);
             this.label8.TabIndex = 17;
@@ -524,7 +566,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 680);
+            this.label9.Location = new System.Drawing.Point(67, 719);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 18);
             this.label9.TabIndex = 16;
@@ -546,30 +588,6 @@
             this.label6.Size = new System.Drawing.Size(104, 18);
             this.label6.TabIndex = 14;
             this.label6.Text = "Avg Heart Rate:";
-            // 
-            // radCheckBox3
-            // 
-            this.radCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox3.Location = new System.Drawing.Point(1184, 107);
-            this.radCheckBox3.Name = "radCheckBox3";
-            this.radCheckBox3.Size = new System.Drawing.Size(72, 22);
-            this.radCheckBox3.TabIndex = 11;
-            this.radCheckBox3.Text = "Cadence";
-            this.radCheckBox3.ThemeName = "Breeze";
-            this.radCheckBox3.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            this.radCheckBox3.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox3_ToggleStateChanged_1);
-            // 
-            // radCheckBox4
-            // 
-            this.radCheckBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.radCheckBox4.Location = new System.Drawing.Point(1184, 131);
-            this.radCheckBox4.Name = "radCheckBox4";
-            this.radCheckBox4.Size = new System.Drawing.Size(73, 22);
-            this.radCheckBox4.TabIndex = 9;
-            this.radCheckBox4.Text = "Altitude";
-            this.radCheckBox4.ThemeName = "Breeze";
-            this.radCheckBox4.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            this.radCheckBox4.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox4_ToggleStateChanged);
             // 
             // radCheckBox6
             // 
@@ -594,6 +612,30 @@
             this.radCheckBox5.ThemeName = "Breeze";
             this.radCheckBox5.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
             this.radCheckBox5.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox5_ToggleStateChanged_1);
+            // 
+            // radCheckBox3
+            // 
+            this.radCheckBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox3.Location = new System.Drawing.Point(1184, 107);
+            this.radCheckBox3.Name = "radCheckBox3";
+            this.radCheckBox3.Size = new System.Drawing.Size(72, 22);
+            this.radCheckBox3.TabIndex = 11;
+            this.radCheckBox3.Text = "Cadence";
+            this.radCheckBox3.ThemeName = "Breeze";
+            this.radCheckBox3.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox3.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox3_ToggleStateChanged_1);
+            // 
+            // radCheckBox4
+            // 
+            this.radCheckBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.radCheckBox4.Location = new System.Drawing.Point(1184, 131);
+            this.radCheckBox4.Name = "radCheckBox4";
+            this.radCheckBox4.Size = new System.Drawing.Size(73, 22);
+            this.radCheckBox4.TabIndex = 9;
+            this.radCheckBox4.Text = "Altitude";
+            this.radCheckBox4.ThemeName = "Breeze";
+            this.radCheckBox4.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.radCheckBox4.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.radCheckBox4_ToggleStateChanged);
             // 
             // radCheckBox2
             // 
@@ -776,7 +818,7 @@
             this.radPageView1.Location = new System.Drawing.Point(0, 51);
             this.radPageView1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage3;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(1348, 793);
             this.radPageView1.TabIndex = 1;
             this.radPageView1.Text = "radPageView1";
@@ -1088,10 +1130,10 @@
             this.groupBox1.PerformLayout();
             this.radPageViewPage3.ResumeLayout(false);
             this.radPageViewPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -1220,6 +1262,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
 

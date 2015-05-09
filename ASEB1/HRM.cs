@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace ASEB1
 {
-    public class HRM
+    public class Hrm
     {
-        public static HRM Active = new HRM();
+        public static Hrm Active = new Hrm();
 
         public DateTime DateTime;
         public DateTime StartTime;
@@ -14,33 +14,28 @@ namespace ASEB1
         public ICollection<Data> DataRows;
         public string Raw = "";
 
-        public HRM(string data)
+        public Hrm(string data)
         {
-            List<string> hrmRows = data
-                .Substring(HRM.Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
+            var hrmRows = data
+                .Substring(Active.Raw.IndexOf("[HRData]\r\n", StringComparison.Ordinal) + 10)
                 .Split(new[] { Environment.NewLine }, StringSplitOptions.None).ToList();
 
-            foreach (var line in hrmRows.TakeWhile(line => !string.IsNullOrWhiteSpace(line)))
+            foreach (var dataRow in hrmRows.TakeWhile(line => !string.IsNullOrWhiteSpace(line)).Select(line => new Data()
             {
-                #region 
-                
-                Data dataRow = new Data()
-                {
-                    HeartRate = double.Parse(line.Split('\t')[0]),
-                    Speed = double.Parse(line.Split('\t')[1]),
-                    Cadence = double.Parse(line.Split('\t')[2]),
-                    Altitude = double.Parse(line.Split('\t')[3]),
-                    Power = double.Parse(line.Split('\t')[4]),
-                    Pressure = double.Parse(line.Split('\t')[4]),
-                    DateTime = HRM.Active.DateTime.AddSeconds(HRM.Active.DataRows.Count)
-                };
-
+                HeartRate = double.Parse(line.Split('\t')[0]),
+                Speed = double.Parse(line.Split('\t')[1]),
+                Cadence = double.Parse(line.Split('\t')[2]),
+                Altitude = double.Parse(line.Split('\t')[3]),
+                Power = double.Parse(line.Split('\t')[4]),
+                Pressure = double.Parse(line.Split('\t')[4]),
+                DateTime = Active.DateTime.AddSeconds(Active.DataRows.Count)
+            }))
+            {
                 Active.DataRows.Add(dataRow);
-                #endregion
             }
         }
 
-        public HRM()
+        public Hrm()
         {
             DataRows = new List<Data>();
         }
