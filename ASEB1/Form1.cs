@@ -20,10 +20,12 @@ namespace ASEB1
             InitializeComponent();
         }
 
-        //ERROR OPENS AND ASKS FOR FILE TWICE (NEEDS FIXING)
-        private void radBrowseEditor1_ValueChanged(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+        
+            
+          
+             private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+               {
+                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Title = @"Open .HRM File";
                 openFileDialog.InitialDirectory = @"C:\Users\mike\Desktop";
@@ -42,7 +44,7 @@ namespace ASEB1
                     HRM.Active.Raw = reader.ReadToEnd();
                 }
             }
-          
+              
 
             int lineIndex = HRM.Active.Raw.IndexOf("Date=");
             string lineDate = HRM.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
@@ -224,12 +226,13 @@ namespace ASEB1
             chart1.Series["Series6"].LegendText = "Power";
             chart1.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
+            
 
             //Chart2 
             chart2.DataBind();
             chart2.DataSource = dt;
             chart2.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
-            //chart2.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
+            chart2.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
 
            chart2.Series["Series1"].XValueMember = "Date/Time";
             
@@ -278,12 +281,17 @@ namespace ASEB1
 
 
 
-            //Zoomable Function - Selectable Data. 
+            //Zoomable Function - Chart1  
             ChartArea CA = chart1.ChartAreas[0];  
             CA.AxisX.ScaleView.Zoomable = true;
             CA.CursorX.AutoScroll = true;
             CA.CursorX.IsUserSelectionEnabled = true;
 
+            //Zoomable Function Chart 2
+            ChartArea CA1 = chart2.ChartAreas[0];
+            CA1.AxisX.ScaleView.Zoomable = true;
+            CA1.CursorX.AutoScroll = true;
+            CA1.CursorX.IsUserSelectionEnabled = true;
             
        }
         /*Function Definition to Draw Chart */
@@ -466,11 +474,11 @@ namespace ASEB1
 
             float TSS = ((duration * NP * IntFact) / (ftp * 3600)) * 100;
 
-            txtNP.Text = Convert.ToString(Math.Round(NP, 0));
+            txtNP.Text = Convert.ToString(Math.Round(NP, 2));
 
             txtIF.Text = Convert.ToString(Math.Round(IntFact, 2));
 
-            txtTSS.Text = Convert.ToString(Math.Round(TSS, 0));
+            txtTSS.Text = Convert.ToString(Math.Round(TSS,2));
 
 
         }
@@ -511,14 +519,19 @@ namespace ASEB1
           sz.Enabled = radCheckBox7.Checked;
       }
 
-     
 
+      private void chart1_SelectionRangeChanged(object sender, CursorEventArgs e)
+      {
+          
+      }
+
+     
     
 
       
 
       
-        //Calculating TSS for TSS Tab with User Entered FTP Value
+  
 
        
 
@@ -531,12 +544,12 @@ namespace ASEB1
 
       
 
-      
+    }
 
 
     }
 
-}
+
 
 
 
