@@ -49,7 +49,7 @@ namespace ASEB1
             var lineDate = Hrm.Active.Raw.Substring(lineIndex + 5, 8);// 8 characters = 20090412
 
             lineDate = lineDate.Insert(4, "-"); // add hyphen after yyyy
-            lineDate = lineDate.Insert(7, "-"); // add hyphen after MM
+            lineDate = lineDate.Insert(7, "-"); // add hyphen after MM 
 
             lineIndex = Hrm.Active.Raw.IndexOf("StartTime=", StringComparison.Ordinal);
             var lineTime = Hrm.Active.Raw.Substring(lineIndex + 10, 8); // 8 characters= hh:mm:ss
@@ -146,14 +146,18 @@ namespace ASEB1
         protected void DrawChart()
         {
 
-           
+
             var dt = new DataTable();
             dt.Clear();
 
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
-                dt.Columns.Add(col.HeaderText);
+                // dt.Columns.Add(col.HeaderText);
+                dt.Columns.Add(col.Name, typeof(int));
             }
+            dt.Columns["Date"].DataType = typeof(DateTime);
+
+
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -167,34 +171,41 @@ namespace ASEB1
             
             //Binds DataGridView to Chart to produce data 
             chart1.DataBind();
-
+            const string dtColumn = "Date"; //"Date/Time";
             chart1.DataSource = dt;
             chart1.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.VariableCount;
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = 90;
             chart1.Series["Series1"].Sort(PointSortOrder.Ascending, "X");
-            chart1.Series["Series1"].XValueMember = "Date/Time";
-           
-            chart1.Series["Series1"].YValueMembers = "HeartRate";
-           
+            chart1.Series["Series1"].XValueType = ChartValueType.DateTime;
+
+            chart1.Series["Series1"].XValueMember = dtColumn;
+
+            chart1.Series["Series1"].YValueMembers = "heartRateCol"; // "HeartRate";
+
             chart1.Series["Series2"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series2"].XValueMember = "Date/Time";
-            chart1.Series["Series2"].YValueMembers = "Speed";
+            chart1.Series["Series2"].XValueType = ChartValueType.DateTime;
+            chart1.Series["Series2"].XValueMember = dtColumn;
+            chart1.Series["Series2"].YValueMembers = "speedCol";// "Speed";
 
             chart1.Series["Series3"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series3"].XValueMember = "Date/Time";
-            chart1.Series["Series3"].YValueMembers = "Cadence";
+            chart1.Series["Series3"].XValueType = ChartValueType.DateTime;
+            chart1.Series["Series3"].XValueMember = dtColumn;
+            chart1.Series["Series3"].YValueMembers = "cadenceCol";// "Cadence";
 
             chart1.Series["Series4"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series4"].XValueMember = "Date/Time";
-            chart1.Series["Series4"].YValueMembers = "Altitude";
+            chart1.Series["Series4"].XValueType = ChartValueType.DateTime;
+            chart1.Series["Series4"].XValueMember = dtColumn;
+            chart1.Series["Series4"].YValueMembers = "altitudeCol";// "Altitude";
 
             chart1.Series["Series5"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series5"].XValueMember = "Date/Time";
-            chart1.Series["Series5"].YValueMembers = "Pressure";
+            chart1.Series["Series5"].XValueType = ChartValueType.DateTime;
+            chart1.Series["Series5"].XValueMember = dtColumn;
+            chart1.Series["Series5"].YValueMembers = "pressureCol";// "Pressure";
 
             chart1.Series["Series6"].ChartType = SeriesChartType.Line;
-            chart1.Series["Series6"].XValueMember = "Date/Time";
-            chart1.Series["Series6"].YValueMembers = "Power";
+            chart1.Series["Series6"].XValueType = ChartValueType.DateTime;
+            chart1.Series["Series6"].XValueMember = dtColumn;
+            chart1.Series["Series6"].YValueMembers = "powerCol";// "Power";
 
             chart1.Series["Series1"].LegendText = "Heart Rate";
 
@@ -271,13 +282,17 @@ namespace ASEB1
             chart2.Series["Series6"].ToolTip = "Power:#VALY\nAverage:#AVG\nMaximum:#MAX";
 
 
-
             //Zoomable Function - Chart1  
-            var ca = chart1.ChartAreas[0];  
+            var ca = chart1.ChartAreas[0];
             ca.AxisX.ScaleView.Zoomable = true;
             ca.CursorX.AutoScroll = true;
             ca.CursorX.IsUserSelectionEnabled = true;
+            ca.AxisX.LabelStyle.Format = "dd.MM.yy. hh:mm:ss"; ca.AxisX.LabelStyle.Interval = 5; 
+            ca.AxisX.LabelStyle.IntervalType = DateTimeIntervalType.Minutes; 
+            
 
+
+            ca.CursorX.IntervalType = DateTimeIntervalType.Milliseconds;
             //Zoomable Function Chart 2
             var ca1 = chart2.ChartAreas[0];
             ca1.AxisX.ScaleView.Zoomable = true;
@@ -507,16 +522,18 @@ namespace ASEB1
       }
 
 
-        
-       
-      private void chart1_AxisViewChanged(object sender, ViewEventArgs e)
+
+     
+      
+
+        private void chart1_AxisViewChanged(object sender, ViewEventArgs e)
       {
           UpdateStats();
           
          
       }
 
-        private int getVisiblePoint(Chart chart, Series series, bool first)
+        private static int GetVisiblePoint(Chart chart, Series series, bool first)
         {
             var s = series;
             var ca = chart.ChartAreas[s.ChartArea];
@@ -532,8 +549,8 @@ namespace ASEB1
 
         private void UpdateStats()
         {
-            var firstPt = getVisiblePoint(chart1, chart1.Series[0], true);
-            var lastPt = getVisiblePoint(chart1, chart1.Series[0], false);
+            var firstPt = GetVisiblePoint(chart1, chart1.Series[0], true);
+            var lastPt = GetVisiblePoint(chart1, chart1.Series[0], false);
             var sCount = chart1.Series.Count;
             var avg = new double[sCount];
             var min = new double[sCount];
@@ -548,7 +565,12 @@ namespace ASEB1
             }
 
             label7.Text = "" + getAverage(chart1.Series[0], firstPt, lastPt);
-            label12.Text = "" + getAverage(chart1.Series[1], firstPt, lastPt);
+            label9.Text = "" + getAverage(chart1.Series[1], firstPt, lastPt);
+            label11.Text = "" + getAverage(chart1.Series[2], firstPt, lastPt);
+            label13.Text = "" + getAverage(chart1.Series[3], firstPt, lastPt);
+            label17.Text = "" + getAverage(chart1.Series[4], firstPt, lastPt);
+             
+            
 
         }
 
@@ -570,6 +592,12 @@ namespace ASEB1
             }
             return val;
         }
+
+
+
+       
+
+       
 
 
 

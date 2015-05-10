@@ -82,14 +82,14 @@
             this.lbMinHR = new System.Windows.Forms.Label();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.radCheckBox6 = new Telerik.WinControls.UI.RadCheckBox();
@@ -480,14 +480,14 @@
             // radPageViewPage3
             // 
             this.radPageViewPage3.AutoSize = true;
-            this.radPageViewPage3.Controls.Add(this.label14);
-            this.radPageViewPage3.Controls.Add(this.label15);
-            this.radPageViewPage3.Controls.Add(this.label12);
+            this.radPageViewPage3.Controls.Add(this.label17);
+            this.radPageViewPage3.Controls.Add(this.label16);
             this.radPageViewPage3.Controls.Add(this.label13);
-            this.radPageViewPage3.Controls.Add(this.label10);
+            this.radPageViewPage3.Controls.Add(this.label12);
             this.radPageViewPage3.Controls.Add(this.label11);
-            this.radPageViewPage3.Controls.Add(this.label8);
+            this.radPageViewPage3.Controls.Add(this.label10);
             this.radPageViewPage3.Controls.Add(this.label9);
+            this.radPageViewPage3.Controls.Add(this.label8);
             this.radPageViewPage3.Controls.Add(this.label7);
             this.radPageViewPage3.Controls.Add(this.label6);
             this.radPageViewPage3.Controls.Add(this.radCheckBox6);
@@ -498,79 +498,79 @@
             this.radPageViewPage3.Controls.Add(this.radCheckBox1);
             this.radPageViewPage3.Controls.Add(this.chart1);
             this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(88F, 32F);
-            this.radPageViewPage3.Location = new System.Drawing.Point(8, 45);
+            this.radPageViewPage3.Location = new System.Drawing.Point(8, 39);
             this.radPageViewPage3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageViewPage3.Name = "radPageViewPage3";
             this.radPageViewPage3.Size = new System.Drawing.Size(1332, 746);
             this.radPageViewPage3.Text = "Graph Data";
             // 
-            // label14
+            // label17
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(177, 701);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 18);
-            this.label14.TabIndex = 23;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(582, 681);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 18);
+            this.label17.TabIndex = 25;
             // 
-            // label15
+            // label16
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(67, 701);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 18);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Max Heart Rate:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(177, 674);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 18);
-            this.label12.TabIndex = 21;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(501, 681);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 18);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Avg Power:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(67, 674);
+            this.label13.Location = new System.Drawing.Point(598, 647);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(104, 18);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Min Heart Rate:";
+            this.label13.Size = new System.Drawing.Size(0, 18);
+            this.label13.TabIndex = 21;
             // 
-            // label10
+            // label12
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(491, 647);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 18);
-            this.label10.TabIndex = 19;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(501, 647);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 18);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Avg Altitude: ";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(381, 647);
+            this.label11.Location = new System.Drawing.Point(162, 716);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 18);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Avg Cadence: ";
+            this.label11.Size = new System.Drawing.Size(0, 18);
+            this.label11.TabIndex = 19;
             // 
-            // label8
+            // label10
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(177, 719);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 18);
-            this.label8.TabIndex = 17;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(67, 716);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 18);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Avg Cadence:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 719);
+            this.label9.Location = new System.Drawing.Point(148, 681);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 18);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Avg Speed:";
+            this.label9.Size = new System.Drawing.Size(0, 18);
+            this.label9.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(67, 681);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 18);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Avg Speed:";
             // 
             // label7
             // 
@@ -818,7 +818,7 @@
             this.radPageView1.Location = new System.Drawing.Point(0, 51);
             this.radPageView1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
+            this.radPageView1.SelectedPage = this.radPageViewPage3;
             this.radPageView1.Size = new System.Drawing.Size(1348, 793);
             this.radPageView1.TabIndex = 1;
             this.radPageView1.Text = "radPageView1";
@@ -1256,16 +1256,16 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 
